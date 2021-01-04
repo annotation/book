@@ -1,0 +1,32 @@
+@config
+@compiler=Dirk Roorda
+@dateWritten!banks=2019-05-20T19:12:23Z
+@dateWritten!rivers=2019-05-20T19:12:23Z
+@fmt:line-default={letters:XXX}{terminator} 
+@fmt:line-term=line#{terminator} 
+@fmt:text-orig-extra={letters}{punc}{gap} 
+@fmt:text-orig-full={letters} 
+@fmt:text-orig-full!banks={letters}{punc} 
+@fmt:text-orig-full!rivers={letters}{gap} 
+@name=Culture quotes from Iain Banks
+@purpose=exposition
+@sectionFeatures=title,number,number
+@sectionFeatures!banks=title,number,number
+@sectionFeatures!rivers=number,number,number
+@sectionTypes=volume,chapter,line
+@sectionTypes!banks=book,chapter,sentence
+@sectionTypes!rivers=chapter,sentence,line
+@source=Good Reads
+@status=with for similarities in a separate module
+@structureFeatures!banks=title,number,number,number
+@structureFeatures!rivers=title,number,number
+@structureTypes!banks=book,chapter,sentence,line
+@structureTypes!rivers=book,chapter,sentence
+@url=https://www.goodreads.com/work/quotes/14366-consider-phlebas
+@version!banks=0.2
+@version!rivers=0.2
+@writtenBy!banks=Text-Fabric
+@writtenBy!rivers=Text-Fabric
+@writtenBy=Text-Fabric
+@dateWritten=2019-06-05T07:05:52Z
+

@@ -1,0 +1,130 @@
+- file: intro
+  numbered: false
+- part: Banks (mini corpus)
+  chapters:
+  - file: banks/compose
+  - file: banks/app
+  - file: banks/repo
+  - file: banks/use
+  - file: banks/share
+- part: Uruk Proto-cuneiform Tablets
+  chapters:
+  - file: uruk/start
+  - file: uruk/imagery
+  - file: uruk/search
+  - file: uruk/steps
+  - file: uruk/jumps
+  - file: uruk/signs
+  - file: uruk/quads
+  - file: uruk/cases
+  - file: uruk/advanced/collocation
+  - file: uruk/advanced/clustering
+  - file: uruk/bits-and-pieces/numbers
+  - file: uruk/bits-and-pieces/pits
+  - file: uruk/bits-and-pieces/calculator
+- part: Akkadian Old Babylonian Tablets
+  chapters:
+  - file: oldbabylonian/start
+  - file: oldbabylonian/display
+  - file: oldbabylonian/search
+  - file: oldbabylonian/exportExcel
+  - file: oldbabylonian/share
+  - file: oldbabylonian/similarLines
+  - file: oldbabylonian/cookbook/pos
+  - file: oldbabylonian/cookbook/prepositions
+  - file: oldbabylonian/cookbook/pos
+  - file: oldbabylonian/cookbook/readings
+  - file: oldbabylonian/cookbook/ummama
+  - file: oldbabylonian/cookbook/words
+  - file: oldbabylonian/cookbook/determinatives
+  - file: oldbabylonian/cookbook/posTag
+- part: Akkadian Old Assyrian Tablets
+  chapters:
+  - file: oldassyrian/start
+  - file: oldassyrian/display
+  - file: oldassyrian/search
+  - file: oldassyrian/exportExcel
+  - file: oldassyrian/share
+  - file: oldassyrian/similarLines
+- part: Hebrew Bible (BHSA)
+  chapters:
+  - file: bhsa/start
+  - file: bhsa/display
+  - file: bhsa/search
+  - file: bhsa/searchAdvanced
+  - file: bhsa/searchRelations
+  - file: bhsa/searchQuantifiers
+  - file: bhsa/searchGaps
+  - file: bhsa/searchFromMQL
+  - file: bhsa/searchRough
+  - file: bhsa/exportExcel
+  - file: bhsa/share
+  - file: bhsa/export
+  - file: bhsa/cookbook/books
+  - file: bhsa/cookbook/namedEntity
+  - file: bhsa/cookbook/text
+  - file: bhsa/cookbook/nametype
+  - file: bhsa/cookbook/edges
+  - file: bhsa/cookbook/featureValues
+  - file: bhsa/cookbook/chapters
+  - file: bhsa/cookbook/negative
+  - file: bhsa/cookbook/accents
+  - file: bhsa/cookbook/accentPatterns
+- part: Hebrew Dead Sea Scrolls
+  chapters:
+  - file: dss/start
+  - file: dss/search
+  - file: dss/share
+  - file: dss/display
+  - file: dss/exportExcel
+  - file: dss/similarLines
+  - file: dss/cookbook/lexemes
+- part: Syriac Peshitta (Bible)
+  chapters:
+  - file: peshitta/start
+  - file: peshitta/search
+  - file: peshitta/cookbook/wordPatterns
+  - file: syrnt/start
+  - file: syrnt/search
+  - file: syrnt/cookbook/verbalstem
+- part: Arabic Quran
+  chapters:
+  - file: quran/start
+  - file: quran/display
+  - file: quran/search
+  - file: quran/exportExcel
+  - file: quran/share
+  - file: quran/rings
+  - file: quran/similarAyas
+  - file: quran/cookbook/sections
+- part: Greek New Testament (Tischendorf)
+  chapters:
+  - file: tisch/start
+  - file: tisch/search
+- part: Greek Athenaeus
+  chapters:
+  - file: athenaeus/start
+  - file: athenaeus/search
+  - file: athenaeus/cookbook/plaintext
+  - file: athenaeus/cookbook/spanning
+- part: Greek Literature
+  chapters:
+  - file: GreekLiterature/start
+  - file: GreekLiterature/load
+  - file: GreekLiterature/compute
+- part: Neo-Aramaic
+  chapters:
+  - file: nena/start
+  - file: nena/display
+  - file: nena/search
+  - file: nena/exportExcel
+  - file: nena/share
+  - file: nena/similarLines
+- part: Dutch General Missives
+  chapters:
+  - file: missieven/start
+  - file: missieven/compute
+  - file: missieven/search
+  - file: missieven/exportExcel
+  - file: missieven/share
+  - file: missieven/annotate
