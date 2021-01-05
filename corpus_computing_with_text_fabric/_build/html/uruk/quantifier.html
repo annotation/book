@@ -1,0 +1,1130 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantifiers &#8212; Corpus computing with Text-Fabric</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/tf-small.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hand-coding" href="hand.html" />
+    <link rel="prev" title="Relation" href="relation.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/tf.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Corpus computing with Text-Fabric</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Banks (mini corpus)
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/compose.html">
+   Compose
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/app.html">
+   The Banks example corpus as app
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/repo.html">
+   Getting data from online repos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/use.html">
+   Use the Banks example corpus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/share.html">
+   Share the Banks example corpus
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Uruk Proto-cuneiform Tablets
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="start.html">
+   Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="imagery.html">
+   Imagery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="search.html">
+   Search
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="relation.html">
+   Relation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Quantifiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hand.html">
+   Hand-coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="steps.html">
+   Steps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="jumps.html">
+   Jumps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="signs.html">
+   Signs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quads.html">
+   Quads
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cases.html">
+   Cases
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/uruk/quantifier.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/annotation/book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/annotation/book/issues/new?title=Issue%20on%20page%20%2Furuk/quantifier.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/annotation/book/master?urlpath=lab/tree/uruk/quantifier.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tablets-without-case-divisions">
+   Tablets without case divisions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next">
+   Next
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <a class="reference internal image-reference" href="../_images/ninologo.png"><img alt="../_images/ninologo.png" class="align-right" src="../_images/ninologo.png" style="width: 150px;" /></a>
+<div class="section" id="quantifiers">
+<h1>Quantifiers<a class="headerlink" href="#quantifiers" title="Permalink to this headline">¶</a></h1>
+<p>So far we have seen only very positive templates.
+They express what you want to see in the result.</p>
+<p>It is also possible to state conditions about what you do not want to see in the results.</p>
+<p>You can express whether sub-searches have or have not results.
+This adds considerably to the power of expression of search templates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="kn">from</span> <span class="nn">tf.app</span> <span class="kn">import</span> <span class="n">use</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">use</span><span class="p">(</span><span class="s1">&#39;uruk:clone&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s2">&quot;clone&quot;</span><span class="p">,</span> <span class="n">hoist</span><span class="o">=</span><span class="nb">globals</span><span class="p">())</span>
+<span class="c1"># A = use(&#39;uruk&#39;, hoist=globals())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><b title="local github">TF-app:</b> <span title="repo clone offline under ~/github">~/github/annotation/app-uruk/code</span></div><div class="output text_html"><b title="local github">data:</b> <span title="repo clone offline under ~/github">~/github/Nino-cunei/uruk/tf/uruk/1.0</span></div><div class="output text_html"><b>Text-Fabric:</b> <a target="_blank" href="https://annotation.github.io/text-fabric/cheatsheet.html" title="text-fabric-api">Text-Fabric API 8.4.6</a>, <a target="_blank" href="https://github.com/annotation/app-uruk" title="uruk TF-app">app-uruk v3</a>, <a target="_blank" href="https://annotation.github.io/text-fabric/about/searchusage.html" title="Search Templates Introduction and Reference">Search Reference</a><br><b>Data:</b> <a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/about.md" title="provenance of Uruk IV/III: Proto-cuneiform tablets ">URUK</a>, <a target="_blank" href="https://annotation.github.io/text-fabric/writing/.html" title="How TF features represent text">Character table</a>, <a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="URUK feature documentation">Feature docs</a><br><b>Features:</b><br><details><summary><b>Uruk IV/III: Proto-cuneiform tablets </b></summary><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/catalogId.tf">catalogId</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/crossref.tf">crossref</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/damage.tf">damage</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/depth.tf">depth</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/excavation.tf">excavation</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/fragment.tf">fragment</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/fullNumber.tf">fullNumber</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/grapheme.tf">grapheme</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/identifier.tf">identifier</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/modifier.tf">modifier</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/modifierFirst.tf">modifierFirst</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/modifierInner.tf">modifierInner</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/name.tf">name</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/number.tf">number</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/otype.tf">otype</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/period.tf">period</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/prime.tf">prime</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/remarkable.tf">remarkable</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/repeat.tf">repeat</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/srcLn.tf">srcLn</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/srcLnNum.tf">srcLnNum</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/terminal.tf">terminal</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/text.tf">text</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/type.tf">type</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/uncertain.tf">uncertain</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/variant.tf">variant</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/variantOuter.tf">variantOuter</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/written.tf">written</a><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/comments.tf">comments</a></i></b><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/op.tf">op</a></i></b><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/oslots.tf">oslots</a></i></b><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/sub.tf">sub</a></i></b><br></details></div><div class="output text_html"><style>tr.tf.ltr, td.tf.ltr, th.tf.ltr { text-align: left ! important;}
+tr.tf.rtl, td.tf.rtl, th.tf.rtl { text-align: right ! important;}
+@font-face {
+  font-family: "Gentium Plus";
+  src: local('Gentium Plus'), local('GentiumPlus'),
+    url('/server/static/fonts/GentiumPlus-R.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/GentiumPlus-R.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "Ezra SIL";
+  src: local('Ezra SIL'), local('EzraSIL'),
+    url('/server/static/fonts/SILEOT.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SILEOT.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "SBL Hebrew";
+  src: local('SBL Hebrew'), local('SBLHebrew'),
+    url('/server/static/fonts/SBL_Hbrw.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SBL_Hbrw.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "Estrangelo Edessa";
+  src: local('Estrangelo Edessa'), local('EstrangeloEdessa');
+    url('/server/static/fonts/SyrCOMEdessa.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SyrCOMEdessa.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: AmiriQuran;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amiri Quran'), local('AmiriQuran'),
+    url('/server/static/fonts/AmiriQuran.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/AmiriQuran.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: AmiriQuranColored;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amiri Quran Colored'), local('AmiriQuranColored'),
+    url('/server/static/fonts/AmiriQuranColored.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/AmiriQuranColored.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "Santakku";
+  src: local('Santakku'),
+    url('/server/static/fonts/Santakku.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/Santakku.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "SantakkuM";
+  src: local('SantakkuM'),
+    url('/server/static/fonts/SantakkuM.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SantakkuM.woff?raw=true') format('woff');
+}
+/* bypassing some classical notebook settings */
+div#notebook {
+  line-height: unset;
+}
+/* neutral text */
+.txtn,.txtn a:visited,.txtn a:link {
+    font-family: sans-serif;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* transcription text */
+.txtt,.txtt a:visited,.txtt a:link {
+    font-family: monospace;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* source text */
+.txto,.txto a:visited,.txto a:link {
+    font-family: serif;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* phonetic text */
+.txtp,.txtp a:visited,.txtp a:link {
+    font-family: Gentium, sans-serif;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* original script text */
+.txtu,.txtu a:visited,.txtu a:link {
+    font-family: Gentium, sans-serif;
+    font-size: medium;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* hebrew */
+.txtu.hbo,.lex.hbo {
+    font-family: "Ezra SIL", "SBL Hebrew", sans-serif;
+    font-size: large;
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+/* syriac */
+.txtu.syc,.lex.syc {
+    font-family: "Estrangelo Edessa", sans-serif;
+    font-size: medium;
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+/* neo aramaic */
+.txtu.cld,.lex.cld {
+    font-family: "CharisSIL-R", sans-serif;
+    font-size: medium;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+/* standard arabic */
+.txtu.ara,.lex.ara {
+    font-family: "AmiriQuran", sans-serif;
+    font-size: large;
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+/* cuneiform */
+.txtu.akk,.lex.akk {
+    font-family: Santakku, sans-serif;
+    font-size: large;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+/* greek */
+.txtu.grc,.lex.grc a:link {
+    font-family: Gentium, sans-serif;
+    font-size: medium;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+a:hover {
+    text-decoration: underline | important;
+    color: #0000ff | important;
+}
+.ltr {
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+.rtl {
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+.ubd {
+    unicode-bidi: embed;
+}
+.col {
+   display: inline-block;
+}
+.features {
+    font-family: monospace;
+    font-size: medium;
+    font-weight: bold;
+    color: var(--features);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 2px;
+    margin: 2px;
+    direction: ltr;
+    unicode-bidi: embed;
+    border: var(--meta-width) solid var(--meta-color);
+    border-radius: var(--meta-width);
+}
+.features div,.features span {
+    padding: 0;
+    margin: -2px 0;
+}
+.features .f {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: normal;
+    color: #5555bb;
+}
+.features .xft {
+  color: #000000;
+  background-color: #eeeeee;
+  font-size: medium;
+  margin: 2px 0px;
+}
+.features .xft .f {
+  color: #000000;
+  background-color: #eeeeee;
+  font-size: small;
+  font-weight: normal;
+}
+.tfsechead {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+    color: var(--tfsechead);
+    unicode-bidi: embed;
+    text-align: start;
+}
+.structure {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+    color: var(--structure);
+    unicode-bidi: embed;
+    text-align: start;
+}
+.comments {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-flow: column nowrap;
+}
+.nd, a:link.nd {
+    font-family: sans-serif;
+    font-size: small;
+    color: var(--node);
+    vertical-align: super;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+.lex {
+  color: var(--lex-color);;
+}
+.children,.children.ltr {
+    display: flex;
+    border: 0;
+    background-color: #ffffff;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.children.stretch {
+    align-items: stretch;
+}
+.children.hor {
+    flex-flow: row nowrap;
+}
+.children.hor.wrap {
+    flex-flow: row wrap;
+}
+.children.ver {
+    flex-flow: column nowrap;
+}
+.children.ver.wrap {
+    flex-flow: column wrap;
+}
+.contnr {
+    width: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-flow: column nowrap;
+    background: #ffffff none repeat scroll 0 0;
+    padding:  10px 2px 2px 2px;
+    margin: 16px 2px 2px 2px;
+    border-style: solid;
+    font-size: small;
+}
+.contnr.trm {
+    background-attachment: local;
+}
+.contnr.cnul {
+    padding:  0;
+    margin: 0;
+    border-style: solid;
+    font-size: xx-small;
+}
+.contnr.cnul,.lbl.cnul {
+    border-color: var(--border-color-nul);
+    border-width: var(--border-width-nul);
+    border-radius: var(--border-width-nul);
+}
+.contnr.c0,.lbl.c0 {
+    border-color: var(--border-color0);
+    border-width: var(--border-width0);
+    border-radius: var(--border-width0);
+}
+.contnr.c1,.lbl.c1 {
+    border-color: var(--border-color1);
+    border-width: var(--border-width1);
+    border-radius: var(--border-width1);
+}
+.contnr.c2,.lbl.c2 {
+    border-color: var(--border-color2);
+    border-width: var(--border-width2);
+    border-radius: var(--border-width2);
+}
+.contnr.c3,.lbl.c3 {
+    border-color: var(--border-color3);
+    border-width: var(--border-width3);
+    border-radius: var(--border-width3);
+}
+.contnr.c4,.lbl.c4 {
+    border-color: var(--border-color4);
+    border-width: var(--border-width4);
+    border-radius: var(--border-width4);
+}
+span.plain {
+    display: inline-block;
+    white-space: pre-wrap;
+}
+.plain {
+    background-color: #ffffff;
+}
+.plain.l,.contnr.l,.contnr.l>.lbl {
+    border-left-style: dotted
+}
+.plain.r,.contnr.r,.contnr.r>.lbl {
+    border-right-style: dotted
+}
+.plain.lno,.contnr.lno,.contnr.lno>.lbl {
+    border-left-style: none
+}
+.plain.rno,.contnr.rno,.contnr.rno>.lbl {
+    border-right-style: none
+}
+.plain.l {
+    padding-left: 4px;
+    margin-left: 2px;
+    border-width: var(--border-width-plain);
+}
+.plain.r {
+    padding-right: 4px;
+    margin-right: 2px;
+    border-width: var(--border-width-plain);
+}
+.lbl {
+    font-family: monospace;
+    margin-top: -24px;
+    margin-left: 20px;
+    background: #ffffff none repeat scroll 0 0;
+    padding: 0 6px;
+    border-style: solid;
+    display: block;
+    color: var(--label)
+}
+.lbl.trm {
+    background-attachment: local;
+    margin-top: 2px;
+    margin-left: 2px;
+    padding: 2px 2px;
+    border-style: none;
+}
+.lbl.cnul {
+    font-size: xx-small;
+}
+.lbl.c0 {
+    font-size: small;
+}
+.lbl.c1 {
+    font-size: small;
+}
+.lbl.c2 {
+    font-size: medium;
+}
+.lbl.c3 {
+    font-size: medium;
+}
+.lbl.c4 {
+    font-size: large;
+}
+.occs, a:link.occs {
+    font-size: small;
+}
+
+/* PROVENANCE */
+
+div.prov {
+	margin: 40px;
+	padding: 20px;
+	border: 2px solid var(--fog-rim);
+}
+div.pline {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: baseline;
+}
+div.p2line {
+	margin-left: 2em;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: baseline;
+}
+div.psline {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: baseline;
+	background-color: var(--gold-mist-back);
+}
+div.pname {
+	flex: 0 0 5rem;
+	font-weight: bold;
+}
+div.pval {
+    flex: 1 1 auto;
+}
+
+:root {
+	--node:               hsla(120, 100%,  20%, 1.0  );
+	--label:              hsla(  0, 100%,  20%, 1.0  );
+	--tfsechead:          hsla(  0, 100%,  25%, 1.0  );
+	--structure:          hsla(120, 100%,  25%, 1.0  );
+	--features:           hsla(  0,   0%,  30%, 1.0  );
+  --text-color:         hsla( 60,  80%,  10%, 1.0  );
+  --lex-color:          hsla(220,  90%,  60%, 1.0  );
+  --meta-color:         hsla(  0,   0%,  90%, 0.7  );
+  --meta-width:         3px;
+  --border-color-nul:   hsla(  0,   0%,  90%, 0.5  );
+  --border-color0:      hsla(  0,   0%,  90%, 0.9  );
+  --border-color1:      hsla(  0,   0%,  80%, 0.9  );
+  --border-color2:      hsla(  0,   0%,  70%, 0.9  );
+  --border-color3:      hsla(  0,   0%,  80%, 0.8  );
+  --border-color4:      hsla(  0,   0%,  60%, 0.9  );
+  --border-width-nul:   2px;
+  --border-width0:      2px;
+  --border-width1:      3px;
+  --border-width2:      4px;
+  --border-width3:      6px;
+  --border-width4:      5px;
+  --border-width-plain: 2px;
+}
+.hl {
+  background-color: var(--hl-strong);
+}
+span.hl {
+	background-color: var(--hl-strong);
+	border-width: 0;
+	border-radius: 2px;
+	border-style: solid;
+}
+div.contnr.hl,div.lbl.hl {
+  background-color: var(--hl-strong);
+}
+div.contnr.hl {
+  border-color: var(--hl-rim) ! important;
+	border-width: 4px ! important;
+}
+
+span.hlbx {
+	border-color: var(--hl-rim);
+	border-width: 4px ! important;
+	border-style: solid;
+	border-radius: 6px;
+  padding: 4px;
+  margin: 4px;
+}
+
+span.plain {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+:root {
+	--hl-strong:        hsla( 60, 100%,  70%, 0.9  );
+	--hl-rim:           hsla( 55,  80%,  50%, 1.0  );
+}
+.contnr.cluster {
+    flex-flow: row wrap;
+    border: 0;
+}
+.meta .features {
+    background-color: #ffeedd;
+}
+.lbl.clusterb,.lbl.clustere {
+    padding:  0.5em 0.1em 0.1em 0.1em;
+    margin: 0.8em 0.1em 0.1em 0.1em;
+    color: #888844;
+    font-size: x-small;
+}
+.lbl.clusterb {
+    border-left: 0.3em solid #cccc99;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 1rem;
+}
+.lbl.clustere {
+    border-left: 0;
+    border-right: 0.3em solid #cccc99;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 1rem;
+}
+.op {
+    padding:  0.5em 0.1em 0.1em 0.1em;
+    margin: 0.8em 0.1em 0.1em 0.1em;
+    font-family: monospace;
+    font-size: x-large;
+    font-weight: bold;
+}
+.period {
+    font-family: monospace;
+    font-size: medium;
+    font-weight: bold;
+    color: #0000bb;
+}
+.excavation {
+    font-family: monospace;
+    font-size: medium;
+    font-style: italic;
+    color: #779900;
+}
+</style></div><div class="output text_html"><div><b>Text-Fabric API:</b> names <a target="_blank" href="https://annotation.github.io/text-fabric/cheatsheet.html" title="doc">N F E L T S C TF</a> directly usable</div><hr></div><div class="output text_html"><b title="local github">data:</b> <span title="repo clone offline under ~/github">~/github/Nino-cunei/uruk/sources/cdli/images</span></div><div class="output text_html">Found 2095 ideograph linearts<br></div><div class="output text_html">Found 2724 tablet linearts<br></div><div class="output text_html">Found 5495 tablet photos<br></div></div>
+</div>
+<div class="section" id="tablets-without-case-divisions">
+<h2>Tablets without case divisions<a class="headerlink" href="#tablets-without-case-divisions" title="Permalink to this headline">¶</a></h2>
+<p>Let’s find all tablets in which all lines are undivided, i.e. lines without cases.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">tablet</span>
+<span class="s1">/without/</span>
+<span class="s1">  case</span>
+<span class="s1">/-/</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The expression</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">without</span><span class="o">/</span>
+<span class="n">template</span>
+<span class="o">/-/</span>
+</pre></div>
+</div>
+<p>is a <a class="reference external" href="https://annotation.github.io/text-fabric/Use/Search/#quantifiers">quantifier</a>.</p>
+<p>It poses a condition on the preceding line in the template, in this case the <code class="docutils literal notranslate"><span class="pre">tablet</span></code>.
+And the condition is that the template</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tablet</span>
+  <span class="n">case</span>
+</pre></div>
+</div>
+<p>does not have results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.02s 5384 results
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P006427" title="to CDLI main page for this tablet" sec="P006427">P006427</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P006427</span></span></div><div class='features'><span class="name " title="name">Anonymous 006427</span><span class="period " title="period">uruk-iii</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N14)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SANGA~a?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SANGA~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sanga-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>2</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P006428" title="to CDLI main page for this tablet" sec="P006428">P006428</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P006428</span></span></div><div class='features'><span class="name " title="name">Anonymous 006428</span><span class="period " title="period">uruk-iii</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">3</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N14)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N14)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUHUR</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUHUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-suhur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">4</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">5</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|DUG~bx1(N57)|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qdug-bx1(n57)q.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">DUG~b</span></span></div></div><div class="op">x</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N57)</span></span></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">6</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">7</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">4</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">5</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
+<p>Now let’s find cases without numerals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">case</span>
+<span class="s1">/without/</span>
+<span class="s1">  sign type=numeral</span>
+<span class="s1">/-/</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.16s 2833 results
+</pre></div>
+</div>
+</div>
+</div>
+<p>We show a few.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P471695" title="to CDLI main page for this tablet" sec="P471695">P471695</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P471695</span></span></div><div class='features'><span class="name " title="name">Anonymous 471695</span><span class="period " title="period">uruk-iii</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">APIN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/APIN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-apin-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N57)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N57).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n57).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">UR4~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/UR4~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ur4-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">1b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1b1</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">EN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/EN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-en-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">DU</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/DU.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-du.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU759</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU759.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu759.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1b2</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">BAN~b</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/BAN~b.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ban-b.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~c</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KASZ~c.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-kasz-c.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1b3</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KI@n</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KI@n.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ki(a)n.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SAG</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SAG.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sag.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N14)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b1</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N57)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N57).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n57).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">PAP~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/PAP~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-pap-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b2</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">n lines broken</span></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZU</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZU.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-szu.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KI</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KI.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ki.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b3</span><span title="prime">'</span></span></div><div class="children hor False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">EN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/EN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-en-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">AN</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/AN.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-an.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">EZINU~d</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/EZINU~d.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ezinu-d.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b4</span><span title="prime">'</span></span></div><div class="children hor False "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">rest broken</span></div></div><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">(for a total of 12 sub-cases with PNN)</span></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">IDIGNA</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/IDIGNA.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-idigna.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ISZ~a#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ISZ~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-isz-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1b1</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">blank space</span></div></div><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">rest broken</span></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">PAP~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/PAP~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-pap-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GIR3~c</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GIR3~c.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gir3-c.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div></div></div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">reverse</span></span></div><div class="children hor  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">beginning broken</span></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">0</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N14)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">6(N01)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/6(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-6(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>2</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P471695" title="to CDLI main page for this tablet" sec="P471695">P471695</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P471695</span></span></div><div class='features'><span class="name " title="name">Anonymous 471695</span><span class="period " title="period">uruk-iii</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">APIN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/APIN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-apin-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N57)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N57).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n57).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">UR4~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/UR4~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ur4-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">1b1</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">EN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/EN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-en-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">DU</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/DU.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-du.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU759</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU759.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu759.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1b2</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">BAN~b</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/BAN~b.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ban-b.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~c</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KASZ~c.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-kasz-c.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1b3</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KI@n</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KI@n.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ki(a)n.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SAG</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SAG.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sag.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N14)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b1</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N57)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N57).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n57).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">PAP~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/PAP~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-pap-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b2</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">n lines broken</span></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZU</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZU.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-szu.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KI</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KI.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ki.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b3</span><span title="prime">'</span></span></div><div class="children hor False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">EN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/EN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-en-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">AN</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/AN.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-an.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">EZINU~d</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/EZINU~d.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ezinu-d.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b4</span><span title="prime">'</span></span></div><div class="children hor False "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">rest broken</span></div></div><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">(for a total of 12 sub-cases with PNN)</span></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">IDIGNA</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/IDIGNA.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-idigna.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ISZ~a#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ISZ~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-isz-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1b1</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">blank space</span></div></div><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">rest broken</span></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">PAP~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/PAP~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-pap-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GIR3~c</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GIR3~c.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gir3-c.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">=</span></span></div> </div></div></div></div></div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">reverse</span></span></div><div class="children hor  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">beginning broken</span></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">0</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N14)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">6(N01)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/6(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-6(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
+<p>Now we can use this to get something more sophisticated: the tablets that do not have numerals in their cases. So only undivided lines may contain numerals.</p>
+<p>Let’s find tablets that do have cases, but just no cases with numerals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">tablet</span>
+<span class="s1">/where/</span>
+<span class="s1">  case</span>
+<span class="s1">/have/</span>
+<span class="s1">  /without/</span>
+<span class="s1">    sign type=numeral</span>
+<span class="s1">  /-/</span>
+<span class="s1">/-/</span>
+<span class="s1">/with/</span>
+<span class="s1">  case</span>
+<span class="s1">/-/</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.01s 53 results
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P006438" title="to CDLI main page for this tablet" sec="P006438">P006438</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P006438</span></span></div><div class='features'><span class="name " title="name">AOST 109</span><span class="period " title="period">uruk-iii</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KU6~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KU6~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ku6-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">BU~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/BU~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-bu-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|AB~axSUKKAL|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qab-axsukkalq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">AB~a</span></span></div></div><div class="op">x</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUKKAL</span></span></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2c</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NAM2</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NAM2.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nam2.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">RAD~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/RAD~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-rad-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">PA~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/PA~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-pa-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZU</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZU.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-szu.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2d</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">RAD~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/RAD~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-rad-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">reverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">USZ~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/USZ~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-usz-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZUBUR</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZUBUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-szubur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GAL~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GAL~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gal-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">IM~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/IM~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-im-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZA</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZA.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sza.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">RAD~a#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/RAD~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-rad-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">4</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">EN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/EN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-en-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">LAL2~a#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/LAL2~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-lal2-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NIM~b2#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NIM~b2.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nim-b2.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>2</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002044" title="to CDLI main page for this tablet" sec="P002044">P002044</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P002044</span></span></div><div class='features'><span class="name " title="name">ATU 6, pl. 043, W 14335,x</span><span class="period " title="period">uruk-iii</span><span class="excavation " title="excavation">W 14335,x</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GAL~a#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GAL~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gal-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">PAP~a#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/PAP~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-pap-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
+<p>Can we find such tablet which do have numerals on their undivided lines.</p>
+<p>We show here a way to use the results of one query in another one:
+<em>custom sets</em>.</p>
+<p>We put the set of tablets with cases but without numerals in cases in a set called <code class="docutils literal notranslate"><span class="pre">cntablet</span></code>.</p>
+<p>We run the query again, but now in shallow mode, so that the result is a set.</p>
+<p>By the way: read more about custom sets and shallow mode in the description of
+<a class="reference external" href="https://annotation.github.io/text-fabric/Api/General/#search-api"><code class="docutils literal notranslate"><span class="pre">A.search()</span></code></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">shallow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">customSets</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cntablet</span><span class="o">=</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.01s 53 results
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can perform a very simple query for numerals on this set: we want tablets with numerals.
+By restricting ourselves to this set, we now that these numerals must occur on undivided lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">cntablet</span>
+<span class="s1">  sign type=numeral</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">sets</span><span class="o">=</span><span class="n">customSets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.13s 160 results
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">queryFeatures</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P006438" title="to CDLI main page for this tablet" sec="P006438">P006438</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P006438</span></span></div><div class='features'><span class="name " title="name">AOST 109</span><span class="period " title="period">uruk-iii</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KU6~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KU6~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ku6-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">BU~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/BU~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-bu-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|AB~axSUKKAL|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qab-axsukkalq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">AB~a</span></span></div></div><div class="op">x</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUKKAL</span></span></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2c</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NAM2</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NAM2.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nam2.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">RAD~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/RAD~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-rad-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">PA~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/PA~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-pa-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZU</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZU.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-szu.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2d</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">RAD~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/RAD~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-rad-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">reverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">1(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">USZ~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/USZ~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-usz-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZUBUR</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZUBUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-szubur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GAL~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GAL~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gal-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">IM~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/IM~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-im-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZA</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZA.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sza.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">RAD~a#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/RAD~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-rad-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">4</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">EN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/EN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-en-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">LAL2~a#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/LAL2~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-lal2-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NIM~b2#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NIM~b2.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nim-b2.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>2</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002082" title="to CDLI main page for this tablet" sec="P002082">P002082</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P002082</span></span></div><div class='features'><span class="name " title="name">ATU 6, pl. 047, W 14637</span><span class="period " title="period">uruk-iii</span><span class="excavation " title="excavation">W 14637</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">1(N01)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">BA#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/BA.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ba.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUHUR#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUHUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-suhur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SAG</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SAG.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sag.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N01)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">BA#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/BA.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ba.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUHUR</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUHUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-suhur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N14)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUHUR#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUHUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-suhur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">4</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUMASZ</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUMASZ.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sumasz.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N34)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N34).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n34).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|ZATU759xKU6~a|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qzatu759xku6-aq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU759</span></span></div></div><div class="op">x</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KU6~a</span></span></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">UB</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/UB.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ub.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KU6~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KU6~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ku6-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">3a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">EN~a#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/EN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-en-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">3b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">3b1</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUHUR#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUHUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-suhur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">3b2</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">TUR3~a#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/TUR3~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-tur3-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">DU#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/DU.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-du.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZE3#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZE3.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sze3.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">reverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|GI&amp;GI|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qgi(e)giq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div></div><div class="op">&</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div></div></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GIR3~a#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GIR3~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gir3-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUHUR#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUHUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-suhur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
+<p>We could have found these results by one query as well.
+Judge for yourself which method causes the least friction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">tablet</span>
+<span class="s1">/without/</span>
+<span class="s1">  case</span>
+<span class="s1">    sign type=numeral</span>
+<span class="s1">/-/</span>
+<span class="s1">/with/</span>
+<span class="s1">  case</span>
+<span class="s1">/-/</span>
+<span class="s1">  sign type=numeral</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">queryFeatures</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.14s 160 results
+</pre></div>
+</div>
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P006438" title="to CDLI main page for this tablet" sec="P006438">P006438</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P006438</span></span></div><div class='features'><span class="name " title="name">AOST 109</span><span class="period " title="period">uruk-iii</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KU6~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KU6~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ku6-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">BU~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/BU~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-bu-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|AB~axSUKKAL|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qab-axsukkalq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">AB~a</span></span></div></div><div class="op">x</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUKKAL</span></span></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2c</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NAM2</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NAM2.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nam2.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">RAD~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/RAD~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-rad-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">PA~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/PA~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-pa-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZU</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZU.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-szu.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2d</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">RAD~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/RAD~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-rad-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">reverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">1(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">USZ~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/USZ~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-usz-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZUBUR</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZUBUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-szubur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GAL~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GAL~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gal-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">IM~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/IM~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-im-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZA</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZA.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sza.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">RAD~a#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/RAD~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-rad-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">4</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">EN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/EN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-en-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">LAL2~a#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/LAL2~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-lal2-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NIM~b2#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NIM~b2.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nim-b2.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>2</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002082" title="to CDLI main page for this tablet" sec="P002082">P002082</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P002082</span></span></div><div class='features'><span class="name " title="name">ATU 6, pl. 047, W 14637</span><span class="period " title="period">uruk-iii</span><span class="excavation " title="excavation">W 14637</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">1(N01)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">BA#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/BA.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ba.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUHUR#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUHUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-suhur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SAG</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SAG.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sag.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N01)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">BA#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/BA.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ba.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUHUR</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUHUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-suhur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N14)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUHUR#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUHUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-suhur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">4</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUMASZ</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUMASZ.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sumasz.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N34)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N34).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n34).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|ZATU759xKU6~a|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qzatu759xku6-aq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU759</span></span></div></div><div class="op">x</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KU6~a</span></span></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">UB</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/UB.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ub.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KU6~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KU6~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ku6-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">3a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">EN~a#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/EN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-en-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">3b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">3b1</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUHUR#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUHUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-suhur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">3b2</span><span title="prime"></span></span></div><div class="children hor False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">TUR3~a#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/TUR3~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-tur3-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">DU#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/DU.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-du.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZE3#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZE3.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sze3.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">reverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|GI&amp;GI|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qgi(e)giq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div></div><div class="op">&</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div></div></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GIR3~a#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GIR3~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gir3-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SUHUR#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUHUR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-suhur.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
+</div>
+<div class="section" id="next">
+<h2>Next<a class="headerlink" href="#next" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="hand.html"><span class="doc std std-doc">hand</span></a></p>
+<p><em>Give it a hand …</em></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./uruk"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="relation.html" title="previous page">Relation</a>
+    <a class='right-next' id="next-link" href="hand.html" title="next page">Hand-coding</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Roorda<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

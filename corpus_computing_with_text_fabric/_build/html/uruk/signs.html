@@ -1,0 +1,1670 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signs &#8212; Corpus computing with Text-Fabric</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/tf-small.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quads" href="quads.html" />
+    <link rel="prev" title="Jumps" href="jumps.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/tf.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Corpus computing with Text-Fabric</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Banks (mini corpus)
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/compose.html">
+   Compose
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/app.html">
+   The Banks example corpus as app
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/repo.html">
+   Getting data from online repos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/use.html">
+   Use the Banks example corpus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/share.html">
+   Share the Banks example corpus
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Uruk Proto-cuneiform Tablets
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="start.html">
+   Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="imagery.html">
+   Imagery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="search.html">
+   Search
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="relation.html">
+   Relation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quantifier.html">
+   Quantifiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hand.html">
+   Hand-coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="steps.html">
+   Steps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="jumps.html">
+   Jumps
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Signs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quads.html">
+   Quads
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cases.html">
+   Cases
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/uruk/signs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/annotation/book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/annotation/book/issues/new?title=Issue%20on%20page%20%2Furuk/signs.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/annotation/book/master?urlpath=lab/tree/uruk/signs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#showing-signs">
+   Showing signs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#occurrences-of-a-sign">
+   Occurrences of a sign
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#with-table-and-show">
+     With
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       table()
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       show()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#as-a-plain-list">
+     As a plain list
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#as-a-linked-table">
+     As a linked table
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#everything-to-file">
+     Everything to file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#frequency-lists">
+   Frequency lists
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graphemes">
+     Graphemes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#augments">
+     Augments
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#prime">
+       Prime
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variant">
+       Variant
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#modifier">
+       Modifier
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#full-signs">
+     Full signs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-results-to-file">
+     Writing results to file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next">
+   Next
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <a class="reference internal image-reference" href="../_images/ninologo.png"><img alt="../_images/ninologo.png" class="align-right" src="../_images/ninologo.png" style="width: 150px;" /></a>
+<div class="section" id="signs">
+<h1>Signs<a class="headerlink" href="#signs" title="Permalink to this headline">¶</a></h1>
+<p>Signs are the building blocks in the transcriptions.
+They correspond to the individual “glyphs” on the tablet.</p>
+<p>However, we have inserted a few <em>empty</em> signs, which we can leave out subsequently …</p>
+<p>We need a few extra modules.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span>
+<span class="kn">from</span> <span class="nn">tf.app</span> <span class="kn">import</span> <span class="n">use</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">use</span><span class="p">(</span><span class="s1">&#39;uruk:clone&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s2">&quot;clone&quot;</span><span class="p">,</span> <span class="n">hoist</span><span class="o">=</span><span class="nb">globals</span><span class="p">())</span>
+<span class="c1"># A = use(&#39;uruk&#39;, hoist=globals())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><b title="local github">TF-app:</b> <span title="repo clone offline under ~/github">~/github/annotation/app-uruk/code</span></div><div class="output text_html"><b title="local github">data:</b> <span title="repo clone offline under ~/github">~/github/Nino-cunei/uruk/tf/uruk/1.0</span></div><div class="output text_html"><b>Text-Fabric:</b> <a target="_blank" href="https://annotation.github.io/text-fabric/cheatsheet.html" title="text-fabric-api">Text-Fabric API 8.4.6</a>, <a target="_blank" href="https://github.com/annotation/app-uruk" title="uruk TF-app">app-uruk v3</a>, <a target="_blank" href="https://annotation.github.io/text-fabric/about/searchusage.html" title="Search Templates Introduction and Reference">Search Reference</a><br><b>Data:</b> <a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/about.md" title="provenance of Uruk IV/III: Proto-cuneiform tablets ">URUK</a>, <a target="_blank" href="https://annotation.github.io/text-fabric/writing/.html" title="How TF features represent text">Character table</a>, <a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="URUK feature documentation">Feature docs</a><br><b>Features:</b><br><details><summary><b>Uruk IV/III: Proto-cuneiform tablets </b></summary><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/catalogId.tf">catalogId</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/crossref.tf">crossref</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/damage.tf">damage</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/depth.tf">depth</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/excavation.tf">excavation</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/fragment.tf">fragment</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/fullNumber.tf">fullNumber</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/grapheme.tf">grapheme</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/identifier.tf">identifier</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/modifier.tf">modifier</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/modifierFirst.tf">modifierFirst</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/modifierInner.tf">modifierInner</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/name.tf">name</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/number.tf">number</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/otype.tf">otype</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/period.tf">period</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/prime.tf">prime</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/remarkable.tf">remarkable</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/repeat.tf">repeat</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/srcLn.tf">srcLn</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/srcLnNum.tf">srcLnNum</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/terminal.tf">terminal</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/text.tf">text</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/type.tf">type</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/uncertain.tf">uncertain</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/variant.tf">variant</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/variantOuter.tf">variantOuter</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/written.tf">written</a><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/comments.tf">comments</a></i></b><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/op.tf">op</a></i></b><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/oslots.tf">oslots</a></i></b><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/sub.tf">sub</a></i></b><br></details></div><div class="output text_html"><style>tr.tf.ltr, td.tf.ltr, th.tf.ltr { text-align: left ! important;}
+tr.tf.rtl, td.tf.rtl, th.tf.rtl { text-align: right ! important;}
+@font-face {
+  font-family: "Gentium Plus";
+  src: local('Gentium Plus'), local('GentiumPlus'),
+    url('/server/static/fonts/GentiumPlus-R.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/GentiumPlus-R.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "Ezra SIL";
+  src: local('Ezra SIL'), local('EzraSIL'),
+    url('/server/static/fonts/SILEOT.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SILEOT.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "SBL Hebrew";
+  src: local('SBL Hebrew'), local('SBLHebrew'),
+    url('/server/static/fonts/SBL_Hbrw.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SBL_Hbrw.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "Estrangelo Edessa";
+  src: local('Estrangelo Edessa'), local('EstrangeloEdessa');
+    url('/server/static/fonts/SyrCOMEdessa.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SyrCOMEdessa.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: AmiriQuran;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amiri Quran'), local('AmiriQuran'),
+    url('/server/static/fonts/AmiriQuran.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/AmiriQuran.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: AmiriQuranColored;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amiri Quran Colored'), local('AmiriQuranColored'),
+    url('/server/static/fonts/AmiriQuranColored.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/AmiriQuranColored.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "Santakku";
+  src: local('Santakku'),
+    url('/server/static/fonts/Santakku.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/Santakku.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "SantakkuM";
+  src: local('SantakkuM'),
+    url('/server/static/fonts/SantakkuM.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SantakkuM.woff?raw=true') format('woff');
+}
+/* bypassing some classical notebook settings */
+div#notebook {
+  line-height: unset;
+}
+/* neutral text */
+.txtn,.txtn a:visited,.txtn a:link {
+    font-family: sans-serif;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* transcription text */
+.txtt,.txtt a:visited,.txtt a:link {
+    font-family: monospace;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* source text */
+.txto,.txto a:visited,.txto a:link {
+    font-family: serif;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* phonetic text */
+.txtp,.txtp a:visited,.txtp a:link {
+    font-family: Gentium, sans-serif;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* original script text */
+.txtu,.txtu a:visited,.txtu a:link {
+    font-family: Gentium, sans-serif;
+    font-size: medium;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* hebrew */
+.txtu.hbo,.lex.hbo {
+    font-family: "Ezra SIL", "SBL Hebrew", sans-serif;
+    font-size: large;
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+/* syriac */
+.txtu.syc,.lex.syc {
+    font-family: "Estrangelo Edessa", sans-serif;
+    font-size: medium;
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+/* neo aramaic */
+.txtu.cld,.lex.cld {
+    font-family: "CharisSIL-R", sans-serif;
+    font-size: medium;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+/* standard arabic */
+.txtu.ara,.lex.ara {
+    font-family: "AmiriQuran", sans-serif;
+    font-size: large;
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+/* cuneiform */
+.txtu.akk,.lex.akk {
+    font-family: Santakku, sans-serif;
+    font-size: large;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+/* greek */
+.txtu.grc,.lex.grc a:link {
+    font-family: Gentium, sans-serif;
+    font-size: medium;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+a:hover {
+    text-decoration: underline | important;
+    color: #0000ff | important;
+}
+.ltr {
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+.rtl {
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+.ubd {
+    unicode-bidi: embed;
+}
+.col {
+   display: inline-block;
+}
+.features {
+    font-family: monospace;
+    font-size: medium;
+    font-weight: bold;
+    color: var(--features);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 2px;
+    margin: 2px;
+    direction: ltr;
+    unicode-bidi: embed;
+    border: var(--meta-width) solid var(--meta-color);
+    border-radius: var(--meta-width);
+}
+.features div,.features span {
+    padding: 0;
+    margin: -2px 0;
+}
+.features .f {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: normal;
+    color: #5555bb;
+}
+.features .xft {
+  color: #000000;
+  background-color: #eeeeee;
+  font-size: medium;
+  margin: 2px 0px;
+}
+.features .xft .f {
+  color: #000000;
+  background-color: #eeeeee;
+  font-size: small;
+  font-weight: normal;
+}
+.tfsechead {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+    color: var(--tfsechead);
+    unicode-bidi: embed;
+    text-align: start;
+}
+.structure {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+    color: var(--structure);
+    unicode-bidi: embed;
+    text-align: start;
+}
+.comments {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-flow: column nowrap;
+}
+.nd, a:link.nd {
+    font-family: sans-serif;
+    font-size: small;
+    color: var(--node);
+    vertical-align: super;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+.lex {
+  color: var(--lex-color);;
+}
+.children,.children.ltr {
+    display: flex;
+    border: 0;
+    background-color: #ffffff;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.children.stretch {
+    align-items: stretch;
+}
+.children.hor {
+    flex-flow: row nowrap;
+}
+.children.hor.wrap {
+    flex-flow: row wrap;
+}
+.children.ver {
+    flex-flow: column nowrap;
+}
+.children.ver.wrap {
+    flex-flow: column wrap;
+}
+.contnr {
+    width: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-flow: column nowrap;
+    background: #ffffff none repeat scroll 0 0;
+    padding:  10px 2px 2px 2px;
+    margin: 16px 2px 2px 2px;
+    border-style: solid;
+    font-size: small;
+}
+.contnr.trm {
+    background-attachment: local;
+}
+.contnr.cnul {
+    padding:  0;
+    margin: 0;
+    border-style: solid;
+    font-size: xx-small;
+}
+.contnr.cnul,.lbl.cnul {
+    border-color: var(--border-color-nul);
+    border-width: var(--border-width-nul);
+    border-radius: var(--border-width-nul);
+}
+.contnr.c0,.lbl.c0 {
+    border-color: var(--border-color0);
+    border-width: var(--border-width0);
+    border-radius: var(--border-width0);
+}
+.contnr.c1,.lbl.c1 {
+    border-color: var(--border-color1);
+    border-width: var(--border-width1);
+    border-radius: var(--border-width1);
+}
+.contnr.c2,.lbl.c2 {
+    border-color: var(--border-color2);
+    border-width: var(--border-width2);
+    border-radius: var(--border-width2);
+}
+.contnr.c3,.lbl.c3 {
+    border-color: var(--border-color3);
+    border-width: var(--border-width3);
+    border-radius: var(--border-width3);
+}
+.contnr.c4,.lbl.c4 {
+    border-color: var(--border-color4);
+    border-width: var(--border-width4);
+    border-radius: var(--border-width4);
+}
+span.plain {
+    display: inline-block;
+    white-space: pre-wrap;
+}
+.plain {
+    background-color: #ffffff;
+}
+.plain.l,.contnr.l,.contnr.l>.lbl {
+    border-left-style: dotted
+}
+.plain.r,.contnr.r,.contnr.r>.lbl {
+    border-right-style: dotted
+}
+.plain.lno,.contnr.lno,.contnr.lno>.lbl {
+    border-left-style: none
+}
+.plain.rno,.contnr.rno,.contnr.rno>.lbl {
+    border-right-style: none
+}
+.plain.l {
+    padding-left: 4px;
+    margin-left: 2px;
+    border-width: var(--border-width-plain);
+}
+.plain.r {
+    padding-right: 4px;
+    margin-right: 2px;
+    border-width: var(--border-width-plain);
+}
+.lbl {
+    font-family: monospace;
+    margin-top: -24px;
+    margin-left: 20px;
+    background: #ffffff none repeat scroll 0 0;
+    padding: 0 6px;
+    border-style: solid;
+    display: block;
+    color: var(--label)
+}
+.lbl.trm {
+    background-attachment: local;
+    margin-top: 2px;
+    margin-left: 2px;
+    padding: 2px 2px;
+    border-style: none;
+}
+.lbl.cnul {
+    font-size: xx-small;
+}
+.lbl.c0 {
+    font-size: small;
+}
+.lbl.c1 {
+    font-size: small;
+}
+.lbl.c2 {
+    font-size: medium;
+}
+.lbl.c3 {
+    font-size: medium;
+}
+.lbl.c4 {
+    font-size: large;
+}
+.occs, a:link.occs {
+    font-size: small;
+}
+
+/* PROVENANCE */
+
+div.prov {
+	margin: 40px;
+	padding: 20px;
+	border: 2px solid var(--fog-rim);
+}
+div.pline {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: baseline;
+}
+div.p2line {
+	margin-left: 2em;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: baseline;
+}
+div.psline {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: baseline;
+	background-color: var(--gold-mist-back);
+}
+div.pname {
+	flex: 0 0 5rem;
+	font-weight: bold;
+}
+div.pval {
+    flex: 1 1 auto;
+}
+
+:root {
+	--node:               hsla(120, 100%,  20%, 1.0  );
+	--label:              hsla(  0, 100%,  20%, 1.0  );
+	--tfsechead:          hsla(  0, 100%,  25%, 1.0  );
+	--structure:          hsla(120, 100%,  25%, 1.0  );
+	--features:           hsla(  0,   0%,  30%, 1.0  );
+  --text-color:         hsla( 60,  80%,  10%, 1.0  );
+  --lex-color:          hsla(220,  90%,  60%, 1.0  );
+  --meta-color:         hsla(  0,   0%,  90%, 0.7  );
+  --meta-width:         3px;
+  --border-color-nul:   hsla(  0,   0%,  90%, 0.5  );
+  --border-color0:      hsla(  0,   0%,  90%, 0.9  );
+  --border-color1:      hsla(  0,   0%,  80%, 0.9  );
+  --border-color2:      hsla(  0,   0%,  70%, 0.9  );
+  --border-color3:      hsla(  0,   0%,  80%, 0.8  );
+  --border-color4:      hsla(  0,   0%,  60%, 0.9  );
+  --border-width-nul:   2px;
+  --border-width0:      2px;
+  --border-width1:      3px;
+  --border-width2:      4px;
+  --border-width3:      6px;
+  --border-width4:      5px;
+  --border-width-plain: 2px;
+}
+.hl {
+  background-color: var(--hl-strong);
+}
+span.hl {
+	background-color: var(--hl-strong);
+	border-width: 0;
+	border-radius: 2px;
+	border-style: solid;
+}
+div.contnr.hl,div.lbl.hl {
+  background-color: var(--hl-strong);
+}
+div.contnr.hl {
+  border-color: var(--hl-rim) ! important;
+	border-width: 4px ! important;
+}
+
+span.hlbx {
+	border-color: var(--hl-rim);
+	border-width: 4px ! important;
+	border-style: solid;
+	border-radius: 6px;
+  padding: 4px;
+  margin: 4px;
+}
+
+span.plain {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+:root {
+	--hl-strong:        hsla( 60, 100%,  70%, 0.9  );
+	--hl-rim:           hsla( 55,  80%,  50%, 1.0  );
+}
+.contnr.cluster {
+    flex-flow: row wrap;
+    border: 0;
+}
+.meta .features {
+    background-color: #ffeedd;
+}
+.lbl.clusterb,.lbl.clustere {
+    padding:  0.5em 0.1em 0.1em 0.1em;
+    margin: 0.8em 0.1em 0.1em 0.1em;
+    color: #888844;
+    font-size: x-small;
+}
+.lbl.clusterb {
+    border-left: 0.3em solid #cccc99;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 1rem;
+}
+.lbl.clustere {
+    border-left: 0;
+    border-right: 0.3em solid #cccc99;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 1rem;
+}
+.op {
+    padding:  0.5em 0.1em 0.1em 0.1em;
+    margin: 0.8em 0.1em 0.1em 0.1em;
+    font-family: monospace;
+    font-size: x-large;
+    font-weight: bold;
+}
+.period {
+    font-family: monospace;
+    font-size: medium;
+    font-weight: bold;
+    color: #0000bb;
+}
+.excavation {
+    font-family: monospace;
+    font-size: medium;
+    font-style: italic;
+    color: #779900;
+}
+</style></div><div class="output text_html"><div><b>Text-Fabric API:</b> names <a target="_blank" href="https://annotation.github.io/text-fabric/cheatsheet.html" title="doc">N F E L T S C TF</a> directly usable</div><hr></div><div class="output text_html"><b title="local github">data:</b> <span title="repo clone offline under ~/github">~/github/Nino-cunei/uruk/sources/cdli/images</span></div><div class="output text_html">Found 2095 ideograph linearts<br></div><div class="output text_html">Found 2724 tablet linearts<br></div><div class="output text_html">Found 5495 tablet photos<br></div></div>
+</div>
+<div class="section" id="showing-signs">
+<h2>Showing signs<a class="headerlink" href="#showing-signs" title="Permalink to this headline">¶</a></h2>
+<p>The main characteristic of a sign is its <strong>grapheme</strong>.
+Everything we do with signs, is complicated by the fact that signs can be <em>repeated</em>, and <em>augmented</em> with
+<em>primes</em>, <em>variants</em>, <em>modifiers</em> and <em>flags</em>.</p>
+<p>Before we go on, we call up our example tablet.</p>
+<p>If you want to output multiple text items in an output cell, you have to <code class="docutils literal notranslate"><span class="pre">print()</span></code> it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pNum</span> <span class="o">=</span> <span class="s1">&#39;P005381&#39;</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">tablet catalogId=P005381</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">withNodes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.01s 1 result
+</pre></div>
+</div>
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P005381" title="to CDLI main page for this tablet" sec="P005381">P005381</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet:148166</span> <span class="txtu"><span class="tfsechead">P005381</span></span></div><div class='features'><span class="name " title="name">MSVO 3, 70</span><span class="period " title="period">uruk-iii</span><span class="catalogid xft" ><span class="f">catalogId=</span>P005381</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment:178162</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face:156932</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column:190362</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:254173</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case:167736</span> <span class="txtu"><span title="number">1a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106585</span> <span class="txtu"><span title="atf">2(N14)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106586</span> <span class="txtu"><span title="atf">SZE~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZE~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sze-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106587</span> <span class="txtu"><span title="atf">SAL</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SAL.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sal.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106588</span> <span class="txtu"><span title="atf">TUR3~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/TUR3~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-tur3-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106589</span> <span class="txtu"><span title="atf">NUN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NUN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nun-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case:167737</span> <span class="txtu"><span title="number">1b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106590</span> <span class="txtu"><span title="atf">3(N19)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N19).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n19).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad:143013</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|GISZ.TE|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qgisz(d)teq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106591</span> <span class="txtu"><span title="atf">GISZ</span></span></div></div><div class="op">.</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106592</span> <span class="txtu"><span title="atf">TE</span></span></div></div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:254174</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106593</span> <span class="txtu"><span title="atf">1(N14)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106594</span> <span class="txtu"><span title="atf">NAR</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NAR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nar.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106595</span> <span class="txtu"><span title="atf">NUN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NUN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nun-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106596</span> <span class="txtu"><span title="atf">SIG7</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SIG7.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sig7.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:254175</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106597</span> <span class="txtu"><span title="atf">2(N04)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N04).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n04).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106598</span> <span class="txtu"><span title="atf">PIRIG~b1</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/PIRIG~b1.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-pirig-b1.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106599</span> <span class="txtu"><span title="atf">SIG7</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SIG7.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sig7.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106600</span> <span class="txtu"><span title="atf">URI3~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/URI3~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-uri3-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106601</span> <span class="txtu"><span title="atf">NUN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NUN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nun-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column:190363</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:254176</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106602</span> <span class="txtu"><span title="atf">3(N04)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N04).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n04).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad:143014</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|GISZ.TE|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qgisz(d)teq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106603</span> <span class="txtu"><span title="atf">GISZ</span></span></div></div><div class="op">.</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106604</span> <span class="txtu"><span title="atf">TE</span></span></div></div></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106605</span> <span class="txtu"><span title="atf">GAR</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GAR.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gar.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad:143015</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|SZU2.((HI+1(N57))+(HI+1(N57)))|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qszu2(d)((hi(p)1(n57))(p)(hi(p)1(n57)))q.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106606</span> <span class="txtu"><span title="atf">SZU2</span></span></div></div><div class="op">.</div><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad:143016</span></div><div class="children hor wrap "><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad:143017</span></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106607</span> <span class="txtu"><span title="atf">HI</span></span></div></div><div class="op">+</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106608</span> <span class="txtu"><span title="atf">1(N57)</span></span></div></div></div></div><div class="op">+</div><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad:143018</span></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106609</span> <span class="txtu"><span title="atf">HI</span></span></div></div><div class="op">+</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106610</span> <span class="txtu"><span title="atf">1(N57)</span></span></div></div></div></div></div></div></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106611</span> <span class="txtu"><span title="atf">GI4~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GI4~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gi4-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:254177</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106612</span> <span class="txtu"><span title="atf">GU7</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GU7.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gu7.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106613</span> <span class="txtu"><span title="atf">AZ</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/AZ.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-az.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106614</span> <span class="txtu"><span title="atf">SI4~f</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SI4~f.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-si4-f.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face:156933</span> <span class="txtu"><span title="type">reverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column:190364</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:254178</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106615</span> <span class="txtu"><span title="atf">3(N14)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106616</span> <span class="txtu"><span title="atf">SZE~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZE~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sze-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:254179</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106617</span> <span class="txtu"><span title="atf">3(N19)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N19).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n19).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106618</span> <span class="txtu"><span title="atf">5(N04)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/5(N04).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-5(n04).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:254180</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106619</span> <span class="txtu"><span title="atf">GU7</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GU7.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gu7.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column:190365</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:254181</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106620</span> <span class="txtu"><span title="atf">AZ</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/AZ.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-az.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106621</span> <span class="txtu"><span title="atf">SI4~f</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SI4~f.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-si4-f.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
+<p>We navigate to the last sign in line 1 in column 2 on the obverse face:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">case</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">nodeFromCase</span><span class="p">((</span><span class="n">pNum</span><span class="p">,</span> <span class="s1">&#39;obverse:2&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">))</span>
+<span class="n">sign1</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">otype</span><span class="o">=</span><span class="s1">&#39;sign&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sign1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>106611
+</pre></div>
+</div>
+</div>
+</div>
+<p>That must be the right barcode.</p>
+<p>We can retrieve the ATF transliteration:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">atfFromSign</span><span class="p">(</span><span class="n">sign1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GI4~a
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that we get the ATF for a sign by means of <code class="docutils literal notranslate"><span class="pre">A.atfFromSign(node)</span></code>.
+We get also the augments such as primes and modifiers and variant.
+We get the flags if we say so by <code class="docutils literal notranslate"><span class="pre">flags=True</span></code>.</p>
+<p>Take for example the first sign on line 3 in column 1 on the obverse face:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">case</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">nodeFromCase</span><span class="p">((</span><span class="n">pNum</span><span class="p">,</span> <span class="s1">&#39;obverse:1&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">))</span>
+<span class="n">sign2</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">otype</span><span class="o">=</span><span class="s1">&#39;sign&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sign2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">atfFromSign</span><span class="p">(</span><span class="n">sign2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">atfFromSign</span><span class="p">(</span><span class="n">sign2</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>106597
+2(N04)
+2(N04)#
+</pre></div>
+</div>
+</div>
+</div>
+<p>Secondly, we want to get pointers to the locations of these signs in the corpus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">sign1</span><span class="p">,</span> <span class="n">withNodes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">sign2</span><span class="p">,</span> <span class="n">withNodes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P005381" title="to CDLI main page for this tablet" sec="P005381 obverse:2:1">P005381 obverse:2:1</a></div><div class=" children"><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106611</span> <span class="txtu"><span title="atf">GI4~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GI4~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gi4-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P005381" title="to CDLI main page for this tablet" sec="P005381 obverse:1:3">P005381 obverse:1:3</a></div><div class=" children"><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">106597</span> <span class="txtu"><span title="atf">2(N04)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N04).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n04).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div>
+</div>
+<p>Click the links below <code class="docutils literal notranslate"><span class="pre">sign</span></code> and you are taken to the CDLI page for this tablet.</p>
+<p>If we want to enlarge the sign, we can call it up with the lineart function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">([</span><span class="n">sign1</span><span class="p">,</span> <span class="n">sign2</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GI4~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gi4-a.jpg" style="display: inline;max-width: 200px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">GI4~a</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N04).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n04).jpg" style="display: inline;max-width: 200px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">2(N04)</a></div></div></div></div></div></div>
+</div>
+<p><strong>N.B.</strong></p>
+<p>For concepts that span one or more transliteration lines,
+such as <em>tablet</em>, <em>face</em>, <em>column</em>, <em>line</em>, <em>case</em>, <em>comment</em>, you can get the source
+material by requesting the feature <strong>srcLn</strong>, as we have seen before.</p>
+<p>For <em>inline</em> concepts, such as <em>clusters</em>, <em>quads</em>, and <em>signs</em>,
+there are functions in <code class="docutils literal notranslate"><span class="pre">A.</span></code>.</p>
+<p>For signs we have:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">atfFromSign(sign,</span> <span class="pre">flags=False)</span></code></p>
+<p>Returns the ATF representation for a sign, including primes, repeats, variants, modifiers,
+and, optionally, flags.</p>
+</li>
+</ul>
+<p>The unaugmented transliteration of a single sign can be obtained from the feature <strong>grapheme</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">grapheme</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">sign1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">grapheme</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">sign2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GI4
+N04
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s pretty-print the line in which sign2 occurs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">u</span><span class="p">(</span><span class="n">sign2</span><span class="p">,</span> <span class="n">otype</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P005381" title="to CDLI main page for this tablet" sec="P005381 obverse:1:3">P005381 obverse:1:3</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N04)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N04).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n04).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">PIRIG~b1</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/PIRIG~b1.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-pirig-b1.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SIG7</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SIG7.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sig7.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">URI3~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/URI3~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-uri3-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NUN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NUN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nun-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div>
+</div>
+</div>
+<div class="section" id="occurrences-of-a-sign">
+<h2>Occurrences of a sign<a class="headerlink" href="#occurrences-of-a-sign" title="Permalink to this headline">¶</a></h2>
+<p>Now we are using something we learned before: we want all signs with exactly
+the grapheme <code class="docutils literal notranslate"><span class="pre">GU7</span></code>, regardless of augments or flags:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gu7s</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">grapheme</span><span class="o">.</span><span class="n">s</span><span class="p">(</span><span class="s1">&#39;GU7&#39;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">gu7s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>314
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or, with a search template:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">sign grapheme=GU7</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.12s 314 results
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="with-table-and-show">
+<h3>With <code class="docutils literal notranslate"><span class="pre">table()</span></code> and <code class="docutils literal notranslate"><span class="pre">show()</span></code><a class="headerlink" href="#with-table-and-show" title="Permalink to this headline">¶</a></h3>
+<p>The simplest way to show the results is with <code class="docutils literal notranslate"><span class="pre">A.table()</span></code> for a compact tabular view, or with
+<code class="docutils literal notranslate"><span class="pre">A.show()</span></code> with a full context view.</p>
+<p>We show a tabular view of 3 occurrences, including node numbers.
+The show view can be quite unwieldy, so we show a only 3 tablets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">withNodes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table><tr class="tf ltr"><th class="tf ltr">n</th><th class="tf ltr">p</th><th class="tf ltr">sign</th></tr>
+<tr class="tf ltr"><td class="tf ltr">1</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P001705" title="to CDLI main page for this tablet" sec="P001705 obverse:3:1">P001705 obverse:3:1</a></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="nd">2456</span><span class="plain hl" >GU7</span>  <a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GU7.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gu7.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">2</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P001719" title="to CDLI main page for this tablet" sec="P001719 obverse:1:1">P001719 obverse:1:1</a></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="nd">2660</span><span class="plain hl" >GU7</span>  <a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GU7.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gu7.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">3</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P001951" title="to CDLI main page for this tablet" sec="P001951 obverse:3:2">P001951 obverse:3:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="nd">3883</span><span class="plain hl" >GU7</span>  <a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GU7.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gu7.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></span></span></td></tr></table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">showGraphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P001705" title="to CDLI main page for this tablet" sec="P001705">P001705</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P001705</span></span></div><div class='features'><span class="name " title="name">ATU 6, pl. 003, W 10594+</span><span class="period " title="period">uruk-iii</span><span class="excavation " title="excavation">W 10594 + W 10599 + W 10600</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N47)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N47</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">6(N20)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N20</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">4(N05)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N05</span></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>X</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">3</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N47)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N47</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">6(N20)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N20</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">5(N05)#?</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N05</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N42~a)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N42</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N25)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N25</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N28~c)#?</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N28</span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">GU7#?</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>GU7</span></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N20)#?</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N20</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N42~a)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N42</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N28~c)#?</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N28</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">BA</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>BA</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf"></span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span></span></div></div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">reverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZENNUR~a#?</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>SZENNUR</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">1b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N47)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N47</span></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">U4</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>U4</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KI</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>KI</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">6(N20)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N20</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">4(N05)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N05</span></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">3a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">U4</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>U4</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KI</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>KI</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">3b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N01</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N39~a)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N39</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N24)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N24</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N28)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N28</span></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">4</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>2</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P001719" title="to CDLI main page for this tablet" sec="P001719">P001719</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P001719</span></span></div><div class='features'><span class="name " title="name">ATU 6, pl. 004, W 10608</span><span class="period " title="period">uruk-iii</span><span class="excavation " title="excavation">W 10608</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N14)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N14</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N01)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N01</span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">GU7#?</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>GU7</span></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GUM~b#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>GUM</span></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">...</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>…</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>3</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P001951" title="to CDLI main page for this tablet" sec="P001951">P001951</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P001951</span></span></div><div class='features'><span class="name " title="name">ATU 6, pl. 032, W 14109</span><span class="period " title="period">uruk-iii</span><span class="excavation " title="excavation">W 14109</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N01</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N58)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N58</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU675~d</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>ZATU675</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NAGA~a</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>NAGA</span></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N01</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU659</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>ZATU659</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">BU~a?</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>BU</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NAM2</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>NAM2</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">PAP~a</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>PAP</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZITA~a3</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>SZITA</span></div></div><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad</span></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">U4</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>U4</span></div></div><div class="op">x</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N01</span></div></div></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">E2~b</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>E2</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N57)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N57</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">DU</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>DU</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">E2~b</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>E2</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NUNUZ~a1#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>NUNUZ</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">4</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">4a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N57)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N57</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NAGA~a#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>NAGA</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N57)#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N57</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">4b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N57)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N57</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">E2~b#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>E2</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">X</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>X</span></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">5</span></span></div><div class="children hor  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">5a</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N01</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU659</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>ZATU659</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NIR~a#</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>NIR</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">5b</span><span title="prime"></span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SU~a</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>SU</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">PAP~a</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>PAP</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N57)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N57</span></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">6</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N57)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N57</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">EN~a</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>EN</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SAG</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>SAG</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZITA~a1</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>SZITA</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">7</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N57)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N57</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">PAP~a</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>PAP</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GA2~a1</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>GA2</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GISZ</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>GISZ</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ERIM~a#?</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>ERIM</span></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">3</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N57)</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>N57</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">BU~a#?</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>BU</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">SZU</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>SZU</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">GU7</span></span></div><div class='features'><span class="grapheme xft" ><span class="f">grapheme=</span>GU7</span></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
+</div>
+<div class="section" id="as-a-plain-list">
+<h3>As a plain list<a class="headerlink" href="#as-a-plain-list" title="Permalink to this headline">¶</a></h3>
+<p>There are a few hundred occurrences, we show a bit more context for them, like we did before.
+We show the full grapheme, with all its augments, <strong>and flags</strong>.
+We also show the full source line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">gu7s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]:</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">u</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">otype</span><span class="o">=</span><span class="s1">&#39;tablet&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cl</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">lineFromNode</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+    <span class="n">pNum</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">sectionFromNode</span><span class="p">(</span><span class="n">t</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">gRep</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">atfFromSign</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">line</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">srcLn</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">gRep</span><span class="si">:</span><span class="s1">&lt;7</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">pNum</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GU7#?   P001705 1. 2(N47)# 6(N20)# 5(N05)#? 1(N42~a)# 1(N25)# 1(N28~c)#? , GU7#? [...] 
+GU7#?   P001719 1. [...] 1(N14)# 2(N01)# , GU7#? [...] 
+GU7     P001951 2. , GU7 
+GU7#    P002002 1. , [...] EN~a# |SILA3~axSZE~a@t|# X [...] GU7# 
+GU7#    P002035 2. , GU7# 
+GU7#    P002062 1. [...] , [...] GU7# 
+GU7     P002100 1. , [...] GU7 
+GU7#    P002370 1. 1(N14) 1(N01) , GU7# [...] 
+GU7     P002510 1. 1(N34) 1(N14) 1(N01) , GIR2~a GU7 
+GU7     P002524 2. , GU7 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="as-a-linked-table">
+<h3>As a linked table<a class="headerlink" href="#as-a-linked-table" title="Permalink to this headline">¶</a></h3>
+<p>We can make it more user friendly: we can link each occurrence to its page on CDLI, and
+put everything in a Markdown table.</p>
+<p>We have a function to generate the link: <code class="docutils literal notranslate"><span class="pre">A.cdli()</span></code>.</p>
+<p>We build a markdown table.</p>
+<p>We write a function for this, because we want to do it again.</p>
+<p>First we use the function to write the first 10 to the screen,
+and then to write the whole set to a directory on your file system.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">showSigns</span><span class="p">(</span><span class="n">signs</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+    <span class="n">markdown</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    sign | tablet | line</span>
+<span class="s1">    ---- | ------ | ----</span>
+<span class="s1">    &#39;&#39;&#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="p">(</span>
+        <span class="n">signs</span> <span class="k">if</span> <span class="n">amount</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">signs</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">amount</span><span class="p">]</span>
+    <span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">u</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">otype</span><span class="o">=</span><span class="s1">&#39;tablet&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">cl</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">lineFromNode</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+        <span class="n">gRep</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">atfFromSign</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">srcLn</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="s1">&#39;&amp;#124;&#39;</span><span class="p">)</span>
+
+        <span class="n">markdown</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">gRep</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">cdli</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">asString</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s1">&#39;</span>
+
+    <span class="n">markdown</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+    <span class="k">return</span> <span class="n">markdown</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Markdown</span><span class="p">(</span><span class="n">showSigns</span><span class="p">(</span><span class="n">gu7s</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>sign | tablet | line
+---- | ------ | ----
+GU7#? | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P001705" title="to CDLI main page for this item">P001705</a> | 1. 2(N47)# 6(N20)# 5(N05)#? 1(N42~a)# 1(N25)# 1(N28~c)#? , GU7#? [...]
+GU7#? | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P001719" title="to CDLI main page for this item">P001719</a> | 1. [...] 1(N14)# 2(N01)# , GU7#? [...]
+GU7 | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P001951" title="to CDLI main page for this item">P001951</a> | 2. , GU7</p>
+</div>
+</div>
+<p>A bit more please …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Markdown</span><span class="p">(</span><span class="n">showSigns</span><span class="p">(</span><span class="n">gu7s</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>sign | tablet | line
+---- | ------ | ----
+GU7#? | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P001705" title="to CDLI main page for this item">P001705</a> | 1. 2(N47)# 6(N20)# 5(N05)#? 1(N42~a)# 1(N25)# 1(N28~c)#? , GU7#? [...]
+GU7#? | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P001719" title="to CDLI main page for this item">P001719</a> | 1. [...] 1(N14)# 2(N01)# , GU7#? [...]
+GU7 | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P001951" title="to CDLI main page for this item">P001951</a> | 2. , GU7
+GU7# | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002002" title="to CDLI main page for this item">P002002</a> | 1. , [...] EN~a# |SILA3~axSZE~a&#64;t|# X [...] GU7#
+GU7# | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002035" title="to CDLI main page for this item">P002035</a> | 2. , GU7#
+GU7# | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002062" title="to CDLI main page for this item">P002062</a> | 1. [...] , [...] GU7#
+GU7 | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002100" title="to CDLI main page for this item">P002100</a> | 1. , [...] GU7
+GU7# | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002370" title="to CDLI main page for this item">P002370</a> | 1. 1(N14) 1(N01) , GU7# [...]
+GU7 | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002510" title="to CDLI main page for this item">P002510</a> | 1. 1(N34) 1(N14) 1(N01) , GIR2~a GU7
+GU7 | <a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002524" title="to CDLI main page for this item">P002524</a> | 2. , GU7</p>
+</div>
+</div>
+</div>
+<div class="section" id="everything-to-file">
+<h3>Everything to file<a class="headerlink" href="#everything-to-file" title="Permalink to this headline">¶</a></h3>
+<p>We give you the whole list, in a Markdown file,
+on your local system.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">tempDir</span><span class="si">}</span><span class="s1">/gu7.md&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">showSigns</span><span class="p">(</span><span class="n">gu7s</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;data written to file </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">tempDir</span><span class="si">}</span><span class="s1">/gu7.md&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data written to file /Users/dirk/github/Nino-cunei/uruk/_temp/gu7.md
+</pre></div>
+</div>
+</div>
+</div>
+<a class="reference internal image-reference" href="../_images/atomMarkdown.png"><img alt="../_images/atomMarkdown.png" class="align-right" src="../_images/atomMarkdown.png" style="width: 600px;" /></a>
+<p>Have a look!</p>
+<p><strong>Tip:</strong> Open the file in <a class="reference external" href="https://github.com/atom/atom">Atom</a>.
+Switch to preview by Ctr+Shift+M (in Atom).</p>
+<p>Again, the tablet links are clickable, and bring you straight to CDLI.</p>
+</div>
+</div>
+<div class="section" id="frequency-lists">
+<h2>Frequency lists<a class="headerlink" href="#frequency-lists" title="Permalink to this headline">¶</a></h2>
+<p>We use a bit more power of Text-Fabric by generating frequency lists.</p>
+<div class="section" id="graphemes">
+<h3>Graphemes<a class="headerlink" href="#graphemes" title="Permalink to this headline">¶</a></h3>
+<p>We just studied the <code class="docutils literal notranslate"><span class="pre">GU7</span></code> grapheme a bit.
+Suppose we want to get an overview of all graphemes?</p>
+<p>There is a generic Text-Fabric function to give us that.
+For each feature you can call up a frequency list of its values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graphemes</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">grapheme</span><span class="o">.</span><span class="n">freqList</span><span class="p">()</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">graphemes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>632
+</pre></div>
+</div>
+</div>
+</div>
+<p>We show the top-20:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graphemes</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((&#39;…&#39;, 29413),
+ (&#39;N01&#39;, 21645),
+ (&#39;&#39;, 12440),
+ (&#39;X&#39;, 6870),
+ (&#39;N14&#39;, 5898),
+ (&#39;EN&#39;, 1950),
+ (&#39;N34&#39;, 1831),
+ (&#39;N57&#39;, 1826),
+ (&#39;SZE&#39;, 1334),
+ (&#39;GAL&#39;, 1180),
+ (&#39;DUG&#39;, 1084),
+ (&#39;U4&#39;, 1023),
+ (&#39;AN&#39;, 1020),
+ (&#39;PAP&#39;, 876),
+ (&#39;SAL&#39;, 876),
+ (&#39;NUN&#39;, 870),
+ (&#39;E2&#39;, 854),
+ (&#39;GI&#39;, 850),
+ (&#39;BA&#39;, 781),
+ (&#39;SANGA&#39;, 733))
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>N.B.:</strong></p>
+<ul class="simple">
+<li><p>empty graphemes: <code class="docutils literal notranslate"><span class="pre">('',</span> <span class="pre">12440),</span></code> These have been inserted by the conversion
+to Text-Fabric inside comments, in order to link them to the tablets.</p></li>
+<li><p>ellipsis graphemes: correspond to the <code class="docutils literal notranslate"><span class="pre">...</span></code> in ATF, usually within an uncertainty
+cluster <code class="docutils literal notranslate"><span class="pre">[...]</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="augments">
+<h3>Augments<a class="headerlink" href="#augments" title="Permalink to this headline">¶</a></h3>
+<p>We can quickly get an overview of all kinds of augments: primes ,variants, modifiers, flags.</p>
+<div class="section" id="prime">
+<h4>Prime<a class="headerlink" href="#prime" title="Permalink to this headline">¶</a></h4>
+<p>The prime is a feature with values: 2, 1 or 0.
+The number indicates the number of primes.
+Below you see how often that occurs.
+Note that we count all primes here: on signs, case numbers and column numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">frequency</span><span class="p">)</span> <span class="ow">in</span> <span class="n">F</span><span class="o">.</span><span class="n">prime</span><span class="o">.</span><span class="n">freqList</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">frequency</span><span class="si">:</span><span class="s1">&gt;5</span><span class="si">}</span><span class="s1"> x </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 5164 x 1
+    1 x 2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="variant">
+<h4>Variant<a class="headerlink" href="#variant" title="Permalink to this headline">¶</a></h4>
+<p>The variant or <em>allograph</em> is what occurs after the grapheme and after the <code class="docutils literal notranslate"><span class="pre">~</span></code> symbol, which should be digits and/or
+lowercase letters except the <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>Here is the frequency list of variant values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">frequency</span><span class="p">)</span> <span class="ow">in</span> <span class="n">F</span><span class="o">.</span><span class="n">variant</span><span class="o">.</span><span class="n">freqList</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">frequency</span><span class="si">:</span><span class="s1">&gt;5</span><span class="si">}</span><span class="s1"> x </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23162 x a
+ 3994 x b
+ 1505 x c
+ 1308 x a1
+  689 x b1
+  188 x a2
+  183 x d
+  125 x b2
+   85 x f
+   72 x a3
+   42 x e
+   29 x c2
+   22 x c1
+   22 x c3
+   14 x c5
+   12 x a0
+   12 x b3
+   12 x d1
+   12 x v
+   11 x c4
+    6 x a4
+    6 x g
+    5 x d2
+    4 x d4
+    4 x h
+    2 x 3a
+    2 x d3
+    1 x h2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="modifier">
+<h4>Modifier<a class="headerlink" href="#modifier" title="Permalink to this headline">¶</a></h4>
+<p>The modifier is what occurs after the grapheme and after the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol
+It consists of digits and/or
+lowercase letters except the <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>Sometimes modifiers occur inside a repeat, then we have stored the modifier in the feature
+<em>modifierInner</em>, as in</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="p">(</span><span class="n">N34</span><span class="nd">@f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here is the frequency list of <em>modifier</em> and <em>modifierInner</em> values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">frequency</span><span class="p">)</span> <span class="ow">in</span> <span class="n">F</span><span class="o">.</span><span class="n">modifier</span><span class="o">.</span><span class="n">freqList</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">frequency</span><span class="si">:</span><span class="s1">&gt;5</span><span class="si">}</span><span class="s1"> x </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  634 x g
+  262 x t
+   35 x n
+    6 x r
+    4 x s
+    1 x c
+    1 x h
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">frequency</span><span class="p">)</span> <span class="ow">in</span> <span class="n">F</span><span class="o">.</span><span class="n">modifierInner</span><span class="o">.</span><span class="n">freqList</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">frequency</span><span class="si">:</span><span class="s1">&gt;5</span><span class="si">}</span><span class="s1"> x </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   25 x f
+    1 x r
+    1 x v
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="full-signs">
+<h3>Full signs<a class="headerlink" href="#full-signs" title="Permalink to this headline">¶</a></h3>
+<p>We make a frequency list of all full signs, i.e. the grapheme including variant, modifier, and prime.
+We show them as they appear in transcriptions.</p>
+<p>We only deal with instances which are not contained in a quad.</p>
+<p>This is no longer the frequency distribution of the values of a single feature,
+so we have to do the coding ourselves.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fullGraphemes</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">F</span><span class="o">.</span><span class="n">otype</span><span class="o">.</span><span class="n">s</span><span class="p">(</span><span class="s1">&#39;sign&#39;</span><span class="p">):</span>
+    <span class="n">grapheme</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">grapheme</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">grapheme</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">or</span> <span class="n">grapheme</span> <span class="o">==</span> <span class="s1">&#39;…&#39;</span> <span class="ow">or</span> <span class="n">grapheme</span> <span class="o">==</span> <span class="s1">&#39;X&#39;</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">fullGrapheme</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">atfFromSign</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">fullGraphemes</span><span class="p">[</span><span class="n">fullGrapheme</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="nb">len</span><span class="p">(</span><span class="n">fullGraphemes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1476
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or with a query:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">sign type=ideograph|numeral</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">fullGraphemesQ</span> <span class="o">=</span> <span class="p">{</span><span class="n">A</span><span class="o">.</span><span class="n">atfFromSign</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)}</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">fullGraphemesQ</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1476
+</pre></div>
+</div>
+</div>
+</div>
+<p>There! We have counted all incarnations of full graphemes, and there are 1476 distinct ones.</p>
+<p>We show the top-20, sorted by frequency.</p>
+<p>We specify a <code class="docutils literal notranslate"><span class="pre">key</span></code> function, that given an (value, amount) pair returns
+(-amount, value).
+This determines the order after sorting. Signs with a high value of amount come
+before signs with a low value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">frequency</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span>
+    <span class="n">fullGraphemes</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> 
+    <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+<span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">frequency</span><span class="si">:</span><span class="s1">&gt;5</span><span class="si">}</span><span class="s1"> x </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12983 x 1(N01)
+ 3080 x 2(N01)
+ 2584 x 1(N14)
+ 1830 x EN~a
+ 1598 x 3(N01)
+ 1357 x 2(N14)
+ 1294 x 5(N01)
+ 1294 x SZE~a
+ 1164 x GAL~a
+ 1117 x 4(N01)
+ 1022 x U4
+ 1020 x AN
+  999 x 1(N34)
+  876 x SAL
+  851 x PAP~a
+  849 x GI
+  791 x 3(N14)
+  789 x 1(N57)
+  781 x BA
+  719 x NUN~a
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="writing-results-to-file">
+<h3>Writing results to file<a class="headerlink" href="#writing-results-to-file" title="Permalink to this headline">¶</a></h3>
+<p>We also want to write the results to files in your <code class="docutils literal notranslate"><span class="pre">_temp</span></code> directory, within this repo.</p>
+<p><code class="docutils literal notranslate"><span class="pre">writeFreqs</span></code> writes distribution data of data items called <code class="docutils literal notranslate"><span class="pre">dataName</span></code>
+to a file <code class="docutils literal notranslate"><span class="pre">fileName.txt</span></code>.
+In fact, it writes two files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fileName-alpha.txt</span></code>, ordered by data items</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fileName-freq.txt</span></code>, ordered by frequency.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">writeFreqs</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">dataName</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There are </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">dataName</span><span class="si">}</span><span class="s1">s&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">sortName</span><span class="p">,</span> <span class="n">sortKey</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span>
+        <span class="p">(</span><span class="s1">&#39;freq&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span>
+    <span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">tempDir</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">fileName</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">sortName</span><span class="si">}</span><span class="s1">.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">freq</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">sortKey</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">item</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                    <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">freq</span><span class="si">:</span><span class="s1">&gt;5</span><span class="si">}</span><span class="s1"> x </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">writeFreqs</span><span class="p">(</span><span class="s1">&#39;grapheme-plain&#39;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">grapheme</span><span class="o">.</span><span class="n">freqList</span><span class="p">(),</span> <span class="s1">&#39;bare grapheme&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 632 bare graphemes
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">writeFreqs</span><span class="p">(</span><span class="s1">&#39;grapheme-full&#39;</span><span class="p">,</span> <span class="n">fullGraphemes</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="s1">&#39;full grapheme&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 1476 full graphemes
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now have a look at your {{A.tempDir}} and you see two generated files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">graphemes-plain-alpha.txt</span></code> (sorted by grapheme)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">graphemes-plain-freq.txt</span></code> (sorted by frequency)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">graphemes-full-alpha.txt</span></code> (sorted by grapheme)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">graphemes-full-freq.txt</span></code> (sorted by frequency)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="next">
+<h2>Next<a class="headerlink" href="#next" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="quads.html"><span class="doc std std-doc">quads</span></a></p>
+<p><em>Things never stay simple …</em></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./uruk"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="jumps.html" title="previous page">Jumps</a>
+    <a class='right-next' id="next-link" href="quads.html" title="next page">Quads</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Roorda<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

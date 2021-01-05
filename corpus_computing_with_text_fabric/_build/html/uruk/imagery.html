@@ -1,0 +1,1591 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imagery &#8212; Corpus computing with Text-Fabric</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/tf-small.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Search" href="search.html" />
+    <link rel="prev" title="Start" href="start.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/tf.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Corpus computing with Text-Fabric</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Banks (mini corpus)
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/compose.html">
+   Compose
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/app.html">
+   The Banks example corpus as app
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/repo.html">
+   Getting data from online repos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/use.html">
+   Use the Banks example corpus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/share.html">
+   Share the Banks example corpus
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Uruk Proto-cuneiform Tablets
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="start.html">
+   Start
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Imagery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="search.html">
+   Search
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="relation.html">
+   Relation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quantifier.html">
+   Quantifiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hand.html">
+   Hand-coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="steps.html">
+   Steps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="jumps.html">
+   Jumps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="signs.html">
+   Signs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quads.html">
+   Quads
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cases.html">
+   Cases
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/uruk/imagery.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/annotation/book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/annotation/book/issues/new?title=Issue%20on%20page%20%2Furuk/imagery.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/annotation/book/master?urlpath=lab/tree/uruk/imagery.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-lineart-and-photo-and-cdli-functions">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     lineart
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     photo
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cdli
+    </span>
+   </code>
+   functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#start-up">
+   Start up
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tablets">
+   Tablets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lineart">
+   Lineart
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Tablets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keys">
+     Keys
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ideographs">
+     Ideographs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#images-in-a-row">
+     Images in a row
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#existence-of-images">
+   Existence of images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#annotated-images">
+   Annotated images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#online-images">
+   Online images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next">
+   Next
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <a class="reference internal image-reference" href="../_images/ninologo.png"><img alt="../_images/ninologo.png" class="align-right" src="../_images/ninologo.png" style="width: 150px;" /></a>
+<div class="section" id="imagery">
+<h1>Imagery<a class="headerlink" href="#imagery" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Cuneiform Digital Library Initiative</strong> <a class="reference external" href="https://cdli.ucla.edu">CDLI</a>
+contains photographic and lineart imagery for tablets and individual ideographs in the
+<a class="reference external" href="http://cdli.ox.ac.uk/wiki/doku.php?id=proto-cuneiform">Uruk IV/III</a>
+corpus.</p>
+<p>Here we show how we can employ them.</p>
+<p>More details of the provenance of the images can be found
+in <a class="reference external" href="https://github.com/Nino-cunei/uruk/blob/master/docs/images.md">about</a>.</p>
+<div class="section" id="the-lineart-and-photo-and-cdli-functions">
+<h2>The <code class="docutils literal notranslate"><span class="pre">lineart</span></code> and <code class="docutils literal notranslate"><span class="pre">photo</span></code> and <code class="docutils literal notranslate"><span class="pre">cdli</span></code> functions<a class="headerlink" href="#the-lineart-and-photo-and-cdli-functions" title="Permalink to this headline">¶</a></h2>
+<p>We have made utility functions <code class="docutils literal notranslate"><span class="pre">lineart(nodes)</span></code> and <code class="docutils literal notranslate"><span class="pre">photo(nodes)</span></code> in the <em>cunei</em> module.
+They look up the photos and linearts for nodes, and show them in a row.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">cdli(node)</span></code> function produces a link to the archival page of the tablet corresponding to <code class="docutils literal notranslate"><span class="pre">node</span></code>.</p>
+<p><strong>Caveat:</strong> We will use a few functions we have not explained before.
+See this chapter as a showcase of what can be done.
+You want to return to this after you have digested further chapters.</p>
+</div>
+<div class="section" id="start-up">
+<h2>Start up<a class="headerlink" href="#start-up" title="Permalink to this headline">¶</a></h2>
+<p>We import the Python modules we need.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">tf.app</span> <span class="kn">import</span> <span class="n">use</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We set up our working locations on the file system.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">use</span><span class="p">(</span><span class="s1">&#39;uruk:clone&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s2">&quot;clone&quot;</span><span class="p">,</span> <span class="n">hoist</span><span class="o">=</span><span class="nb">globals</span><span class="p">())</span>
+<span class="c1"># A = use(&#39;uruk&#39;, hoist=globals())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><b title="local github">TF-app:</b> <span title="repo clone offline under ~/github">~/github/annotation/app-uruk/code</span></div><div class="output text_html"><b title="local github">data:</b> <span title="repo clone offline under ~/github">~/github/Nino-cunei/uruk/tf/uruk/1.0</span></div><div class="output text_html"><b>Text-Fabric:</b> <a target="_blank" href="https://annotation.github.io/text-fabric/cheatsheet.html" title="text-fabric-api">Text-Fabric API 8.4.6</a>, <a target="_blank" href="https://github.com/annotation/app-uruk" title="uruk TF-app">app-uruk v3</a>, <a target="_blank" href="https://annotation.github.io/text-fabric/about/searchusage.html" title="Search Templates Introduction and Reference">Search Reference</a><br><b>Data:</b> <a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/about.md" title="provenance of Uruk IV/III: Proto-cuneiform tablets ">URUK</a>, <a target="_blank" href="https://annotation.github.io/text-fabric/writing/.html" title="How TF features represent text">Character table</a>, <a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="URUK feature documentation">Feature docs</a><br><b>Features:</b><br><details><summary><b>Uruk IV/III: Proto-cuneiform tablets </b></summary><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/catalogId.tf">catalogId</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/crossref.tf">crossref</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/damage.tf">damage</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/depth.tf">depth</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/excavation.tf">excavation</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/fragment.tf">fragment</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/fullNumber.tf">fullNumber</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/grapheme.tf">grapheme</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/identifier.tf">identifier</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/modifier.tf">modifier</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/modifierFirst.tf">modifierFirst</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/modifierInner.tf">modifierInner</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/name.tf">name</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/number.tf">number</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/otype.tf">otype</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/period.tf">period</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/prime.tf">prime</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/remarkable.tf">remarkable</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/repeat.tf">repeat</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/srcLn.tf">srcLn</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/srcLnNum.tf">srcLnNum</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/terminal.tf">terminal</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/text.tf">text</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/type.tf">type</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/uncertain.tf">uncertain</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/variant.tf">variant</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/variantOuter.tf">variantOuter</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/written.tf">written</a><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/comments.tf">comments</a></i></b><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/op.tf">op</a></i></b><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/oslots.tf">oslots</a></i></b><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/sub.tf">sub</a></i></b><br></details></div><div class="output text_html"><style>tr.tf.ltr, td.tf.ltr, th.tf.ltr { text-align: left ! important;}
+tr.tf.rtl, td.tf.rtl, th.tf.rtl { text-align: right ! important;}
+@font-face {
+  font-family: "Gentium Plus";
+  src: local('Gentium Plus'), local('GentiumPlus'),
+    url('/server/static/fonts/GentiumPlus-R.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/GentiumPlus-R.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "Ezra SIL";
+  src: local('Ezra SIL'), local('EzraSIL'),
+    url('/server/static/fonts/SILEOT.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SILEOT.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "SBL Hebrew";
+  src: local('SBL Hebrew'), local('SBLHebrew'),
+    url('/server/static/fonts/SBL_Hbrw.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SBL_Hbrw.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "Estrangelo Edessa";
+  src: local('Estrangelo Edessa'), local('EstrangeloEdessa');
+    url('/server/static/fonts/SyrCOMEdessa.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SyrCOMEdessa.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: AmiriQuran;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amiri Quran'), local('AmiriQuran'),
+    url('/server/static/fonts/AmiriQuran.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/AmiriQuran.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: AmiriQuranColored;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amiri Quran Colored'), local('AmiriQuranColored'),
+    url('/server/static/fonts/AmiriQuranColored.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/AmiriQuranColored.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "Santakku";
+  src: local('Santakku'),
+    url('/server/static/fonts/Santakku.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/Santakku.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "SantakkuM";
+  src: local('SantakkuM'),
+    url('/server/static/fonts/SantakkuM.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SantakkuM.woff?raw=true') format('woff');
+}
+/* bypassing some classical notebook settings */
+div#notebook {
+  line-height: unset;
+}
+/* neutral text */
+.txtn,.txtn a:visited,.txtn a:link {
+    font-family: sans-serif;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* transcription text */
+.txtt,.txtt a:visited,.txtt a:link {
+    font-family: monospace;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* source text */
+.txto,.txto a:visited,.txto a:link {
+    font-family: serif;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* phonetic text */
+.txtp,.txtp a:visited,.txtp a:link {
+    font-family: Gentium, sans-serif;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* original script text */
+.txtu,.txtu a:visited,.txtu a:link {
+    font-family: Gentium, sans-serif;
+    font-size: medium;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* hebrew */
+.txtu.hbo,.lex.hbo {
+    font-family: "Ezra SIL", "SBL Hebrew", sans-serif;
+    font-size: large;
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+/* syriac */
+.txtu.syc,.lex.syc {
+    font-family: "Estrangelo Edessa", sans-serif;
+    font-size: medium;
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+/* neo aramaic */
+.txtu.cld,.lex.cld {
+    font-family: "CharisSIL-R", sans-serif;
+    font-size: medium;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+/* standard arabic */
+.txtu.ara,.lex.ara {
+    font-family: "AmiriQuran", sans-serif;
+    font-size: large;
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+/* cuneiform */
+.txtu.akk,.lex.akk {
+    font-family: Santakku, sans-serif;
+    font-size: large;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+/* greek */
+.txtu.grc,.lex.grc a:link {
+    font-family: Gentium, sans-serif;
+    font-size: medium;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+a:hover {
+    text-decoration: underline | important;
+    color: #0000ff | important;
+}
+.ltr {
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+.rtl {
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+.ubd {
+    unicode-bidi: embed;
+}
+.col {
+   display: inline-block;
+}
+.features {
+    font-family: monospace;
+    font-size: medium;
+    font-weight: bold;
+    color: var(--features);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 2px;
+    margin: 2px;
+    direction: ltr;
+    unicode-bidi: embed;
+    border: var(--meta-width) solid var(--meta-color);
+    border-radius: var(--meta-width);
+}
+.features div,.features span {
+    padding: 0;
+    margin: -2px 0;
+}
+.features .f {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: normal;
+    color: #5555bb;
+}
+.features .xft {
+  color: #000000;
+  background-color: #eeeeee;
+  font-size: medium;
+  margin: 2px 0px;
+}
+.features .xft .f {
+  color: #000000;
+  background-color: #eeeeee;
+  font-size: small;
+  font-weight: normal;
+}
+.tfsechead {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+    color: var(--tfsechead);
+    unicode-bidi: embed;
+    text-align: start;
+}
+.structure {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+    color: var(--structure);
+    unicode-bidi: embed;
+    text-align: start;
+}
+.comments {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-flow: column nowrap;
+}
+.nd, a:link.nd {
+    font-family: sans-serif;
+    font-size: small;
+    color: var(--node);
+    vertical-align: super;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+.lex {
+  color: var(--lex-color);;
+}
+.children,.children.ltr {
+    display: flex;
+    border: 0;
+    background-color: #ffffff;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.children.stretch {
+    align-items: stretch;
+}
+.children.hor {
+    flex-flow: row nowrap;
+}
+.children.hor.wrap {
+    flex-flow: row wrap;
+}
+.children.ver {
+    flex-flow: column nowrap;
+}
+.children.ver.wrap {
+    flex-flow: column wrap;
+}
+.contnr {
+    width: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-flow: column nowrap;
+    background: #ffffff none repeat scroll 0 0;
+    padding:  10px 2px 2px 2px;
+    margin: 16px 2px 2px 2px;
+    border-style: solid;
+    font-size: small;
+}
+.contnr.trm {
+    background-attachment: local;
+}
+.contnr.cnul {
+    padding:  0;
+    margin: 0;
+    border-style: solid;
+    font-size: xx-small;
+}
+.contnr.cnul,.lbl.cnul {
+    border-color: var(--border-color-nul);
+    border-width: var(--border-width-nul);
+    border-radius: var(--border-width-nul);
+}
+.contnr.c0,.lbl.c0 {
+    border-color: var(--border-color0);
+    border-width: var(--border-width0);
+    border-radius: var(--border-width0);
+}
+.contnr.c1,.lbl.c1 {
+    border-color: var(--border-color1);
+    border-width: var(--border-width1);
+    border-radius: var(--border-width1);
+}
+.contnr.c2,.lbl.c2 {
+    border-color: var(--border-color2);
+    border-width: var(--border-width2);
+    border-radius: var(--border-width2);
+}
+.contnr.c3,.lbl.c3 {
+    border-color: var(--border-color3);
+    border-width: var(--border-width3);
+    border-radius: var(--border-width3);
+}
+.contnr.c4,.lbl.c4 {
+    border-color: var(--border-color4);
+    border-width: var(--border-width4);
+    border-radius: var(--border-width4);
+}
+span.plain {
+    display: inline-block;
+    white-space: pre-wrap;
+}
+.plain {
+    background-color: #ffffff;
+}
+.plain.l,.contnr.l,.contnr.l>.lbl {
+    border-left-style: dotted
+}
+.plain.r,.contnr.r,.contnr.r>.lbl {
+    border-right-style: dotted
+}
+.plain.lno,.contnr.lno,.contnr.lno>.lbl {
+    border-left-style: none
+}
+.plain.rno,.contnr.rno,.contnr.rno>.lbl {
+    border-right-style: none
+}
+.plain.l {
+    padding-left: 4px;
+    margin-left: 2px;
+    border-width: var(--border-width-plain);
+}
+.plain.r {
+    padding-right: 4px;
+    margin-right: 2px;
+    border-width: var(--border-width-plain);
+}
+.lbl {
+    font-family: monospace;
+    margin-top: -24px;
+    margin-left: 20px;
+    background: #ffffff none repeat scroll 0 0;
+    padding: 0 6px;
+    border-style: solid;
+    display: block;
+    color: var(--label)
+}
+.lbl.trm {
+    background-attachment: local;
+    margin-top: 2px;
+    margin-left: 2px;
+    padding: 2px 2px;
+    border-style: none;
+}
+.lbl.cnul {
+    font-size: xx-small;
+}
+.lbl.c0 {
+    font-size: small;
+}
+.lbl.c1 {
+    font-size: small;
+}
+.lbl.c2 {
+    font-size: medium;
+}
+.lbl.c3 {
+    font-size: medium;
+}
+.lbl.c4 {
+    font-size: large;
+}
+.occs, a:link.occs {
+    font-size: small;
+}
+
+/* PROVENANCE */
+
+div.prov {
+	margin: 40px;
+	padding: 20px;
+	border: 2px solid var(--fog-rim);
+}
+div.pline {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: baseline;
+}
+div.p2line {
+	margin-left: 2em;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: baseline;
+}
+div.psline {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: baseline;
+	background-color: var(--gold-mist-back);
+}
+div.pname {
+	flex: 0 0 5rem;
+	font-weight: bold;
+}
+div.pval {
+    flex: 1 1 auto;
+}
+
+:root {
+	--node:               hsla(120, 100%,  20%, 1.0  );
+	--label:              hsla(  0, 100%,  20%, 1.0  );
+	--tfsechead:          hsla(  0, 100%,  25%, 1.0  );
+	--structure:          hsla(120, 100%,  25%, 1.0  );
+	--features:           hsla(  0,   0%,  30%, 1.0  );
+  --text-color:         hsla( 60,  80%,  10%, 1.0  );
+  --lex-color:          hsla(220,  90%,  60%, 1.0  );
+  --meta-color:         hsla(  0,   0%,  90%, 0.7  );
+  --meta-width:         3px;
+  --border-color-nul:   hsla(  0,   0%,  90%, 0.5  );
+  --border-color0:      hsla(  0,   0%,  90%, 0.9  );
+  --border-color1:      hsla(  0,   0%,  80%, 0.9  );
+  --border-color2:      hsla(  0,   0%,  70%, 0.9  );
+  --border-color3:      hsla(  0,   0%,  80%, 0.8  );
+  --border-color4:      hsla(  0,   0%,  60%, 0.9  );
+  --border-width-nul:   2px;
+  --border-width0:      2px;
+  --border-width1:      3px;
+  --border-width2:      4px;
+  --border-width3:      6px;
+  --border-width4:      5px;
+  --border-width-plain: 2px;
+}
+.hl {
+  background-color: var(--hl-strong);
+}
+span.hl {
+	background-color: var(--hl-strong);
+	border-width: 0;
+	border-radius: 2px;
+	border-style: solid;
+}
+div.contnr.hl,div.lbl.hl {
+  background-color: var(--hl-strong);
+}
+div.contnr.hl {
+  border-color: var(--hl-rim) ! important;
+	border-width: 4px ! important;
+}
+
+span.hlbx {
+	border-color: var(--hl-rim);
+	border-width: 4px ! important;
+	border-style: solid;
+	border-radius: 6px;
+  padding: 4px;
+  margin: 4px;
+}
+
+span.plain {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+:root {
+	--hl-strong:        hsla( 60, 100%,  70%, 0.9  );
+	--hl-rim:           hsla( 55,  80%,  50%, 1.0  );
+}
+.contnr.cluster {
+    flex-flow: row wrap;
+    border: 0;
+}
+.meta .features {
+    background-color: #ffeedd;
+}
+.lbl.clusterb,.lbl.clustere {
+    padding:  0.5em 0.1em 0.1em 0.1em;
+    margin: 0.8em 0.1em 0.1em 0.1em;
+    color: #888844;
+    font-size: x-small;
+}
+.lbl.clusterb {
+    border-left: 0.3em solid #cccc99;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 1rem;
+}
+.lbl.clustere {
+    border-left: 0;
+    border-right: 0.3em solid #cccc99;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 1rem;
+}
+.op {
+    padding:  0.5em 0.1em 0.1em 0.1em;
+    margin: 0.8em 0.1em 0.1em 0.1em;
+    font-family: monospace;
+    font-size: x-large;
+    font-weight: bold;
+}
+.period {
+    font-family: monospace;
+    font-size: medium;
+    font-weight: bold;
+    color: #0000bb;
+}
+.excavation {
+    font-family: monospace;
+    font-size: medium;
+    font-style: italic;
+    color: #779900;
+}
+</style></div><div class="output text_html"><div><b>Text-Fabric API:</b> names <a target="_blank" href="https://annotation.github.io/text-fabric/cheatsheet.html" title="doc">N F E L T S C TF</a> directly usable</div><hr></div><div class="output text_html"><b title="local github">data:</b> <span title="repo clone offline under ~/github">~/github/Nino-cunei/uruk/sources/cdli/images</span></div><div class="output text_html">Found 2095 ideograph linearts<br></div><div class="output text_html">Found 2724 tablet linearts<br></div><div class="output text_html">Found 5495 tablet photos<br></div></div>
+</div>
+</div>
+<div class="section" id="tablets">
+<h2>Tablets<a class="headerlink" href="#tablets" title="Permalink to this headline">¶</a></h2>
+<p>We will work with two example tablets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pNum1</span> <span class="o">=</span> <span class="s1">&#39;P000014&#39;</span>
+<span class="n">pNum2</span> <span class="o">=</span> <span class="s1">&#39;P000022&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s first show the pretty displays of their transcriptions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1Node</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">tabletNode</span><span class="p">(</span><span class="n">pNum1</span><span class="p">)</span>
+<span class="n">p2Node</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">tabletNode</span><span class="p">(</span><span class="n">pNum2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">p2Node</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000022" title="to CDLI main page for this tablet" sec="P000022">P000022</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P000022</span></span></div><div class='features'><span class="name " title="name">ATU 3, pl. 082, W 13982</span><span class="period " title="period">uruk-iii</span><span class="excavation " title="excavation">W 13982</span></div><div class="children ver  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">0</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU707~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU707~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu707-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU686~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU686~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu686-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU707~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU707~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu707-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU707~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU707~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu707-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KA~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KA~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ka-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">E2~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/E2~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-e2-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">E2~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/E2~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-e2-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KA~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KA~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ka-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">LAGAB~b</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/LAGAB~b.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-lagab-b.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU707~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU707~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu707-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">reverse</span></span></div><div class="children hor  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">blank space</span></div></div><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">scrunched together</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf"></span></span></div></div></div></div></div></div></div></div></div>
+</div>
+<p>If you want only one face, you can do that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">L</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="n">p2Node</span><span class="p">,</span> <span class="n">otype</span><span class="o">=</span><span class="s1">&#39;face&#39;</span><span class="p">):</span>
+  <span class="n">A</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000022" title="to CDLI main page for this tablet" sec="P000022 obverse:0:1">P000022 obverse:0:1</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column</span> <span class="txtu"><span title="number">0</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">1(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU707~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU707~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu707-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU686~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU686~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu686-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU707~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU707~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu707-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU707~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU707~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu707-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KA~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KA~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ka-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">E2~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/E2~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-e2-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">E2~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/E2~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-e2-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KA~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KA~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ka-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">LAGAB~b</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/LAGAB~b.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-lagab-b.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">ZATU707~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU707~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu707-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div></div></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000022" title="to CDLI main page for this tablet" sec="P000022">P000022</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face</span> <span class="txtu"><span title="type">reverse</span></span></div><div class="children hor  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">blank space</span></div></div><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">comment</span> <span class="txtu"><span class="plain   " ><span class="plain " ></span> </span></span></div><div class='features'><span class="text " title="text">scrunched together</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf"></span></span></div></div></div></div></div></div></div>
+</div>
+<p>Or we could do it per column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">L</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="n">p2Node</span><span class="p">,</span> <span class="n">otype</span><span class="o">=</span><span class="s1">&#39;column&#39;</span><span class="p">):</span>
+  <span class="n">A</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">withNodes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000022" title="to CDLI main page for this tablet" sec="P000022 obverse:0">P000022 obverse:0</a></div><div class=" children"><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column:180530</span> <span class="txtu"><span title="number">0</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:227556</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">1107</span> <span class="txtu"><span title="atf">1(N01)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">1108</span> <span class="txtu"><span title="atf">ZATU707~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU707~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu707-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">1109</span> <span class="txtu"><span title="atf">ZATU686~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU686~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu686-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">1110</span> <span class="txtu"><span title="atf">ZATU707~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU707~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu707-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">1111</span> <span class="txtu"><span title="atf">ZATU707~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU707~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu707-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">1112</span> <span class="txtu"><span title="atf">KA~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KA~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ka-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">1113</span> <span class="txtu"><span title="atf">E2~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/E2~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-e2-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">1114</span> <span class="txtu"><span title="atf">E2~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/E2~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-e2-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">1115</span> <span class="txtu"><span title="atf">KA~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KA~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ka-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">1116</span> <span class="txtu"><span title="atf">LAGAB~b</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/LAGAB~b.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-lagab-b.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">1117</span> <span class="txtu"><span title="atf">ZATU707~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU707~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu707-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div></div>
+</div>
+<p>We start with showing one photo.
+Note, that if you click on the photo,
+you will be taken to a higher resolution version on CDLI.</p>
+<p>And if you click on the caption, you will be taken to the main page for the tablet on CDLI.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">photo</span><span class="p">(</span><span class="n">pNum1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000014_d.jpg" title="to higher resolution photo on CDLI"><img src="cdli-imagery/photo-p000014.jpg" style="display: inline;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div></div></div></div>
+</div>
+<p>If you want it smaller, you can set the width.</p>
+<p>The width may be an integer indicating the amount of pixels, or any string that is acceptable
+as a measure in
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">CSS</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">photo</span><span class="p">(</span><span class="n">pNum1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000014_d.jpg" title="to higher resolution photo on CDLI"><img src="cdli-imagery/photo-p000014.jpg" style="display: inline;max-width: 200px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">photo</span><span class="p">(</span><span class="n">pNum1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;10em&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000014_d.jpg" title="to higher resolution photo on CDLI"><img src="cdli-imagery/photo-p000014.jpg" style="display: inline;max-width: 10em;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div></div></div></div>
+</div>
+<p>If you do not want to show the caption, say:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">photo</span><span class="p">(</span><span class="n">pNum1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">withCaption</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000014_d.jpg" title="to higher resolution photo on CDLI"><img src="cdli-imagery/photo-p000014.jpg" style="display: inline;max-width: 100px;"  /></a></div></div></div></div>
+</div>
+<p>You can position the caption:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">photo</span><span class="p">(</span><span class="n">pNum1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">withCaption</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column-reverse nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000014_d.jpg" title="to higher resolution photo on CDLI"><img src="cdli-imagery/photo-p000014.jpg" style="display: inline;max-width: 100px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">photo</span><span class="p">(</span><span class="n">pNum1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">withCaption</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row-reverse nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000014_d.jpg" title="to higher resolution photo on CDLI"><img src="cdli-imagery/photo-p000014.jpg" style="display: inline;max-width: 100px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">photo</span><span class="p">(</span><span class="n">pNum1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">withCaption</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000014_d.jpg" title="to higher resolution photo on CDLI"><img src="cdli-imagery/photo-p000014.jpg" style="display: inline;max-width: 100px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div></div></div></div>
+</div>
+<p>Instead of providing a P-number, you can also specify a node:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tablet1</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">nodeFromSection</span><span class="p">((</span><span class="n">pNum1</span><span class="p">,))</span>
+<span class="n">tablet2</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">nodeFromSection</span><span class="p">((</span><span class="n">pNum2</span><span class="p">,))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want to show them in a row:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">photo</span><span class="p">([</span><span class="n">tablet1</span><span class="p">,</span> <span class="n">tablet2</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;200&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000014_d.jpg" title="to higher resolution photo on CDLI"><img src="cdli-imagery/photo-p000014.jpg" style="display: inline;max-height: 200px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000022_d.jpg" title="to higher resolution photo on CDLI"><img src="cdli-imagery/photo-p000022.jpg" style="display: inline;max-height: 200px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000022" title="to CDLI main page for this item">P000022</a></div></div></div></div></div></div>
+</div>
+<p>If you want to show the links only, not the images themselves:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">photo</span><span class="p">([</span><span class="n">tablet1</span><span class="p">,</span> <span class="n">tablet2</span><span class="p">],</span> <span class="n">asLink</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000014_d.jpg" title="to higher resolution photo on CDLI">P000014</a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000022_d.jpg" title="to higher resolution photo on CDLI">P000022</a></div></div></div></div>
+</div>
+<p>If you also want the links to the main pages on CDLI:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">photo</span><span class="p">([</span><span class="n">tablet1</span><span class="p">,</span> <span class="n">tablet2</span><span class="p">],</span> <span class="n">asLink</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">withCaption</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000014_d.jpg" title="to higher resolution photo on CDLI">P000014</a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000022_d.jpg" title="to higher resolution photo on CDLI">P000022</a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000022" title="to CDLI main page for this item">P000022</a></div></div></div></div></div></div>
+</div>
+</div>
+<div class="section" id="lineart">
+<h2>Lineart<a class="headerlink" href="#lineart" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Tablets<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>We show the lineart for our example tablets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">([</span><span class="n">pNum1</span><span class="p">,</span> <span class="n">pNum2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P000014_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p000014.jpg" style="display: inline;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P000022_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p000022.jpg" style="display: inline;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000022" title="to CDLI main page for this item">P000022</a></div></div></div></div></div></div>
+</div>
+<p>Again, we can identify the tablets equally well with their nodes.
+Let’s make them smaller:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">([</span><span class="n">tablet1</span><span class="p">,</span> <span class="n">tablet2</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P000014_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p000014.jpg" style="display: inline;max-width: 100px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P000022_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p000022.jpg" style="display: inline;max-width: 100px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000022" title="to CDLI main page for this item">P000022</a></div></div></div></div></div></div>
+</div>
+<p>We can set a height and a width, they act as maximum constraints.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">([</span><span class="n">tablet1</span><span class="p">,</span> <span class="n">tablet2</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P000014_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p000014.jpg" style="display: inline;max-width: 200px; max-height: 100px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P000022_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p000022.jpg" style="display: inline;max-width: 200px; max-height: 100px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000022" title="to CDLI main page for this item">P000022</a></div></div></div></div></div></div>
+</div>
+<p>If you insist that the width should be fully realized, you can use a <code class="docutils literal notranslate"><span class="pre">!</span></code> in fron of the value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">([</span><span class="n">tablet1</span><span class="p">,</span> <span class="n">tablet2</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="s1">&#39;!200&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P000014_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p000014.jpg" style="display: inline;max-width: 200px; min-width: 200px; max-height: 100px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P000022_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p000022.jpg" style="display: inline;max-width: 200px; min-width: 200px; max-height: 100px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000022" title="to CDLI main page for this item">P000022</a></div></div></div></div></div></div>
+</div>
+<p>Note that this distorts the aspect ratio.
+But sometimes you may want that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">([</span><span class="n">tablet1</span><span class="p">,</span> <span class="n">tablet2</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="s1">&#39;!200&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s1">&#39;!200&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P000014_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p000014.jpg" style="display: inline;max-width: 200px; min-width: 200px; max-height: 200px; min-height: 200px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000014" title="to CDLI main page for this item">P000014</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P000022_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p000022.jpg" style="display: inline;max-width: 200px; min-width: 200px; max-height: 200px; min-height: 200px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000022" title="to CDLI main page for this item">P000022</a></div></div></div></div></div></div>
+</div>
+</div>
+<div class="section" id="keys">
+<h3>Keys<a class="headerlink" href="#keys" title="Permalink to this headline">¶</a></h3>
+<p>Some tablets have additional linearts.
+We can select them by their <em>key</em>.
+The default lineart is keyed by the empty string,
+and this one will be chosen if you do not pass a key, as we did above.</p>
+<p>In order to know which keys there are for a tablet, just call lineart with a non-existing key:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pNum3</span> <span class="o">=</span> <span class="s1">&#39;P003553&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="n">pNum3</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;xxx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P003553_l.jpg" title="to higher resolution lineart on CDLI"><span><b>try</b> key=<code></code> <code>d</code></span></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P003553" title="to CDLI main page for this item">P003553</a></div></div></div></div></div></div>
+</div>
+<p>So this tablet has the empty key, and also key <code class="docutils literal notranslate"><span class="pre">d</span></code>.
+Let’s get the latter one:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="n">pNum3</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P003553_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p003553-d.jpg" style="display: inline;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P003553" title="to CDLI main page for this item">P003553</a></div></div></div></div></div></div>
+</div>
+<p>A bit smaller:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="n">pNum3</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P003553_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p003553-d.jpg" style="display: inline;max-width: 600px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P003553" title="to CDLI main page for this item">P003553</a></div></div></div></div></div></div>
+</div>
+<p>We navigate to a famous example tablet and show the lineart.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pNumX</span> <span class="o">=</span> <span class="s1">&#39;P005381&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="n">pNumX</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P005381_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p005381.jpg" style="display: inline;max-width: 300px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P005381" title="to CDLI main page for this item">P005381</a></div></div></div></div></div></div>
+</div>
+<p>We also want to see the transcription.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabletX</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">nodeFromSection</span><span class="p">((</span><span class="n">pNumX</span><span class="p">,))</span>
+<span class="n">sourceLines</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">getSource</span><span class="p">(</span><span class="n">tabletX</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sourceLines</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&amp;P005381 = MSVO 3, 70
+#atf: lang qpc 
+@obverse 
+@column 1 
+1.a. 2(N14) , SZE~a SAL TUR3~a NUN~a 
+1.b. 3(N19) , |GISZ.TE| 
+2. 1(N14) , NAR NUN~a SIG7 
+3. 2(N04)# , PIRIG~b1 SIG7 URI3~a NUN~a 
+@column 2 
+1. 3(N04) , |GISZ.TE| GAR |SZU2.((HI+1(N57))+(HI+1(N57)))| GI4~a 
+2. , GU7 AZ SI4~f 
+@reverse 
+@column 1 
+1. 3(N14) , SZE~a 
+2. 3(N19) 5(N04) , 
+3. , GU7 
+@column 2 
+1. , AZ SI4~f 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ideographs">
+<h3>Ideographs<a class="headerlink" href="#ideographs" title="Permalink to this headline">¶</a></h3>
+<p>We want to show the ideographs for case <code class="docutils literal notranslate"><span class="pre">1.a</span></code> in column 1.</p>
+<p>If you click on an ideograph, you will be taken to the image file on CDLI.
+However, due to some discrepancies between the ideographs in the CDLI big list and their
+download package, some of these links may be broken.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">case</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">nodeFromCase</span><span class="p">((</span><span class="n">pNumX</span><span class="p">,</span> <span class="s1">&#39;obverse:1&#39;</span><span class="p">,</span> <span class="s1">&#39;1a&#39;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">ideo</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">getOuterQuads</span><span class="p">(</span><span class="n">case</span><span class="p">):</span>
+    <span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="n">ideo</span><span class="p">,</span> <span class="n">withCaption</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n14).jpg" style="display: inline;max-height: 50px;"  /></a></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZE~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sze-a.jpg" style="display: inline;max-height: 50px;"  /></a></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SAL.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sal.jpg" style="display: inline;max-height: 50px;"  /></a></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/TUR3~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-tur3-a.jpg" style="display: inline;max-height: 50px;"  /></a></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NUN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nun-a.jpg" style="display: inline;max-height: 50px;"  /></a></div></div></div></div>
+</div>
+<p>Note that the images are stacked vertically.</p>
+</div>
+<div class="section" id="images-in-a-row">
+<h3>Images in a row<a class="headerlink" href="#images-in-a-row" title="Permalink to this headline">¶</a></h3>
+<p>You can also have <code class="docutils literal notranslate"><span class="pre">lineart()</span></code> put images in a row.
+Just pass multiple nodes to it.</p>
+<p>In this case we also show the captions.
+The link under the caption goes to a big list on CDLI with all ideographs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">getOuterQuads</span><span class="p">(</span><span class="n">case</span><span class="p">),</span> <span class="n">height</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n14).jpg" style="display: inline;max-height: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">2(N14)</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZE~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sze-a.jpg" style="display: inline;max-height: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">SZE~a</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SAL.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sal.jpg" style="display: inline;max-height: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">SAL</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/TUR3~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-tur3-a.jpg" style="display: inline;max-height: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">TUR3~a</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NUN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nun-a.jpg" style="display: inline;max-height: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">NUN~a</a></div></div></div></div></div></div>
+</div>
+<p>You can also call up these images by the name of the quad or sign:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">([</span><span class="s1">&#39;2(N14)&#39;</span><span class="p">,</span> <span class="s1">&#39;SZE~a&#39;</span><span class="p">,</span> <span class="s1">&#39;SAL&#39;</span><span class="p">,</span> <span class="s1">&#39;TUR3~a&#39;</span><span class="p">,</span> <span class="s1">&#39;NUN~a&#39;</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">withCaption</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column-reverse nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n14).jpg" style="display: inline;max-height: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">2(N14)</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column-reverse nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZE~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sze-a.jpg" style="display: inline;max-height: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">SZE~a</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column-reverse nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SAL.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sal.jpg" style="display: inline;max-height: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">SAL</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column-reverse nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/TUR3~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-tur3-a.jpg" style="display: inline;max-height: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">TUR3~a</a></div></div></div><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column-reverse nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NUN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nun-a.jpg" style="display: inline;max-height: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">NUN~a</a></div></div></div></div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="existence-of-images">
+<h2>Existence of images<a class="headerlink" href="#existence-of-images" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you want to test whether an image exists.
+So far, if an image does not exist, a placeholder warning text is output.</p>
+<p>But if you say <code class="docutils literal notranslate"><span class="pre">warning=False</span></code>, the empty string is output.</p>
+<p>That makes it easy to test whether an image is present and do something about it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pNum3</span> <span class="o">=</span> <span class="s1">&#39;P000013&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="n">pNum3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P000013_l.jpg" title="to higher resolution lineart on CDLI"><span><b>no lineart</b> for tablet <code>P000013</code></span></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000013" title="to CDLI main page for this item">P000013</a></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="n">pNum3</span><span class="p">,</span> <span class="n">warning</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we prefer lineart, but in its absence accept a photo, we can say:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="n">pNum3</span><span class="p">,</span> <span class="n">warning</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="n">A</span><span class="o">.</span><span class="n">photo</span><span class="p">(</span><span class="n">pNum3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/photo/P000013_d.jpg" title="to higher resolution photo on CDLI"><img src="cdli-imagery/photo-p000013.jpg" style="display: inline;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000013" title="to CDLI main page for this item">P000013</a></div></div></div></div></div></div>
+</div>
+<p>When there is lineart, it will be chosen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="n">pNum2</span><span class="p">,</span> <span class="n">warning</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="n">A</span><span class="o">.</span><span class="n">photo</span><span class="p">(</span><span class="n">pNum2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/dl/lineart/P000022_l.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-p000022.jpg" style="display: inline;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P000022" title="to CDLI main page for this item">P000022</a></div></div></div></div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Likewise, you can test wether there is lineart for ideographs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="s1">&#39;SZE&#39;</span><span class="p">,</span> <span class="n">warning</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;no lineart for SZE&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;no lineart for SZE&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="s1">&#39;SZE~a&#39;</span><span class="p">,</span> <span class="n">warning</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;no lineart for SZE~a&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: column nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZE~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sze-a.jpg" style="display: inline;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">SZE~a</a></div></div></div></div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>An other, direct way to test whether an image is present is this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;SZE&#39;</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">imagery</span><span class="p">(</span><span class="s1">&#39;ideograph&#39;</span><span class="p">,</span> <span class="s1">&#39;lineart&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;SZE~a&#39;</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">imagery</span><span class="p">(</span><span class="s1">&#39;ideograph&#39;</span><span class="p">,</span> <span class="s1">&#39;lineart&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;P000013&#39;</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">imagery</span><span class="p">(</span><span class="s1">&#39;tablet&#39;</span><span class="p">,</span> <span class="s1">&#39;lineart&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;P000013&#39;</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">imagery</span><span class="p">(</span><span class="s1">&#39;tablet&#39;</span><span class="p">,</span> <span class="s1">&#39;photo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also get the lists of things for which there are images:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ideos</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">imagery</span><span class="p">(</span><span class="s1">&#39;ideograph&#39;</span><span class="p">,</span> <span class="s1">&#39;lineart&#39;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ideos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2095
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">ideos</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1(N01) 1(N01@f) 1(N02) 1(N03) 1(N04) 1(N04@f) 1(N05) 1(N06) 1(N07~a) 1(N07~b) 1(N08) 1(N08@f) 1(N08~b) 1(N09) 1(N11) 1(N12) 1(N14) 1(N14@f) 1(N15) 1(N16) 1(N17) 1(N18) 1(N19) 1(N19@f) 1(N20) 1(N22) 1(N22@f) 1(N23) 1(N24) 1(N24@f) 1(N24~a) 1(N24~b) 1(N25) 1(N26) 1(N26~b) 1(N27) 1(N28) 1(N28~b) 1(N28~c) 1(N29A~b) 1(N29A~c) 1(N29~a) 1(N29~b) 1(N30A~c) 1(N30C~b) 1(N30C~c) 1(N30~a) 1(N30~c) 1(N30~d) 1(N30~e) 1(N31) 1(N32) 1(N33) 1(N34) 1(N34@f) 1(N35) 1(N36) 1(N36@f) 1(N37) 1(N38) 1(N39~a) 1(N39~b) 1(N40) 1(N41) 1(N42~a) 1(N42~b) 1(N43) 1(N44) 1(N45) 1(N45@f) 1(N45~a) 1(N46) 1(N46@f) 1(N47) 1(N48) 1(N48@f) 1(N49) 1(N50) 1(N51) 1(N51@f) 1(N52) 1(N54) 1(N55) 1(N56) 1(N57) 1(N58) 1(N60) 1(N63) 10(N01) 10(N14) 10(N14@f) 10(N57) 10(N58) 12(N14) 12(N58) 2(LAGAB~a) 2(N01) 2(N01@f) 2(N02) 2(N03)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We make a list of all UKKIN ideographs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ukkin</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ideos</span> <span class="k">if</span> <span class="s1">&#39;UKKIN&#39;</span> <span class="ow">in</span> <span class="n">i</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="n">ukkin</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">withCaption</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/UKKIN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ukkin-a.jpg" style="display: inline;max-height: 30px;"  /></a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/UKKIN~b.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ukkin-b.jpg" style="display: inline;max-height: 30px;"  /></a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/UKKIN~c.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ukkin-c.jpg" style="display: inline;max-height: 30px;"  /></a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bx(DIN.1(N01))|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bx(din(d)1(n01))q.jpg" style="display: inline;max-height: 30px;"  /></a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bx2(N01)|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bx2(n01)q.jpg" style="display: inline;max-height: 30px;"  /></a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bx3(N01)|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bx3(n01)q.jpg" style="display: inline;max-height: 30px;"  /></a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bx5(N01)|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bx5(n01)q.jpg" style="display: inline;max-height: 30px;"  /></a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bxDIN|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bxdinq.jpg" style="display: inline;max-height: 30px;"  /></a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bxDUG~a|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bxdug-aq.jpg" style="display: inline;max-height: 30px;"  /></a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bxHI@g~a|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bxhi(a)g-aq.jpg" style="display: inline;max-height: 30px;"  /></a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bxNI~a|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bxni-aq.jpg" style="display: inline;max-height: 30px;"  /></a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bxX|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bxxq.jpg" style="display: inline;max-height: 30px;"  /></a></div></div></div></div>
+</div>
+<p>Or a bit bigger, vertically stacked:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">ukkin</span><span class="p">:</span>
+    <span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">withCaption</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/UKKIN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ukkin-a.jpg" style="display: inline;max-width: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">UKKIN~a</a></div></div></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/UKKIN~b.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ukkin-b.jpg" style="display: inline;max-width: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">UKKIN~b</a></div></div></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/UKKIN~c.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ukkin-c.jpg" style="display: inline;max-width: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">UKKIN~c</a></div></div></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bx(DIN.1(N01))|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bx(din(d)1(n01))q.jpg" style="display: inline;max-width: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">|UKKIN~bx(DIN.1(N01))|</a></div></div></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bx2(N01)|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bx2(n01)q.jpg" style="display: inline;max-width: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">|UKKIN~bx2(N01)|</a></div></div></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bx3(N01)|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bx3(n01)q.jpg" style="display: inline;max-width: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">|UKKIN~bx3(N01)|</a></div></div></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bx5(N01)|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bx5(n01)q.jpg" style="display: inline;max-width: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">|UKKIN~bx5(N01)|</a></div></div></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bxDIN|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bxdinq.jpg" style="display: inline;max-width: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">|UKKIN~bxDIN|</a></div></div></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bxDUG~a|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bxdug-aq.jpg" style="display: inline;max-width: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">|UKKIN~bxDUG~a|</a></div></div></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bxHI@g~a|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bxhi(a)g-aq.jpg" style="display: inline;max-width: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">|UKKIN~bxHI@g~a|</a></div></div></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bxNI~a|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bxni-aq.jpg" style="display: inline;max-width: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">|UKKIN~bxNI~a|</a></div></div></div></div></div><div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><div style="display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;align-content: space-between;"><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|UKKIN~bxX|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qukkin-bxxq.jpg" style="display: inline;max-width: 50px;"  /></a></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns.html" title="to CDLI main page for this item">|UKKIN~bxX|</a></div></div></div></div></div></div>
+</div>
+</div>
+<div class="section" id="annotated-images">
+<h2>Annotated images<a class="headerlink" href="#annotated-images" title="Permalink to this headline">¶</a></h2>
+<p>If you want to use an annotated image in a markdown cell, just copy one of the
+images you find in the (new) <code class="docutils literal notranslate"><span class="pre">cdli-imagery</span></code> directory over to the <code class="docutils literal notranslate"><span class="pre">images</span></code> directory
+(or any near directory you like). You might want to give it an other name.</p>
+<p>Use an image editor to annotate the image, and use it like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>![dummy](images/P005381_l-obverse-1a.png)
+</pre></div>
+</div>
+<p><img alt="dummy" src="../_images/P005381_l-obverse-1a.png" /></p>
+<p>If you want to resize, do this</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;images/P005381_l-obverse-1a.png&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/P005381_l-obverse-1a.png"><img alt="../_images/P005381_l-obverse-1a.png" src="../_images/P005381_l-obverse-1a.png" style="width: 200px;" /></a>
+</div>
+<div class="section" id="online-images">
+<h2>Online images<a class="headerlink" href="#online-images" title="Permalink to this headline">¶</a></h2>
+<p>If you do not need to call up images in your notebook, but you want the online
+links to their counterparts on CDLI, that is also possible.</p>
+<p><strong>N.B.:</strong> Some of these links might be broken.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">lineart</span><span class="p">([</span><span class="s1">&#39;2(N14)&#39;</span><span class="p">,</span> <span class="s1">&#39;SZE~a&#39;</span><span class="p">,</span> <span class="s1">&#39;SAL&#39;</span><span class="p">,</span> <span class="s1">&#39;TUR3~a&#39;</span><span class="p">,</span> <span class="s1">&#39;NUN~a&#39;</span><span class="p">],</span> <span class="n">asLink</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="display: flex;flex-flow: row nowrap;justify-content: flex-start;align-items: center;align-content: flex-start;"><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N14).jpg" title="to higher resolution lineart on CDLI">2(N14)</a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZE~a.jpg" title="to higher resolution lineart on CDLI">SZE~a</a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SAL.jpg" title="to higher resolution lineart on CDLI">SAL</a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/TUR3~a.jpg" title="to higher resolution lineart on CDLI">TUR3~a</a></div><div style="padding: 0.5rem;"><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NUN~a.jpg" title="to higher resolution lineart on CDLI">NUN~a</a></div></div></div></div>
+</div>
+</div>
+<div class="section" id="next">
+<h2>Next<a class="headerlink" href="#next" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="steps.html"><span class="doc std std-doc">steps</span></a></p>
+<p><em>One step at a time …</em></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./uruk"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="start.html" title="previous page">Start</a>
+    <a class='right-next' id="next-link" href="search.html" title="next page">Search</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Roorda<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

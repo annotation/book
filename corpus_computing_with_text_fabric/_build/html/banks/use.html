@@ -1,0 +1,930 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use the Banks example corpus &#8212; Corpus computing with Text-Fabric</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/tf-small.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Share the Banks example corpus" href="share.html" />
+    <link rel="prev" title="Getting data from online repos" href="repo.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/tf.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Corpus computing with Text-Fabric</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Banks (mini corpus)
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="compose.html">
+   Compose
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="app.html">
+   The Banks example corpus as app
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="repo.html">
+   Getting data from online repos
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Use the Banks example corpus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="share.html">
+   Share the Banks example corpus
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Uruk Proto-cuneiform Tablets
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/start.html">
+   Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/imagery.html">
+   Imagery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/search.html">
+   Search
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/relation.html">
+   Relation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/quantifier.html">
+   Quantifiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/hand.html">
+   Hand-coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/steps.html">
+   Steps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/jumps.html">
+   Jumps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/signs.html">
+   Signs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/quads.html">
+   Quads
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/cases.html">
+   Cases
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/banks/use.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/annotation/book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/annotation/book/issues/new?title=Issue%20on%20page%20%2Fbanks/use.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/annotation/book/master?urlpath=lab/tree/banks/use.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-tf">
+   Load TF
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hoisting">
+     Hoisting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploration">
+   Exploration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#frequency-list">
+     Frequency list
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-to-the-banks-corpus">
+   Add to the banks corpus
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preparation">
+     Preparation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compute-all-similarities">
+     Compute all similarities
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-parallels-to-the-tf-dataset">
+     Add parallels to the TF dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <a class="reference internal image-reference" href="../_images/tf-small.png"><img alt="../_images/tf-small.png" class="align-right" src="../_images/tf-small.png" style="width: 128px;" /></a>
+<hr class="docutils" />
+<p>Start with <a class="reference external" href="https://nbviewer.jupyter.org/github/annotation/banks/blob/master/programs/convert.ipynb">convert</a></p>
+<hr class="docutils" />
+<div class="section" id="use-the-banks-example-corpus">
+<h1>Use the Banks example corpus<a class="headerlink" href="#use-the-banks-example-corpus" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="load-tf">
+<h2>Load TF<a class="headerlink" href="#load-tf" title="Permalink to this headline">¶</a></h2>
+<p>We are going to load the new data: all features.</p>
+<p>We start a new instance of the TF machinery.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">from</span> <span class="nn">tf.fabric</span> <span class="kn">import</span> <span class="n">Fabric</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">GH_BASE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~/github&#39;</span><span class="p">)</span>
+<span class="n">ORG</span> <span class="o">=</span> <span class="s1">&#39;annotation&#39;</span>
+<span class="n">REPO</span> <span class="o">=</span> <span class="s1">&#39;banks&#39;</span>
+<span class="n">FOLDER</span> <span class="o">=</span> <span class="s1">&#39;tf&#39;</span>
+<span class="n">TF_DIR</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">GH_BASE</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">ORG</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">REPO</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">FOLDER</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">VERSION</span> <span class="o">=</span> <span class="s1">&#39;0.2&#39;</span>
+
+<span class="n">TF_PATH</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">TF_DIR</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">VERSION</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">TF</span> <span class="o">=</span> <span class="n">Fabric</span><span class="p">(</span><span class="n">locations</span><span class="o">=</span><span class="n">TF_PATH</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is Text-Fabric 8.4.6
+Api reference : https://annotation.github.io/text-fabric/cheatsheet.html
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 features found and 0 ignored
+</pre></div>
+</div>
+</div>
+</div>
+<p>We ask for a list of all features:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allFeatures</span> <span class="o">=</span> <span class="n">TF</span><span class="o">.</span><span class="n">explore</span><span class="p">(</span><span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">loadableFeatures</span> <span class="o">=</span> <span class="n">allFeatures</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">allFeatures</span><span class="p">[</span><span class="s1">&#39;edges&#39;</span><span class="p">]</span>
+<span class="n">loadableFeatures</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;author&#39;,
+ &#39;gap&#39;,
+ &#39;letters&#39;,
+ &#39;number&#39;,
+ &#39;otype&#39;,
+ &#39;punc&#39;,
+ &#39;terminator&#39;,
+ &#39;title&#39;,
+ &#39;oslots&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We load all features:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">TF</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadableFeatures</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.00s loading features ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.01s All features loaded/computed - for details use loadLog()
+</pre></div>
+</div>
+</div>
+</div>
+<p>You see that all files are marked with a <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p>
+<p>That means that Text-Fabric loads the features by reading the plain text <code class="docutils literal notranslate"><span class="pre">.tf</span></code> files.
+But after reading, it makes a binary equivalent and stores it as a <code class="docutils literal notranslate"><span class="pre">.tfx</span></code>
+file in the hidden <code class="docutils literal notranslate"><span class="pre">.tf</span></code> directory next to it.</p>
+<p>Furthermore, you see some lines marked with <code class="docutils literal notranslate"><span class="pre">C</span></code>. Here Text-Fabric is computing derived data,
+mostly about sections, the order of nodes, and the relative positions of nodes with respect to the slots they
+are linked to.</p>
+<p>The results of this pre-computation are also stored in that hidden <code class="docutils literal notranslate"><span class="pre">.tf</span></code> directory.</p>
+<p>The next time, Text-Fabric loads the data from their binary <code class="docutils literal notranslate"><span class="pre">.tfx</span></code> files, which is much faster.
+And the pre-computation step will be skipped.</p>
+<p>If the binary files get outdated Text-Fabric will recompile and recompute everything automatically.</p>
+<p>So let’s load again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TF</span> <span class="o">=</span> <span class="n">Fabric</span><span class="p">(</span><span class="n">locations</span><span class="o">=</span><span class="n">TF_PATH</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">TF</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadableFeatures</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is Text-Fabric 8.4.6
+Api reference : https://annotation.github.io/text-fabric/cheatsheet.html
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 features found and 0 ignored
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.00s loading features ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.01s All features loaded/computed - for details use loadLog()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Where there were <code class="docutils literal notranslate"><span class="pre">T</span></code>s before, there are now <code class="docutils literal notranslate"><span class="pre">B</span></code>s.</p>
+<div class="section" id="hoisting">
+<h3>Hoisting<a class="headerlink" href="#hoisting" title="Permalink to this headline">¶</a></h3>
+<p>We can access all TF data programmatically by using <code class="docutils literal notranslate"><span class="pre">A.api.Features</span></code>, or <code class="docutils literal notranslate"><span class="pre">A.api.F</span></code> (same thing) and a bunch of
+other API members.</p>
+<p>But if we working with a single data source, we hoist those API members to the global namespace.</p>
+<p>Now you can directly refer to <code class="docutils literal notranslate"><span class="pre">F</span></code> and friends.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">api</span><span class="o">.</span><span class="n">makeAvailableIn</span><span class="p">(</span><span class="nb">globals</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Computed&#39;,
+  &#39;computed-data&#39;,
+  (&#39;C Computed&#39;, &#39;Call AllComputeds&#39;, &#39;Cs ComputedString&#39;)),
+ (&#39;Features&#39;, &#39;edge-features&#39;, (&#39;E Edge&#39;, &#39;Eall AllEdges&#39;, &#39;Es EdgeString&#39;)),
+ (&#39;Fabric&#39;, &#39;loading&#39;, (&#39;TF&#39;,)),
+ (&#39;Locality&#39;, &#39;locality&#39;, (&#39;L Locality&#39;,)),
+ (&#39;Nodes&#39;, &#39;navigating-nodes&#39;, (&#39;N Nodes&#39;,)),
+ (&#39;Features&#39;,
+  &#39;node-features&#39;,
+  (&#39;F Feature&#39;, &#39;Fall AllFeatures&#39;, &#39;Fs FeatureString&#39;)),
+ (&#39;Search&#39;, &#39;search&#39;, (&#39;S Search&#39;,)),
+ (&#39;Text&#39;, &#39;text&#39;, (&#39;T Text&#39;,))]
+</pre></div>
+</div>
+</div>
+</div>
+<p>As a result, you have an overview of the names you can use.</p>
+</div>
+</div>
+<div class="section" id="exploration">
+<h2>Exploration<a class="headerlink" href="#exploration" title="Permalink to this headline">¶</a></h2>
+<p>Finally, let’s explore this set by means of Text-Fabric.</p>
+<div class="section" id="frequency-list">
+<h3>Frequency list<a class="headerlink" href="#frequency-list" title="Permalink to this headline">¶</a></h3>
+<p>We can get ordered frequency lists for the values of all features.</p>
+<p>First the words:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="o">.</span><span class="n">letters</span><span class="o">.</span><span class="n">freqList</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((&#39;the&#39;, 8),
+ (&#39;of&#39;, 5),
+ (&#39;and&#39;, 4),
+ (&#39;in&#39;, 3),
+ (&#39;we&#39;, 3),
+ (&#39;everything&#39;, 2),
+ (&#39;know&#39;, 2),
+ (&#39;most&#39;, 2),
+ (&#39;ones&#39;, 2),
+ (&#39;patterns&#39;, 2),
+ (&#39;us&#39;, 2),
+ (&#39;Besides&#39;, 1),
+ (&#39;Culture&#39;, 1),
+ (&#39;Everything&#39;, 1),
+ (&#39;So&#39;, 1),
+ (&#39;a&#39;, 1),
+ (&#39;about&#39;, 1),
+ (&#39;aid&#39;, 1),
+ (&#39;any&#39;, 1),
+ (&#39;around&#39;, 1),
+ (&#39;as&#39;, 1),
+ (&#39;barbarian&#39;, 1),
+ (&#39;bottom&#39;, 1),
+ (&#39;can&#39;, 1),
+ (&#39;care&#39;, 1),
+ (&#39;climbing&#39;, 1),
+ (&#39;composed&#39;, 1),
+ (&#39;control&#39;, 1),
+ (&#39;dead&#39;, 1),
+ (&#39;elegant&#39;, 1),
+ (&#39;enjoyable&#39;, 1),
+ (&#39;final&#39;, 1),
+ (&#39;find&#39;, 1),
+ (&#39;free&#39;, 1),
+ (&#39;games&#39;, 1),
+ (&#39;good&#39;, 1),
+ (&#39;harness&#39;, 1),
+ (&#39;have&#39;, 1),
+ (&#39;high&#39;, 1),
+ (&#39;humans&#39;, 1),
+ (&#39;impossible&#39;, 1),
+ (&#39;is&#39;, 1),
+ (&#39;it&#39;, 1),
+ (&#39;languages&#39;, 1),
+ (&#39;left&#39;, 1),
+ (&#39;life&#39;, 1),
+ (&#39;line&#39;, 1),
+ (&#39;make&#39;, 1),
+ (&#39;mattered&#39;, 1),
+ (&#39;mountains&#39;, 1),
+ (&#39;not&#39;, 1),
+ (&#39;nothing&#39;, 1),
+ (&#39;our&#39;, 1),
+ (&#39;over&#39;, 1),
+ (&#39;own&#39;, 1),
+ (&#39;problems&#39;, 1),
+ (&#39;really&#39;, 1),
+ (&#39;romance&#39;, 1),
+ (&#39;safety&#39;, 1),
+ (&#39;societies&#39;, 1),
+ (&#39;sports&#39;, 1),
+ (&#39;studying&#39;, 1),
+ (&#39;such&#39;, 1),
+ (&#39;take&#39;, 1),
+ (&#39;terms&#39;, 1),
+ (&#39;that&#39;, 1),
+ (&#39;that’s&#39;, 1),
+ (&#39;things&#39;, 1),
+ (&#39;those&#39;, 1),
+ (&#39;to&#39;, 1),
+ (&#39;truth&#39;, 1),
+ (&#39;ultimately&#39;, 1),
+ (&#39;where&#39;, 1),
+ (&#39;why&#39;, 1),
+ (&#39;without&#39;, 1))
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the node types we can get info by calling this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="o">.</span><span class="n">levels</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((&#39;book&#39;, 99.0, 100, 100),
+ (&#39;chapter&#39;, 49.5, 101, 102),
+ (&#39;sentence&#39;, 33.0, 115, 117),
+ (&#39;line&#39;, 7.666666666666667, 103, 114),
+ (&#39;word&#39;, 1, 1, 99))
+</pre></div>
+</div>
+</div>
+</div>
+<p>It means that chapters are 49.5 words long on average, and that the chapter nodes are 101 and 102.</p>
+<p>And you see that we have 99 words.</p>
+</div>
+</div>
+<div class="section" id="add-to-the-banks-corpus">
+<h2>Add to the banks corpus<a class="headerlink" href="#add-to-the-banks-corpus" title="Permalink to this headline">¶</a></h2>
+<p>We are going to make a relationship between each pair of words, and we annotate each related pair with how similar they are.</p>
+<p>We measure the similarity by looking at the distinct letters in each word (lowercase), and computing the percentage of
+how many letters they have in common with respect to how many letters they jointly have.</p>
+<p>This will become a symmetric edge feature. Symmetric means, that if a and b are similar, then b and a as well, with the
+same similarity.</p>
+<p>We only store one copy of each symmetric pair of edges.</p>
+<p>We can then use
+<a class="reference external" href="https://annotation.github.io/text-fabric/Api/Features/#edge-features"><code class="docutils literal notranslate"><span class="pre">E.sim.b(node)</span></code></a>
+to find all nodes that are parallel to node.</p>
+<p>If words do not have letters in common, their similarity is 0, and we do not make an edge.</p>
+<div class="section" id="preparation">
+<h3>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h3>
+<p>We pre-compute all letter sets for all words.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">makeSet</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
+  <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">letters</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">F</span><span class="o">.</span><span class="n">otype</span><span class="o">.</span><span class="n">s</span><span class="p">(</span><span class="s1">&#39;word&#39;</span><span class="p">):</span>
+  <span class="n">words</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="n">makeSet</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    
+<span class="n">nWords</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">nWords</span><span class="si">}</span><span class="s1"> words&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99 words
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sim</span><span class="p">(</span><span class="n">wSet</span><span class="p">,</span> <span class="n">vSet</span><span class="p">):</span>
+  <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">wSet</span> <span class="o">&amp;</span> <span class="n">vSet</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">wSet</span> <span class="o">|</span> <span class="n">vSet</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="compute-all-similarities">
+<h3>Compute all similarities<a class="headerlink" href="#compute-all-similarities" title="Permalink to this headline">¶</a></h3>
+<p>We are going to perform all comparisons.</p>
+<p>Since there are 99 words, this will amount to only 5000 comparisons.</p>
+<p>For a big corpus, this amount will quickly grow with the number of items to be compared.</p>
+<p>See for example the similarities in the
+<a class="reference external" href="https://nbviewer.jupyter.org/github/q-ran/quran/blob/master/programs/parallels.ipynb">Quran</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">computeSim</span><span class="p">():</span>
+  <span class="n">similarity</span> <span class="o">=</span> <span class="p">{}</span>
+
+  <span class="n">wordNodes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+  <span class="n">nWords</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wordNodes</span><span class="p">)</span>
+
+  <span class="n">nComparisons</span> <span class="o">=</span> <span class="n">nWords</span> <span class="o">*</span> <span class="p">(</span><span class="n">nWords</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">nComparisons</span><span class="si">}</span><span class="s1"> comparisons to make&#39;</span><span class="p">)</span>
+
+  <span class="n">TF</span><span class="o">.</span><span class="n">indent</span><span class="p">(</span><span class="n">reset</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="n">co</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">si</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">stop</span> <span class="o">=</span> <span class="kc">False</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nWords</span><span class="p">):</span>
+    <span class="n">nodeI</span> <span class="o">=</span> <span class="n">wordNodes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">wordI</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="n">nodeI</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nWords</span><span class="p">):</span>
+      <span class="n">nodeJ</span> <span class="o">=</span> <span class="n">wordNodes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+      <span class="n">wordJ</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="n">nodeJ</span><span class="p">]</span>
+      <span class="n">s</span> <span class="o">=</span> <span class="n">sim</span><span class="p">(</span><span class="n">wordI</span><span class="p">,</span> <span class="n">wordJ</span><span class="p">)</span>
+      <span class="n">co</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">if</span> <span class="n">s</span><span class="p">:</span>
+        <span class="n">similarity</span><span class="p">[(</span><span class="n">nodeI</span><span class="p">,</span> <span class="n">nodeJ</span><span class="p">)]</span> <span class="o">=</span> <span class="n">sim</span><span class="p">(</span><span class="n">wordI</span><span class="p">,</span> <span class="n">wordJ</span><span class="p">)</span>
+        <span class="n">si</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">stop</span><span class="p">:</span>
+      <span class="k">break</span>
+
+  <span class="n">TF</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">co</span><span class="si">:</span><span class="s1">&gt;4</span><span class="si">}</span><span class="s1"> comparisons and </span><span class="si">{</span><span class="n">si</span><span class="si">:</span><span class="s1">&gt;4</span><span class="si">}</span><span class="s1"> similarities&#39;</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">similarity</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">similarity</span> <span class="o">=</span> <span class="n">computeSim</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4851 comparisons to make
+  0.01s 4851 comparisons and 3332 similarities
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">similarity</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">similarity</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+100
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eq</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">similarity</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">neq</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">similarity</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">eq</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">neq</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((1, 4), 100)
+((1, 2), 8)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">eq</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">neq</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>58
+3247
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">eq</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">F</span><span class="o">.</span><span class="n">letters</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">eq</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eq</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">F</span><span class="o">.</span><span class="n">letters</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">eq</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 Everything
+4 everything
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">neq</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">F</span><span class="o">.</span><span class="n">letters</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">neq</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">neq</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">F</span><span class="o">.</span><span class="n">letters</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">neq</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 Everything
+2 about
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-parallels-to-the-tf-dataset">
+<h3>Add parallels to the TF dataset<a class="headerlink" href="#add-parallels-to-the-tf-dataset" title="Permalink to this headline">¶</a></h3>
+<p>We now add this information to the Banks dataset as an <em>edge feature</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metaData</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Banks (similar words)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;converters&#39;</span><span class="p">:</span> <span class="s1">&#39;Dirk Roorda&#39;</span><span class="p">,</span>    
+    <span class="s1">&#39;sourceUrl&#39;</span><span class="p">:</span> <span class="s1">&#39;https://nbviewer.jupyter.org/github/annotation/tutorials/blob/master/text-fabric/use.ipynb&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;0.2&#39;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s1">&#39;sim&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;valueType&#39;</span><span class="p">:</span> <span class="s1">&#39;int&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;edgeValues&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;similarity between words, as a percentage of the common material wrt the combined material&#39;</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simData</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="n">d</span><span class="p">)</span> <span class="ow">in</span> <span class="n">similarity</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="n">simData</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">{})[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FOLDER_SIM</span> <span class="o">=</span> <span class="s1">&#39;sim/tf&#39;</span>
+<span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ORG</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">REPO</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">FOLDER_SIM</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">location</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">GH_BASE</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">module</span> <span class="o">=</span> <span class="n">VERSION</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TF</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">edgeFeatures</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">sim</span><span class="o">=</span><span class="n">simData</span><span class="p">),</span> <span class="n">metaData</span><span class="o">=</span><span class="n">metaData</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="n">module</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.00s Exporting 0 node and 1 edge and 0 config features to ~/github/annotation/banks/sim/tf/0.2:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   |     0.01s T sim                  to ~/github/annotation/banks/sim/tf/0.2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.01s Exported 0 node features and 1 edge features and 0 config features to ~/github/annotation/banks/sim/tf/0.2
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./banks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="repo.html" title="previous page">Getting data from online repos</a>
+    <a class='right-next' id="next-link" href="share.html" title="next page">Share the Banks example corpus</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Roorda<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

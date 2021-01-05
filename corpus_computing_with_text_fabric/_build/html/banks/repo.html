@@ -1,0 +1,1431 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting data from online repos &#8212; Corpus computing with Text-Fabric</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/tf-small.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Use the Banks example corpus" href="use.html" />
+    <link rel="prev" title="The Banks example corpus as app" href="app.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/tf.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Corpus computing with Text-Fabric</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Banks (mini corpus)
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="compose.html">
+   Compose
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="app.html">
+   The Banks example corpus as app
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Getting data from online repos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="use.html">
+   Use the Banks example corpus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="share.html">
+   Share the Banks example corpus
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Uruk Proto-cuneiform Tablets
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/start.html">
+   Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/imagery.html">
+   Imagery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/search.html">
+   Search
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/relation.html">
+   Relation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/quantifier.html">
+   Quantifiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/hand.html">
+   Hand-coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/steps.html">
+   Steps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/jumps.html">
+   Jumps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/signs.html">
+   Signs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/quads.html">
+   Quads
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uruk/cases.html">
+   Cases
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/banks/repo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/annotation/book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/annotation/book/issues/new?title=Issue%20on%20page%20%2Fbanks/repo.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/annotation/book/master?urlpath=lab/tree/banks/repo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#leading-example">
+   Leading example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#presenting-the-results">
+   Presenting the results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#all-the-checkout-options">
+   All the checkout options
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clone">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       clone
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       local
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#default">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ''
+      </span>
+     </code>
+     (default)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note-about-versions-and-releases">
+       Note about versions and releases
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#download-a-different-version">
+       Download a different version
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#latest">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       latest
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hot">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       hot
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#v1-0-a-specific-release">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       v1.0
+      </span>
+     </code>
+     a specific release
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a81746c-a-specific-commit">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       a81746c
+      </span>
+     </code>
+     a specific commit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-and-dest-an-alternative-for-github-and-text-fabric-data">
+   <em>
+    source
+   </em>
+   and
+   <em>
+    dest
+   </em>
+   : an alternative for
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ~/github
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ~/text-fabric-data
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <a class="reference internal image-reference" href="../_images/tf-small.png"><img alt="../_images/tf-small.png" class="align-right" src="../_images/tf-small.png" style="width: 128px;" /></a>
+<hr class="docutils" />
+<p>Start with <a class="reference external" href="https://nbviewer.jupyter.org/github/annotation/banks/blob/master/programs/convert.ipynb">convert</a></p>
+<hr class="docutils" />
+<div class="section" id="getting-data-from-online-repos">
+<h1>Getting data from online repos<a class="headerlink" href="#getting-data-from-online-repos" title="Permalink to this headline">¶</a></h1>
+<p>We show the various automatic ways by which you can get data that is out there on GitHub to your computer.</p>
+<p>The work horse is the function <code class="docutils literal notranslate"><span class="pre">checkoutRepo()</span></code> in <code class="docutils literal notranslate"><span class="pre">tf.applib.repo</span></code>.</p>
+<p>Text-Fabric uses this function for all operations where data flows from GitHub to your computer.</p>
+<p>There are quite some options, and here we explain all the <code class="docutils literal notranslate"><span class="pre">checkout</span></code> options, i.e. the selection of
+data from the history.</p>
+<p>See also the <a class="reference external" href="https://annotation.github.io/text-fabric/Api/Repo/">documentation</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="leading-example">
+<h2>Leading example<a class="headerlink" href="#leading-example" title="Permalink to this headline">¶</a></h2>
+<p>We use markdown display from IPython purely for presentation.
+It is not needed to run <code class="docutils literal notranslate"><span class="pre">checkoutRepo()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tf.advanced.helpers</span> <span class="kn">import</span> <span class="n">dm</span>
+<span class="kn">from</span> <span class="nn">tf.advanced.repo</span> <span class="kn">import</span> <span class="n">checkoutRepo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We work with our tiny example TF app: <code class="docutils literal notranslate"><span class="pre">banks</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ORG</span> <span class="o">=</span> <span class="s1">&#39;annotation&#39;</span>
+<span class="n">REPO</span> <span class="o">=</span> <span class="s1">&#39;banks&#39;</span>
+<span class="n">MAIN</span> <span class="o">=</span> <span class="s1">&#39;tf&#39;</span>
+<span class="n">MOD</span> <span class="o">=</span> <span class="s1">&#39;sim/tf&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">MAIN</span></code>points to the main data, <code class="docutils literal notranslate"><span class="pre">MOD</span></code> points to a module of data: the similarity feature.</p>
+</div>
+<div class="section" id="presenting-the-results">
+<h2>Presenting the results<a class="headerlink" href="#presenting-the-results" title="Permalink to this headline">¶</a></h2>
+<p>The function <code class="docutils literal notranslate"><span class="pre">do()</span></code> just formats the results of a <code class="docutils literal notranslate"><span class="pre">checkoutRepo()</span></code> run.</p>
+<p>The result of such a run, after the progress messages, is a tuple.
+For the explanation of the tuple, read the <a class="reference external" href="https://annotation.github.io/text-fabric/Api/Repo/">docs</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="n">task</span>
+  <span class="n">md</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">commit | release | local | base | subdir</span>
+<span class="s1">--- | --- | --- | --- | ---</span>
+<span class="s1">`</span><span class="si">{</span><span class="n">task</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">` | `</span><span class="si">{</span><span class="n">task</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">` | `</span><span class="si">{</span><span class="n">task</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">` | `</span><span class="si">{</span><span class="n">task</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1">` | `</span><span class="si">{</span><span class="n">task</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s1">`</span>
+<span class="s1">&#39;&#39;&#39;</span>
+  <span class="n">dm</span><span class="p">(</span><span class="n">md</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="all-the-checkout-options">
+<h2>All the checkout options<a class="headerlink" href="#all-the-checkout-options" title="Permalink to this headline">¶</a></h2>
+<p>We discuss the meaning and effects of the values you can pass to the <code class="docutils literal notranslate"><span class="pre">checkout</span></code> option.</p>
+<div class="section" id="clone">
+<h3><code class="docutils literal notranslate"><span class="pre">clone</span></code><a class="headerlink" href="#clone" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Look whether the appropriate folder exists under your <code class="docutils literal notranslate"><span class="pre">~/github</span></code> directory.</p>
+</div></blockquote>
+<p>This is merely a check whether your data exists in the expected location.</p>
+<ul class="simple">
+<li><p>No online checks take place.</p></li>
+<li><p>No data is moved or copied.</p></li>
+</ul>
+<p><strong>NB</strong>: you cannot select releases and commits in your <em>local</em> GitHub clone.
+The data will be used as it is found on your file system.</p>
+<p><strong>When to use</strong></p>
+<blockquote>
+<div><p>If you are developing new feature data.</p>
+</div></blockquote>
+<p>When you develop your data in a repository, your development is private as long as you
+do not push to GitHub.</p>
+<p>You can test your data, even without locally committing your data.</p>
+<p>But, if you are ready to share your data, everything is in place, and you only
+have to commit and push, and pass the location on github to others, like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myorg</span><span class="o">/</span><span class="n">myrepo</span><span class="o">/</span><span class="n">subfolder</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;clone&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><b title="local github">data:</b> <span title="repo clone offline under ~/github">~/github/annotation/banks/tf/0.2</span></div><p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">clone</span></code> | <code class="docutils literal notranslate"><span class="pre">~/github</span></code> | <code class="docutils literal notranslate"><span class="pre">annotation/banks/tf</span></code></p>
+</div>
+</div>
+<p>We show what happens if you do not have a local github clone in <code class="docutils literal notranslate"><span class="pre">~/github</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
+
+mv ~/github/annotation/banks/tf ~/github/annotation/banks/tfxxx
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;clone&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	~/github/annotation/banks/tf not found
+</pre></div>
+</div>
+<p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</div>
+</div>
+<p>Note that no attempt is made to retrieve online data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
+
+mv ~/github/annotation/banks/tfxxx ~/github/annotation/banks/tf
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="local">
+<h3><code class="docutils literal notranslate"><span class="pre">local</span></code><a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Look whether the appropriate folder exists under your <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> directory.</p>
+</div></blockquote>
+<p>This is merely a check whether your data exists in the expected location.</p>
+<ul class="simple">
+<li><p>No online checks take place.</p></li>
+<li><p>No data is moved or copied.</p></li>
+</ul>
+<p><strong>When to use</strong></p>
+<blockquote>
+<div><p>If you are using data created and shared by others, and if the data
+is already on your system.</p>
+</div></blockquote>
+<p>You can be sure that no updates are downloaded, and that everything works the same as the last time
+you ran your program.</p>
+<p>If you do not already have the data, you have to pass <code class="docutils literal notranslate"><span class="pre">latest</span></code> or <code class="docutils literal notranslate"><span class="pre">hot</span></code> or <code class="docutils literal notranslate"><span class="pre">''</span></code> which will be discussed below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;local&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><b title="local release">data:</b> <span title="rv2.0=#9713e71c18fd296cf1860d6411312f9127710ba7 offline under ~/text-fabric-data">~/text-fabric-data/annotation/banks/tf/0.2</span></div><p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">9713e71c18fd296cf1860d6411312f9127710ba7</span></code> | <code class="docutils literal notranslate"><span class="pre">v2.0</span></code> | <code class="docutils literal notranslate"><span class="pre">local</span></code> | <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> | <code class="docutils literal notranslate"><span class="pre">annotation/banks/tf</span></code></p>
+</div>
+</div>
+<p>You see this data because earlier I have downloaded release <code class="docutils literal notranslate"><span class="pre">v2.0</span></code>, which is a tag for
+the commit with hash <code class="docutils literal notranslate"><span class="pre">9713e71c18fd296cf1860d6411312f9127710ba7</span></code>.</p>
+<p>If you do not have any corresponding data in your <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code>, you get this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
+
+mv ~/text-fabric-data/annotation/banks/tf ~/text-fabric-data/annotation/banks/tfxxx
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;local&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	~/text-fabric-data/annotation/banks/tf not found
+</pre></div>
+</div>
+<p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
+
+mv ~/text-fabric-data/annotation/banks/tfxxx ~/text-fabric-data/annotation/banks/tf
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="default">
+<h3><code class="docutils literal notranslate"><span class="pre">''</span></code> (default)<a class="headerlink" href="#default" title="Permalink to this headline">¶</a></h3>
+<p>This is about when you omit the <code class="docutils literal notranslate"><span class="pre">checkout</span></code> parameter, or pass <code class="docutils literal notranslate"><span class="pre">''</span></code> to it.</p>
+<p>The destination for local data is your <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> folder.</p>
+<p>If you have already a local copy of the data, that will be used.</p>
+<p>If not:</p>
+<blockquote>
+<div><p>Note that if your local data is outdated, no new data will be downloaded.
+You need <code class="docutils literal notranslate"><span class="pre">latest</span></code> or <code class="docutils literal notranslate"><span class="pre">hot</span></code> for that.</p>
+</div></blockquote>
+<p>But what is the latest online copy? In this case we mean:</p>
+<ul class="simple">
+<li><p>the latest <em>release</em>, and from that release an appropriate attached zip file</p></li>
+<li><p>but if there is no such zip file, we take the files from the corresponding commit</p></li>
+<li><p>but if there is no release at all, we take the files from the <em>latest commit</em>.</p></li>
+</ul>
+<p><strong>When to use</strong></p>
+<blockquote>
+<div><p>If you need data created/shared by other people and you want to be sure that you always have the
+same copy that you initially downloaded.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>If the data provider makes releases after important modifications, you will get those.</p></li>
+<li><p>If the data provider is experimenting after the latest release, and commits them to GitHub,
+you do not get those.</p></li>
+</ul>
+<p>However, with <code class="docutils literal notranslate"><span class="pre">hot</span></code>, you <code class="docutils literal notranslate"><span class="pre">can</span></code> get the latest commit, to be discussed below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><b title="local release">data:</b> <span title="rv2.0=#9713e71c18fd296cf1860d6411312f9127710ba7 offline under ~/text-fabric-data">~/text-fabric-data/annotation/banks/tf/0.2</span></div><p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">9713e71c18fd296cf1860d6411312f9127710ba7</span></code> | <code class="docutils literal notranslate"><span class="pre">v2.0</span></code> | <code class="docutils literal notranslate"><span class="pre">local</span></code> | <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> | <code class="docutils literal notranslate"><span class="pre">annotation/banks/tf</span></code></p>
+</div>
+</div>
+<p>Note that no data has been downloaded, because it has detected that there is already local data on your computer.</p>
+<p>If you do not have any checkout of this data on your computer, the data will be downloaded.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
+
+rm -rf ~/text-fabric-data/annotation/banks/tf
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	~/text-fabric-data/annotation/banks/tf not found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rate limit is 5000 requests per hour, with 5000 left for this hour
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	connecting to online GitHub repo annotation/banks ... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.2/author.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.2/gap.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.2/letters.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.2/number.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.2/oslots.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.2/otext.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.2/otype.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.2/punc.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.2/terminator.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.2/title.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	OK
+</pre></div>
+</div>
+<div class="output text_html"><b title="latest release">data:</b> <span title="rv3.0=#4fc68c6f0bf20ef7070a82ec534416bf39b836a2">~/text-fabric-data/annotation/banks/tf/0.2</span></div><p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">4fc68c6f0bf20ef7070a82ec534416bf39b836a2</span></code> | <code class="docutils literal notranslate"><span class="pre">v3.0</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> | <code class="docutils literal notranslate"><span class="pre">annotation/banks/tf</span></code></p>
+</div>
+</div>
+<div class="section" id="note-about-versions-and-releases">
+<h4>Note about versions and releases<a class="headerlink" href="#note-about-versions-and-releases" title="Permalink to this headline">¶</a></h4>
+<p>The <strong>version</strong> of the data is not necessarily the same concept as the <strong>release</strong> of it.</p>
+<p>It is possible to keep the versions and the releases strictly parallel,
+but in text conversion workflows it can be handy to make a distinction between them,
+e.g. as follows:</p>
+<blockquote>
+<div><p>the version is a property of the input data
+the release is a property of the output data</p>
+</div></blockquote>
+<p>When you create data from sources using conversion algorithms,
+you want to increase the version if you get new input data, e.g. as a result of corrections
+made by the author.</p>
+<p>But if you modify your conversion algorithm, while still running it on the same input data,
+you may release the new output data as a <strong>new release</strong> of the <strong>same version</strong>.</p>
+<p>Likewise, when the input data stays the same, but you have corrected typos in the metadata,
+you can make a <strong>new release</strong> of the <strong>same version</strong> of the data.</p>
+<p>The conversion delivers the features under a specific version,
+and Text-Fabric supports those versions: users of TF can select the version they work with.</p>
+<p>Releases are made in the version control system (git and GitHub).
+The part of Text-Fabric that auto-downloads data is aware of releases.
+But once the data has been downloaded in place, there is no machinery in Text-Fabric to handle
+different releases.</p>
+<p>Yet the release tag and commit hash are passed on to the point where it comes to recording
+the provenance of the data.</p>
+</div>
+<div class="section" id="download-a-different-version">
+<h4>Download a different version<a class="headerlink" href="#download-a-different-version" title="Permalink to this headline">¶</a></h4>
+<p>We download version <code class="docutils literal notranslate"><span class="pre">0.1</span></code> of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	~/text-fabric-data/annotation/banks/tf not found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rate limit is 5000 requests per hour, with 4979 left for this hour
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	connecting to online GitHub repo annotation/banks ... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.1/author.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.1/gap.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.1/letters.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.1/number.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.1/oslots.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.1/otext.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.1/otype.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.1/punc.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.1/terminator.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	tf/0.1/title.tf...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloaded
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	OK
+</pre></div>
+</div>
+<div class="output text_html"><b title="latest release">data:</b> <span title="rv3.0=#4fc68c6f0bf20ef7070a82ec534416bf39b836a2">~/text-fabric-data/annotation/banks/tf/0.1</span></div><p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">4fc68c6f0bf20ef7070a82ec534416bf39b836a2</span></code> | <code class="docutils literal notranslate"><span class="pre">v3.0</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> | <code class="docutils literal notranslate"><span class="pre">annotation/banks/tf</span></code></p>
+</div>
+</div>
+<p>Several observations:</p>
+<ul class="simple">
+<li><p>we obtained the older version from the <em>latest</em> release, which is still release <code class="docutils literal notranslate"><span class="pre">v2.0</span></code></p></li>
+<li><p>the download looks different from when we downloaded version <code class="docutils literal notranslate"><span class="pre">0.2</span></code>;
+this is because the data producer has zipped the <code class="docutils literal notranslate"><span class="pre">0.2</span></code> data and has attached it to release <code class="docutils literal notranslate"><span class="pre">v2.0</span></code>,
+but he forgot, or deliberately refused, to attach version <code class="docutils literal notranslate"><span class="pre">0.1</span></code> to that release;
+so it has been retrieved directly from the files in the corresponding commit, which is
+<code class="docutils literal notranslate"><span class="pre">9713e71c18fd296cf1860d6411312f9127710ba7</span></code>.</p></li>
+</ul>
+<p>For the verification, an online check is needed. The verification consists of checking the release tag and/or commit hash.</p>
+<p>If there is no online connection, you get this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
+
+networksetup -setairportpower en0 off
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;latest&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no internet
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The offline data may not be the latest
+</pre></div>
+</div>
+<div class="output text_html"><b title="latest? release">data:</b> <span title="rv3.0=#4fc68c6f0bf20ef7070a82ec534416bf39b836a2">~/text-fabric-data/annotation/banks/tf/0.1</span></div><p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">4fc68c6f0bf20ef7070a82ec534416bf39b836a2</span></code> | <code class="docutils literal notranslate"><span class="pre">v3.0</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> | <code class="docutils literal notranslate"><span class="pre">annotation/banks/tf</span></code></p>
+</div>
+</div>
+<p>or if you do not have local data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
+
+mv ~/text-fabric-data/annotation/banks/tf/0.1 ~/text-fabric-data/annotation/banks/tf/0.1xxx
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;latest&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no internet
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
+
+mv ~/text-fabric-data/annotation/banks/tf/0.1xxx ~/text-fabric-data/annotation/banks/tf/0.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
+
+networksetup -setairportpower en0 on
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="latest">
+<h3><code class="docutils literal notranslate"><span class="pre">latest</span></code><a class="headerlink" href="#latest" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The latest online release will be identified,
+and if you do not have that copy locally, it will be downloaded.</p>
+</div></blockquote>
+<p><strong>When to use</strong></p>
+<blockquote>
+<div><p>If you need data created/shared by other people and you want to be sure that you always have the
+latest <em>stable</em> version of that data, unreleased data is not good enough.</p>
+</div></blockquote>
+<p>One of the difference with <code class="docutils literal notranslate"><span class="pre">checkout=''</span></code> is that if there are no releases, you will not get data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;latest&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no internet
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The offline data may not be the latest
+</pre></div>
+</div>
+<div class="output text_html"><b title="latest? release">data:</b> <span title="rv3.0=#4fc68c6f0bf20ef7070a82ec534416bf39b836a2">~/text-fabric-data/annotation/banks/tf/0.2</span></div><p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">4fc68c6f0bf20ef7070a82ec534416bf39b836a2</span></code> | <code class="docutils literal notranslate"><span class="pre">v3.0</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> | <code class="docutils literal notranslate"><span class="pre">annotation/banks/tf</span></code></p>
+</div>
+</div>
+<p>There is no sim/tf data in any release commit, so if we look it up, it should fail.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MOD</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;latest&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no internet
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</div>
+</div>
+<p>But with <code class="docutils literal notranslate"><span class="pre">checkout=''</span></code> it will only be found if you do not have local data already:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MOD</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><b title="local commit">data:</b> <span title="#8d87675fd02ee96ad6f4c3a5ce99e0bda8277a54 offline under ~/text-fabric-data">~/text-fabric-data/annotation/banks/sim/tf/0.2</span></div><p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">8d87675fd02ee96ad6f4c3a5ce99e0bda8277a54</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">local</span></code> | <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> | <code class="docutils literal notranslate"><span class="pre">annotation/banks/sim/tf</span></code></p>
+</div>
+</div>
+<p>In that case there is only one way: <code class="docutils literal notranslate"><span class="pre">hot</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MOD</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no internet
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The offline data may not be the latest
+</pre></div>
+</div>
+<div class="output text_html"><b title="latest? commit">data:</b> <span title="#8d87675fd02ee96ad6f4c3a5ce99e0bda8277a54">~/text-fabric-data/annotation/banks/sim/tf/0.2</span></div><p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">8d87675fd02ee96ad6f4c3a5ce99e0bda8277a54</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> | <code class="docutils literal notranslate"><span class="pre">annotation/banks/sim/tf</span></code></p>
+</div>
+</div>
+</div>
+<div class="section" id="hot">
+<h3><code class="docutils literal notranslate"><span class="pre">hot</span></code><a class="headerlink" href="#hot" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The latest online commit will be identified,
+and if you do not have that copy locally, it will be downloaded.</p>
+</div></blockquote>
+<p><strong>When to use</strong></p>
+<blockquote>
+<div><p>If you need data created/shared by other people and you want to be sure that you always have the
+latest version of that data, whether released or not.</p>
+</div></blockquote>
+<p>The difference with <code class="docutils literal notranslate"><span class="pre">checkout=''</span></code> is that if there are releases,
+you will now get data that may be newer than the latest release.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no internet
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The offline data may not be the latest
+</pre></div>
+</div>
+<div class="output text_html"><b title="latest? commit">data:</b> <span title="rv3.0=#4fc68c6f0bf20ef7070a82ec534416bf39b836a2">~/text-fabric-data/annotation/banks/tf/0.2</span></div><p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">4fc68c6f0bf20ef7070a82ec534416bf39b836a2</span></code> | <code class="docutils literal notranslate"><span class="pre">v3.0</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> | <code class="docutils literal notranslate"><span class="pre">annotation/banks/tf</span></code></p>
+</div>
+</div>
+<p>Observe that data has been downloaded, and that we have now data corresponding to a different commit hash,
+and not corresponding to a release.</p>
+<p>If we now ask for the latest <em>stable</em> data, the data will be downloaded anew.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;latest&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no internet
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The offline data may not be the latest
+</pre></div>
+</div>
+<div class="output text_html"><b title="latest? release">data:</b> <span title="rv3.0=#4fc68c6f0bf20ef7070a82ec534416bf39b836a2">~/text-fabric-data/annotation/banks/tf/0.2</span></div><p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">4fc68c6f0bf20ef7070a82ec534416bf39b836a2</span></code> | <code class="docutils literal notranslate"><span class="pre">v3.0</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> | <code class="docutils literal notranslate"><span class="pre">annotation/banks/tf</span></code></p>
+</div>
+</div>
+</div>
+<div class="section" id="v1-0-a-specific-release">
+<h3><code class="docutils literal notranslate"><span class="pre">v1.0</span></code> a specific release<a class="headerlink" href="#v1-0-a-specific-release" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Look for a specific online release to get data from.</p>
+</div></blockquote>
+<p><strong>When to use</strong></p>
+<blockquote>
+<div><p>When you want to replicate something, and need data from an earlier point in the history.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;v1.0&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no internet
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No online connection
+</pre></div>
+</div>
+<p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</div>
+</div>
+<p>We might try to get version <code class="docutils literal notranslate"><span class="pre">0.2</span></code> from this release.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;v1.0&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no internet
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No online connection
+</pre></div>
+</div>
+<p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</div>
+</div>
+<p>At that early point in the history there is not yet a version <code class="docutils literal notranslate"><span class="pre">0.2</span></code> of the data.</p>
+</div>
+<div class="section" id="a81746c-a-specific-commit">
+<h3><code class="docutils literal notranslate"><span class="pre">a81746c</span></code> a specific commit<a class="headerlink" href="#a81746c-a-specific-commit" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Look for a specific online commit to get data from.</p>
+</div></blockquote>
+<p><strong>When to use</strong></p>
+<blockquote>
+<div><p>When you want to replicate something, and need data from an earlier point in the history, and there is no
+release for that commit.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;a81746c5f9627637db4dae04c2d5348bda9e511a&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no internet
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No online connection
+</pre></div>
+</div>
+<p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="source-and-dest-an-alternative-for-github-and-text-fabric-data">
+<h2><em>source</em> and <em>dest</em>: an alternative for <code class="docutils literal notranslate"><span class="pre">~/github</span></code> and <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code><a class="headerlink" href="#source-and-dest-an-alternative-for-github-and-text-fabric-data" title="Permalink to this headline">¶</a></h2>
+<p>Everything so far uses the hard-wired <code class="docutils literal notranslate"><span class="pre">~/github</span></code> and <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> directories.
+But you can change that:</p>
+<ul class="simple">
+<li><p>pass <em>source</em> as a replacement for <code class="docutils literal notranslate"><span class="pre">~/github</span></code>.</p></li>
+<li><p>pass <em>dest</em> as a replacement for <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code>.</p></li>
+</ul>
+<p><strong>When to use</strong></p>
+<blockquote>
+<div><p>if you do not want to interfere with the <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> directory.</p>
+</div></blockquote>
+<p>Text-Fabric manages the <code class="docutils literal notranslate"><span class="pre">~/text-fabric-data</span></code> directory,
+and if you are experimenting outside Text-Fabric
+you may not want to touch its data directory.</p>
+<blockquote>
+<div><p>if you want to clone data into your <code class="docutils literal notranslate"><span class="pre">~/github</span></code> directory.</p>
+</div></blockquote>
+<p>Normally, TF uses your <code class="docutils literal notranslate"><span class="pre">~/github</span></code> directory as a source of information,
+and never writes into it.
+But if you explicitly pass <code class="docutils literal notranslate"><span class="pre">dest=~/github</span></code>, things change: downloads will
+arrive under <code class="docutils literal notranslate"><span class="pre">~/github</span></code>. Use this with care.</p>
+<blockquote>
+<div><p>if you work with cloned data outside your <code class="docutils literal notranslate"><span class="pre">~/github</span></code> directory,</p>
+</div></blockquote>
+<p>you can let the system look in <em>source</em> instead of <code class="docutils literal notranslate"><span class="pre">~/github</span></code>.</p>
+<p>We customize source and destination directories:</p>
+<ul class="simple">
+<li><p>we put them both under <code class="docutils literal notranslate"><span class="pre">~/Downloads</span></code></p></li>
+<li><p>we give them different names</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MY_GH</span> <span class="o">=</span> <span class="s1">&#39;~/Downloads/repoclones&#39;</span>
+<span class="n">MY_TFD</span> <span class="o">=</span> <span class="s1">&#39;~/Downloads/textbase&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Download a fresh copy of the data to <code class="docutils literal notranslate"><span class="pre">~/Downloads/textbase</span></code> instead.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">MY_GH</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="n">MY_TFD</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	~/Downloads/textbase/annotation/banks/tf not found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no internet
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</div>
+</div>
+<p>Lookup the same data locally.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">MY_GH</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="n">MY_TFD</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	~/Downloads/textbase/annotation/banks/tf not found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no internet
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The requested data is not available offline
+</pre></div>
+</div>
+<p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">False</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</div>
+</div>
+<p>We copy the local github data to the custom location:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
+
+mkdir -p ~/Downloads/repoclones/annotation
+cp -R ~/github/annotation/banks ~/Downloads/repoclones/annotation/banks
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lookup the data in this alternative directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do</span><span class="p">(</span>
+  <span class="n">checkoutRepo</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="n">ORG</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="n">REPO</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">MAIN</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s1">&#39;clone&#39;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">MY_GH</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="n">MY_TFD</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><b title="local github">data:</b> <span title="repo clone offline under ~/Downloads/repoclones">~/Downloads/repoclones/annotation/banks/tf/0.2</span></div><p>commit | release | local | base | subdir
+--- | --- | --- | --- | ---
+<code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> | <code class="docutils literal notranslate"><span class="pre">clone</span></code> | <code class="docutils literal notranslate"><span class="pre">~/Downloads/repoclones</span></code> | <code class="docutils literal notranslate"><span class="pre">annotation/banks/tf</span></code></p>
+</div>
+</div>
+<p>Note that the directory trees under the customised <em>source</em> and <em>dest</em> locations have exactly the same shape as before.</p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>With the help of <code class="docutils literal notranslate"><span class="pre">checkoutRepo()</span></code> you will be able to make local copies of online data in an organized way.</p>
+<p>This will help you when</p>
+<ul class="simple">
+<li><p>you use other people’s data</p></li>
+<li><p>develop your own data</p></li>
+<li><p>share and publish your data</p></li>
+<li><p>go back in history.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./banks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="app.html" title="previous page">The Banks example corpus as app</a>
+    <a class='right-next' id="next-link" href="use.html" title="next page">Use the Banks example corpus</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Roorda<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

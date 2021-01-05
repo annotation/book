@@ -1,0 +1,1451 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relation &#8212; Corpus computing with Text-Fabric</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/tf-small.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quantifiers" href="quantifier.html" />
+    <link rel="prev" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/tf.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Corpus computing with Text-Fabric</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Banks (mini corpus)
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/compose.html">
+   Compose
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/app.html">
+   The Banks example corpus as app
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/repo.html">
+   Getting data from online repos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/use.html">
+   Use the Banks example corpus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../banks/share.html">
+   Share the Banks example corpus
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Uruk Proto-cuneiform Tablets
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="start.html">
+   Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="imagery.html">
+   Imagery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="search.html">
+   Search
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Relation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quantifier.html">
+   Quantifiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hand.html">
+   Hand-coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="steps.html">
+   Steps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="jumps.html">
+   Jumps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="signs.html">
+   Signs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quads.html">
+   Quads
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cases.html">
+   Cases
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/uruk/relation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/annotation/book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/annotation/book/issues/new?title=Issue%20on%20page%20%2Furuk/relation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/annotation/book/master?urlpath=lab/tree/uruk/relation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#search-for-spatial-patterns">
+   Search for spatial patterns
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#relational-patterns-quads">
+   Relational patterns: quads
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next">
+   Next
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <a class="reference internal image-reference" href="../_images/ninologo.png"><img alt="../_images/ninologo.png" class="align-right" src="../_images/ninologo.png" style="width: 150px;" /></a>
+<div class="section" id="relation">
+<h1>Relation<a class="headerlink" href="#relation" title="Permalink to this headline">¶</a></h1>
+<p>You can search for spatial ways that nodes hangs together in text: adjacent, embedded, same starting position, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="kn">from</span> <span class="nn">tf.app</span> <span class="kn">import</span> <span class="n">use</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">use</span><span class="p">(</span><span class="s1">&#39;uruk:clone&#39;</span><span class="p">,</span> <span class="n">checkout</span><span class="o">=</span><span class="s2">&quot;clone&quot;</span><span class="p">,</span> <span class="n">hoist</span><span class="o">=</span><span class="nb">globals</span><span class="p">())</span>
+<span class="c1"># A = use(&#39;uruk&#39;, hoist=globals())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><b title="local github">TF-app:</b> <span title="repo clone offline under ~/github">~/github/annotation/app-uruk/code</span></div><div class="output text_html"><b title="local github">data:</b> <span title="repo clone offline under ~/github">~/github/Nino-cunei/uruk/tf/uruk/1.0</span></div><div class="output text_html"><b>Text-Fabric:</b> <a target="_blank" href="https://annotation.github.io/text-fabric/cheatsheet.html" title="text-fabric-api">Text-Fabric API 8.4.6</a>, <a target="_blank" href="https://github.com/annotation/app-uruk" title="uruk TF-app">app-uruk v3</a>, <a target="_blank" href="https://annotation.github.io/text-fabric/about/searchusage.html" title="Search Templates Introduction and Reference">Search Reference</a><br><b>Data:</b> <a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/about.md" title="provenance of Uruk IV/III: Proto-cuneiform tablets ">URUK</a>, <a target="_blank" href="https://annotation.github.io/text-fabric/writing/.html" title="How TF features represent text">Character table</a>, <a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="URUK feature documentation">Feature docs</a><br><b>Features:</b><br><details><summary><b>Uruk IV/III: Proto-cuneiform tablets </b></summary><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/catalogId.tf">catalogId</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/crossref.tf">crossref</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/damage.tf">damage</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/depth.tf">depth</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/excavation.tf">excavation</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/fragment.tf">fragment</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/fullNumber.tf">fullNumber</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/grapheme.tf">grapheme</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/identifier.tf">identifier</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/modifier.tf">modifier</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/modifierFirst.tf">modifierFirst</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/modifierInner.tf">modifierInner</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/name.tf">name</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/number.tf">number</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/otype.tf">otype</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/period.tf">period</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/prime.tf">prime</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/remarkable.tf">remarkable</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/repeat.tf">repeat</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/srcLn.tf">srcLn</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/srcLnNum.tf">srcLnNum</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/terminal.tf">terminal</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/text.tf">text</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/type.tf">type</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/uncertain.tf">uncertain</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/variant.tf">variant</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/variantOuter.tf">variantOuter</a><br><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/written.tf">written</a><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/comments.tf">comments</a></i></b><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/op.tf">op</a></i></b><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/oslots.tf">oslots</a></i></b><br><b><i><a target="_blank" href="https://github.com/Nino-cunei/uruk/blob/master/docs/transcription.md" title="~/github/Nino-cunei/uruk/tf/uruk/1.0/sub.tf">sub</a></i></b><br></details></div><div class="output text_html"><style>tr.tf.ltr, td.tf.ltr, th.tf.ltr { text-align: left ! important;}
+tr.tf.rtl, td.tf.rtl, th.tf.rtl { text-align: right ! important;}
+@font-face {
+  font-family: "Gentium Plus";
+  src: local('Gentium Plus'), local('GentiumPlus'),
+    url('/server/static/fonts/GentiumPlus-R.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/GentiumPlus-R.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "Ezra SIL";
+  src: local('Ezra SIL'), local('EzraSIL'),
+    url('/server/static/fonts/SILEOT.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SILEOT.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "SBL Hebrew";
+  src: local('SBL Hebrew'), local('SBLHebrew'),
+    url('/server/static/fonts/SBL_Hbrw.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SBL_Hbrw.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "Estrangelo Edessa";
+  src: local('Estrangelo Edessa'), local('EstrangeloEdessa');
+    url('/server/static/fonts/SyrCOMEdessa.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SyrCOMEdessa.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: AmiriQuran;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amiri Quran'), local('AmiriQuran'),
+    url('/server/static/fonts/AmiriQuran.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/AmiriQuran.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: AmiriQuranColored;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amiri Quran Colored'), local('AmiriQuranColored'),
+    url('/server/static/fonts/AmiriQuranColored.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/AmiriQuranColored.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "Santakku";
+  src: local('Santakku'),
+    url('/server/static/fonts/Santakku.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/Santakku.woff?raw=true') format('woff');
+}
+
+@font-face {
+  font-family: "SantakkuM";
+  src: local('SantakkuM'),
+    url('/server/static/fonts/SantakkuM.woff') format('woff'),
+    url('https://github.com/annotation/text-fabric/blob/master/tf/server/static/fonts/SantakkuM.woff?raw=true') format('woff');
+}
+/* bypassing some classical notebook settings */
+div#notebook {
+  line-height: unset;
+}
+/* neutral text */
+.txtn,.txtn a:visited,.txtn a:link {
+    font-family: sans-serif;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* transcription text */
+.txtt,.txtt a:visited,.txtt a:link {
+    font-family: monospace;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* source text */
+.txto,.txto a:visited,.txto a:link {
+    font-family: serif;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* phonetic text */
+.txtp,.txtp a:visited,.txtp a:link {
+    font-family: Gentium, sans-serif;
+    font-size: medium;
+    direction: ltr;
+    unicode-bidi: embed;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* original script text */
+.txtu,.txtu a:visited,.txtu a:link {
+    font-family: Gentium, sans-serif;
+    font-size: medium;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* hebrew */
+.txtu.hbo,.lex.hbo {
+    font-family: "Ezra SIL", "SBL Hebrew", sans-serif;
+    font-size: large;
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+/* syriac */
+.txtu.syc,.lex.syc {
+    font-family: "Estrangelo Edessa", sans-serif;
+    font-size: medium;
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+/* neo aramaic */
+.txtu.cld,.lex.cld {
+    font-family: "CharisSIL-R", sans-serif;
+    font-size: medium;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+/* standard arabic */
+.txtu.ara,.lex.ara {
+    font-family: "AmiriQuran", sans-serif;
+    font-size: large;
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+/* cuneiform */
+.txtu.akk,.lex.akk {
+    font-family: Santakku, sans-serif;
+    font-size: large;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+/* greek */
+.txtu.grc,.lex.grc a:link {
+    font-family: Gentium, sans-serif;
+    font-size: medium;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+a:hover {
+    text-decoration: underline | important;
+    color: #0000ff | important;
+}
+.ltr {
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+.rtl {
+    direction: rtl ! important;
+    unicode-bidi: embed;
+}
+.ubd {
+    unicode-bidi: embed;
+}
+.col {
+   display: inline-block;
+}
+.features {
+    font-family: monospace;
+    font-size: medium;
+    font-weight: bold;
+    color: var(--features);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 2px;
+    margin: 2px;
+    direction: ltr;
+    unicode-bidi: embed;
+    border: var(--meta-width) solid var(--meta-color);
+    border-radius: var(--meta-width);
+}
+.features div,.features span {
+    padding: 0;
+    margin: -2px 0;
+}
+.features .f {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: normal;
+    color: #5555bb;
+}
+.features .xft {
+  color: #000000;
+  background-color: #eeeeee;
+  font-size: medium;
+  margin: 2px 0px;
+}
+.features .xft .f {
+  color: #000000;
+  background-color: #eeeeee;
+  font-size: small;
+  font-weight: normal;
+}
+.tfsechead {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+    color: var(--tfsechead);
+    unicode-bidi: embed;
+    text-align: start;
+}
+.structure {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+    color: var(--structure);
+    unicode-bidi: embed;
+    text-align: start;
+}
+.comments {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-flow: column nowrap;
+}
+.nd, a:link.nd {
+    font-family: sans-serif;
+    font-size: small;
+    color: var(--node);
+    vertical-align: super;
+    direction: ltr ! important;
+    unicode-bidi: embed;
+}
+.lex {
+  color: var(--lex-color);;
+}
+.children,.children.ltr {
+    display: flex;
+    border: 0;
+    background-color: #ffffff;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.children.stretch {
+    align-items: stretch;
+}
+.children.hor {
+    flex-flow: row nowrap;
+}
+.children.hor.wrap {
+    flex-flow: row wrap;
+}
+.children.ver {
+    flex-flow: column nowrap;
+}
+.children.ver.wrap {
+    flex-flow: column wrap;
+}
+.contnr {
+    width: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-flow: column nowrap;
+    background: #ffffff none repeat scroll 0 0;
+    padding:  10px 2px 2px 2px;
+    margin: 16px 2px 2px 2px;
+    border-style: solid;
+    font-size: small;
+}
+.contnr.trm {
+    background-attachment: local;
+}
+.contnr.cnul {
+    padding:  0;
+    margin: 0;
+    border-style: solid;
+    font-size: xx-small;
+}
+.contnr.cnul,.lbl.cnul {
+    border-color: var(--border-color-nul);
+    border-width: var(--border-width-nul);
+    border-radius: var(--border-width-nul);
+}
+.contnr.c0,.lbl.c0 {
+    border-color: var(--border-color0);
+    border-width: var(--border-width0);
+    border-radius: var(--border-width0);
+}
+.contnr.c1,.lbl.c1 {
+    border-color: var(--border-color1);
+    border-width: var(--border-width1);
+    border-radius: var(--border-width1);
+}
+.contnr.c2,.lbl.c2 {
+    border-color: var(--border-color2);
+    border-width: var(--border-width2);
+    border-radius: var(--border-width2);
+}
+.contnr.c3,.lbl.c3 {
+    border-color: var(--border-color3);
+    border-width: var(--border-width3);
+    border-radius: var(--border-width3);
+}
+.contnr.c4,.lbl.c4 {
+    border-color: var(--border-color4);
+    border-width: var(--border-width4);
+    border-radius: var(--border-width4);
+}
+span.plain {
+    display: inline-block;
+    white-space: pre-wrap;
+}
+.plain {
+    background-color: #ffffff;
+}
+.plain.l,.contnr.l,.contnr.l>.lbl {
+    border-left-style: dotted
+}
+.plain.r,.contnr.r,.contnr.r>.lbl {
+    border-right-style: dotted
+}
+.plain.lno,.contnr.lno,.contnr.lno>.lbl {
+    border-left-style: none
+}
+.plain.rno,.contnr.rno,.contnr.rno>.lbl {
+    border-right-style: none
+}
+.plain.l {
+    padding-left: 4px;
+    margin-left: 2px;
+    border-width: var(--border-width-plain);
+}
+.plain.r {
+    padding-right: 4px;
+    margin-right: 2px;
+    border-width: var(--border-width-plain);
+}
+.lbl {
+    font-family: monospace;
+    margin-top: -24px;
+    margin-left: 20px;
+    background: #ffffff none repeat scroll 0 0;
+    padding: 0 6px;
+    border-style: solid;
+    display: block;
+    color: var(--label)
+}
+.lbl.trm {
+    background-attachment: local;
+    margin-top: 2px;
+    margin-left: 2px;
+    padding: 2px 2px;
+    border-style: none;
+}
+.lbl.cnul {
+    font-size: xx-small;
+}
+.lbl.c0 {
+    font-size: small;
+}
+.lbl.c1 {
+    font-size: small;
+}
+.lbl.c2 {
+    font-size: medium;
+}
+.lbl.c3 {
+    font-size: medium;
+}
+.lbl.c4 {
+    font-size: large;
+}
+.occs, a:link.occs {
+    font-size: small;
+}
+
+/* PROVENANCE */
+
+div.prov {
+	margin: 40px;
+	padding: 20px;
+	border: 2px solid var(--fog-rim);
+}
+div.pline {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: baseline;
+}
+div.p2line {
+	margin-left: 2em;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: baseline;
+}
+div.psline {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: baseline;
+	background-color: var(--gold-mist-back);
+}
+div.pname {
+	flex: 0 0 5rem;
+	font-weight: bold;
+}
+div.pval {
+    flex: 1 1 auto;
+}
+
+:root {
+	--node:               hsla(120, 100%,  20%, 1.0  );
+	--label:              hsla(  0, 100%,  20%, 1.0  );
+	--tfsechead:          hsla(  0, 100%,  25%, 1.0  );
+	--structure:          hsla(120, 100%,  25%, 1.0  );
+	--features:           hsla(  0,   0%,  30%, 1.0  );
+  --text-color:         hsla( 60,  80%,  10%, 1.0  );
+  --lex-color:          hsla(220,  90%,  60%, 1.0  );
+  --meta-color:         hsla(  0,   0%,  90%, 0.7  );
+  --meta-width:         3px;
+  --border-color-nul:   hsla(  0,   0%,  90%, 0.5  );
+  --border-color0:      hsla(  0,   0%,  90%, 0.9  );
+  --border-color1:      hsla(  0,   0%,  80%, 0.9  );
+  --border-color2:      hsla(  0,   0%,  70%, 0.9  );
+  --border-color3:      hsla(  0,   0%,  80%, 0.8  );
+  --border-color4:      hsla(  0,   0%,  60%, 0.9  );
+  --border-width-nul:   2px;
+  --border-width0:      2px;
+  --border-width1:      3px;
+  --border-width2:      4px;
+  --border-width3:      6px;
+  --border-width4:      5px;
+  --border-width-plain: 2px;
+}
+.hl {
+  background-color: var(--hl-strong);
+}
+span.hl {
+	background-color: var(--hl-strong);
+	border-width: 0;
+	border-radius: 2px;
+	border-style: solid;
+}
+div.contnr.hl,div.lbl.hl {
+  background-color: var(--hl-strong);
+}
+div.contnr.hl {
+  border-color: var(--hl-rim) ! important;
+	border-width: 4px ! important;
+}
+
+span.hlbx {
+	border-color: var(--hl-rim);
+	border-width: 4px ! important;
+	border-style: solid;
+	border-radius: 6px;
+  padding: 4px;
+  margin: 4px;
+}
+
+span.plain {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+:root {
+	--hl-strong:        hsla( 60, 100%,  70%, 0.9  );
+	--hl-rim:           hsla( 55,  80%,  50%, 1.0  );
+}
+.contnr.cluster {
+    flex-flow: row wrap;
+    border: 0;
+}
+.meta .features {
+    background-color: #ffeedd;
+}
+.lbl.clusterb,.lbl.clustere {
+    padding:  0.5em 0.1em 0.1em 0.1em;
+    margin: 0.8em 0.1em 0.1em 0.1em;
+    color: #888844;
+    font-size: x-small;
+}
+.lbl.clusterb {
+    border-left: 0.3em solid #cccc99;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 1rem;
+}
+.lbl.clustere {
+    border-left: 0;
+    border-right: 0.3em solid #cccc99;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 1rem;
+}
+.op {
+    padding:  0.5em 0.1em 0.1em 0.1em;
+    margin: 0.8em 0.1em 0.1em 0.1em;
+    font-family: monospace;
+    font-size: x-large;
+    font-weight: bold;
+}
+.period {
+    font-family: monospace;
+    font-size: medium;
+    font-weight: bold;
+    color: #0000bb;
+}
+.excavation {
+    font-family: monospace;
+    font-size: medium;
+    font-style: italic;
+    color: #779900;
+}
+</style></div><div class="output text_html"><div><b>Text-Fabric API:</b> names <a target="_blank" href="https://annotation.github.io/text-fabric/cheatsheet.html" title="doc">N F E L T S C TF</a> directly usable</div><hr></div><div class="output text_html"><b title="local github">data:</b> <span title="repo clone offline under ~/github">~/github/Nino-cunei/uruk/sources/cdli/images</span></div><div class="output text_html">Found 2095 ideograph linearts<br></div><div class="output text_html">Found 2724 tablet linearts<br></div><div class="output text_html">Found 5495 tablet photos<br></div></div>
+</div>
+<div class="section" id="search-for-spatial-patterns">
+<h2>Search for spatial patterns<a class="headerlink" href="#search-for-spatial-patterns" title="Permalink to this headline">¶</a></h2>
+<p>A few words on the construction of search templates.</p>
+<p>The idea is that you mimick the things you are looking for
+in your search template.
+Embedded things are mimicked by indentation.</p>
+<p>Let’s search for a line with a case in it that is not further divided,
+in which there is a numeral and an ideograph.</p>
+<p>Here is our first attempt, and we show the first tablet only.
+Note that you can have comments in a search template.
+Lines that start with <code class="docutils literal notranslate"><span class="pre">#</span></code> are ignored.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">line</span>
+<span class="s1">  case terminal=1</span>
+<span class="si">% o</span><span class="s1">rder is not important</span>
+<span class="s1">    sign type=ideograph</span>
+<span class="s1">    sign type=numeral</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.35s 10673 results
+</pre></div>
+</div>
+</div>
+</div>
+<p>First a glance at the first 3 items in tabular view.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">showGraphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table><tr class="tf ltr"><th class="tf ltr">n</th><th class="tf ltr">p</th><th class="tf ltr">line</th><th class="tf">case</th><th class="tf">sign</th><th class="tf">sign</th></tr>
+<tr class="tf ltr"><td class="tf ltr">1</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain hl" >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain " >3(N01)</span> <span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain hl" >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain " >3(N01)</span> <span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >N</span> </span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">2</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span><span class="plain " >3(N01)</span> <span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span><span class="plain " >3(N01)</span> <span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span></span></td></tr></table></div></div>
+</div>
+<p>Ah, we were still in condensed mode.</p>
+<p>For this query the table is more perspicuous in normal mode, so we tell not to condense.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">condensed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">showGraphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table><tr class="tf ltr"><th class="tf ltr">n</th><th class="tf ltr">p</th><th class="tf ltr">line</th><th class="tf">case</th><th class="tf">sign</th><th class="tf">sign</th></tr>
+<tr class="tf ltr"><td class="tf ltr">1</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain hl" >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain " >3(N01)</span> <span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain hl" >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain " >3(N01)</span> <span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >N</span> </span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">2</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span><span class="plain " >3(N01)</span> <span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span><span class="plain " >3(N01)</span> <span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">3</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">4</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain hl" >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain " >3(N01)</span> <span class="plain " >KASZ~b</span> <span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain hl" >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain " >3(N01)</span> <span class="plain " >KASZ~b</span> <span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >N</span> </span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">5</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~b</span> <span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~b</span> <span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">6</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span><span class="plain " >KASZ~b</span> <span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span><span class="plain " >KASZ~b</span> <span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">7</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain " >3(N01)</span> <span class="plain " >KASZ~b</span> <span class="plain " >NUN~a</span> <span class="plain   hlbx" ><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span><span class="plain   hl" ><span class="plain hl" >KASZ~a</span> </span><span class="plain " >GI</span> </span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span><span class="plain   hl" ><span class="plain hl" >KASZ~a</span> </span><span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >KASZ~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span></span></td></tr></table></div></div>
+</div>
+<p>Now the results on the first tablet, condensed by line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">condenseType</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class='features'><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="children hor wrap "><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">N</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> <div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N14)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">KASZ~b</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KASZ~b.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-kasz-b.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NUN~a</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NUN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-nun-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class='features'><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/KASZ~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-kasz-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GI.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gi.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div></div>
+</div>
+<p>The order between the two signs is not defined by the template,
+despite the fact that the line with the ideograph
+precedes the line with the numeral.
+Results may have the numeral and the ideograph in any order.</p>
+<p>In fact, the highlights above represent multiple results.
+If a case has say 2 numerals and 3 ideographs, there are 6 possible
+pairs.</p>
+<p>By default, results are shown in <em>condensed</em> mode.
+That means that results are shown per tablet, and on the result tablets
+everything that is in some result is being highlighted.</p>
+<p>It is also possible to see the uncondensed results.
+That gives you an exact picture of each real result constellation.</p>
+<p>In order to illustrate the difference, we focus on one tablet and one case.
+This case has 3 numerals and 2 ideographs, so we expect 6 results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">tablet catalogId=P448702</span>
+<span class="s1">  line</span>
+<span class="s1">    case terminal=1 number=2a</span>
+<span class="s1">      sign type=ideograph</span>
+<span class="s1">      sign type=numeral</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.31s 6 results
+</pre></div>
+</div>
+</div>
+</div>
+<p>We show them condensed (by default), so we expect 1 line with all ideographs and numerals in case <code class="docutils literal notranslate"><span class="pre">2a'</span></code> highlighted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">showGraphics</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">condenseType</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702">P448702</a></div><div class=" children"><div class="contnr c4 trm   " ><div class="lbl c4 trm " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P448702</span></span></div><div class='features'><span class="name " title="name">Anonymous 448702</span><span class="period " title="period">uruk-iii</span><span class="catalogid xft" ><span class="f">catalogId=</span>P448702</span></div></div></div></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2</span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2a</span><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="children hor wrap "><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">N</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> <div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N14)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">KASZ~b</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NUN~a</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2b</span><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>2</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702">P448702</a></div><div class=" children"><div class="contnr c4 trm   " ><div class="lbl c4 trm " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P448702</span></span></div><div class='features'><span class="name " title="name">Anonymous 448702</span><span class="period " title="period">uruk-iii</span><span class="catalogid xft" ><span class="f">catalogId=</span>P448702</span></div></div></div></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2</span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2a</span><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">N</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> <div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">2(N14)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">KASZ~b</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NUN~a</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2b</span><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>3</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702">P448702</a></div><div class=" children"><div class="contnr c4 trm   " ><div class="lbl c4 trm " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P448702</span></span></div><div class='features'><span class="name " title="name">Anonymous 448702</span><span class="period " title="period">uruk-iii</span><span class="catalogid xft" ><span class="f">catalogId=</span>P448702</span></div></div></div></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2</span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2a</span><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">N</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> <div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N14)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">KASZ~b</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NUN~a</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2b</span><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>4</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702">P448702</a></div><div class=" children"><div class="contnr c4 trm   " ><div class="lbl c4 trm " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P448702</span></span></div><div class='features'><span class="name " title="name">Anonymous 448702</span><span class="period " title="period">uruk-iii</span><span class="catalogid xft" ><span class="f">catalogId=</span>P448702</span></div></div></div></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2</span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2a</span><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="children hor wrap "><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">N</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> <div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N14)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~b</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">NUN~a</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2b</span><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>5</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702">P448702</a></div><div class=" children"><div class="contnr c4 trm   " ><div class="lbl c4 trm " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P448702</span></span></div><div class='features'><span class="name " title="name">Anonymous 448702</span><span class="period " title="period">uruk-iii</span><span class="catalogid xft" ><span class="f">catalogId=</span>P448702</span></div></div></div></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2</span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2a</span><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">N</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> <div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">2(N14)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~b</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">NUN~a</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2b</span><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>6</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702">P448702</a></div><div class=" children"><div class="contnr c4 trm   " ><div class="lbl c4 trm " ><span class="nd">tablet</span> <span class="txtu"><span class="tfsechead">P448702</span></span></div><div class='features'><span class="name " title="name">Anonymous 448702</span><span class="period " title="period">uruk-iii</span><span class="catalogid xft" ><span class="f">catalogId=</span>P448702</span></div></div></div></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2</span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2a</span><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">N</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> <div class='features'><span class="type xft" ><span class="f">type=</span>uncertain</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N14)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~b</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">NUN~a</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class='features'><span class="number xft" ><span class="f">number=</span>2b</span><span class="terminal xft" ><span class="f">terminal=</span>1</span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>numeral</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div><div class='features'><span class="type xft" ><span class="f">type=</span>ideograph</span></div></div></div></div></div></div></div></div></div>
+</div>
+<p>Now the same results in uncondensed mode. Expect 6 times the same line with
+different highlighted pairs of signs.</p>
+<p>Note that we can apply different highlight colors to different parts of the result.
+The words in the pair are member 4 and 5.</p>
+<p>The members that we do not map, will not be highlighted.
+The members that we map to the empty string will be highlighted with the default color.</p>
+<p><strong>NB:</strong> Choose your colors from the
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">CSS specification</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">displaySetup</span><span class="p">(</span><span class="n">condensed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">skipCols</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">colorMap</span><span class="o">=</span><span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;magenta&#39;</span><span class="p">},</span> <span class="n">showGraphics</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">condenseType</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span> <span class="n">queryFeatures</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   hl"  style="background-color: magenta;" ><div class="lbl c0 trm hl"  style="background-color: magenta;" ><span class="txtu"><span title="atf">N</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N14)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   hl"  style="background-color: cyan;" ><div class="lbl c0 trm hl"  style="background-color: cyan;" ><span class="txtu"><span title="atf">KASZ~b</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NUN~a</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>2</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">N</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   hl"  style="background-color: magenta;" ><div class="lbl c0 trm hl"  style="background-color: magenta;" ><span class="txtu"><span title="atf">2(N14)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   hl"  style="background-color: cyan;" ><div class="lbl c0 trm hl"  style="background-color: cyan;" ><span class="txtu"><span title="atf">KASZ~b</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NUN~a</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>3</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">N</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N14)</span></span></div></div><div class="contnr c0 trm   hl"  style="background-color: magenta;" ><div class="lbl c0 trm hl"  style="background-color: magenta;" ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   hl"  style="background-color: cyan;" ><div class="lbl c0 trm hl"  style="background-color: cyan;" ><span class="txtu"><span title="atf">KASZ~b</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NUN~a</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>4</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   hl"  style="background-color: magenta;" ><div class="lbl c0 trm hl"  style="background-color: magenta;" ><span class="txtu"><span title="atf">N</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N14)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~b</span></span></div></div><div class="contnr c0 trm   hl"  style="background-color: cyan;" ><div class="lbl c0 trm hl"  style="background-color: cyan;" ><span class="txtu"><span title="atf">NUN~a</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>5</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">N</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   hl"  style="background-color: magenta;" ><div class="lbl c0 trm hl"  style="background-color: magenta;" ><span class="txtu"><span title="atf">2(N14)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~b</span></span></div></div><div class="contnr c0 trm   hl"  style="background-color: cyan;" ><div class="lbl c0 trm hl"  style="background-color: cyan;" ><span class="txtu"><span title="atf">NUN~a</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>6</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">N</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N14)</span></span></div></div><div class="contnr c0 trm   hl"  style="background-color: magenta;" ><div class="lbl c0 trm hl"  style="background-color: magenta;" ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~b</span></span></div></div><div class="contnr c0 trm   hl"  style="background-color: cyan;" ><div class="lbl c0 trm hl"  style="background-color: cyan;" ><span class="txtu"><span title="atf">NUN~a</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div></div></div></div></div></div></div></div></div>
+</div>
+<p>Color mapping works best for uncondensed results. If you condense results, some nodes may occupy
+different positions in different results. It is unpredictable which color will be used
+for such nodes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">condensed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><b>line</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   hl"  style="background-color: cyan;" ><div class="lbl c0 trm hl"  style="background-color: cyan;" ><span class="txtu"><span title="atf">N</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   hl"  style="background-color: magenta;" ><div class="lbl c0 trm hl"  style="background-color: magenta;" ><span class="txtu"><span title="atf">2(N14)</span></span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">KASZ~b</span></span></div></div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="txtu"><span title="atf">NUN~a</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div></div></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">displayReset</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can enforce order.
+We modify the template a little to state a
+relational condition, namely that the ideograph follows the numeral.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">tablet catalogId=P448702</span>
+<span class="s1">  line</span>
+<span class="s1">    case terminal=1 number=2a</span>
+<span class="s1">      sign type=ideograph</span>
+<span class="s1">      &gt; sign type=numeral</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">condensed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showGraphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.27s 6 results
+</pre></div>
+</div>
+<div class="output text_html"><table><tr class="tf ltr"><th class="tf ltr">n</th><th class="tf ltr">p</th><th class="tf ltr">tablet</th><th class="tf">line</th><th class="tf">case</th><th class="tf">sign</th><th class="tf">sign</th></tr>
+<tr class="tf ltr"><td class="tf ltr">1</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="txtu "><span class="tfsechead">P448702</span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain hl" >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain " >3(N01)</span> <span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain hl" >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain " >3(N01)</span> <span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >N</span> </span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">2</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="txtu "><span class="tfsechead">P448702</span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span><span class="plain " >3(N01)</span> <span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span><span class="plain " >3(N01)</span> <span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">3</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="txtu "><span class="tfsechead">P448702</span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">4</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="txtu "><span class="tfsechead">P448702</span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain hl" >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain " >3(N01)</span> <span class="plain " >KASZ~b</span> <span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain hl" >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain " >3(N01)</span> <span class="plain " >KASZ~b</span> <span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >N</span> </span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">5</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="txtu "><span class="tfsechead">P448702</span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~b</span> <span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~b</span> <span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >2(N14)</span> </span></span></td></tr>
+<tr class="tf ltr"><td class="tf ltr">6</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="txtu "><span class="tfsechead">P448702</span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span><span class="plain " >KASZ~b</span> <span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span><span class="plain " >KASZ~b</span> <span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span></span></td></tr></table></div></div>
+</div>
+<p>Still six results.
+No wonder, because the case has first three numerals in a row and then 2 ideographs.</p>
+<p>Do you want the ideograph and the numeral to be <em>adjacent</em> as well?
+We only have to add 1 character to the template to make it happen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">tablet catalogId=P448702</span>
+<span class="s1">  line</span>
+<span class="s1">    case terminal=1 number=2a</span>
+<span class="s1">      sign type=ideograph</span>
+<span class="s1">      :&gt; sign type=numeral</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.29s 1 result
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">condensed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showGraphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table><tr class="tf ltr"><th class="tf ltr">n</th><th class="tf ltr">p</th><th class="tf ltr">tablet</th><th class="tf">line</th><th class="tf">case</th><th class="tf">sign</th><th class="tf">sign</th></tr>
+<tr class="tf ltr"><td class="tf ltr">1</td><td class="tf ltr"><span class="tfsechead ltr"><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></span></td><td class="tf ltr"><span class=" ubd"><span class="txtu "><span class="tfsechead">P448702</span></span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span><span class="txtu "><span title="number">2b</span><span title="prime">'</span></span><span class="plain " >3(N01)</span> <span class="plain " >KASZ~a</span> <span class="plain " >GI</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hlbx" ><span class="txtu "><span title="number">2a</span><span title="prime">'</span></span><span class="plain " >[<span class="plain " >N</span>]</span> <span class="plain " >2(N14)</span> <span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span><span class="plain " >NUN~a</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >KASZ~b</span> </span></span></td><td class="tf ltr"><span class=" ubd"><span class="plain   hl" ><span class="plain hl" >3(N01)</span> </span></span></td></tr></table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">displaySetup</span><span class="p">(</span>
+    <span class="n">condensed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">skipCols</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="n">colorMap</span><span class="o">=</span><span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;magenta&#39;</span><span class="p">},</span>
+    <span class="n">showGraphics</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">condenseType</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span> <span class="n">queryFeatures</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">condensed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P448702" title="to CDLI main page for this tablet" sec="P448702 obverse:1:2">P448702 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">case</span> <span class="txtu"><span title="number">2a</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">N</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">2(N14)</span></span></div></div><div class="contnr c0 trm   hl"  style="background-color: magenta;" ><div class="lbl c0 trm hl"  style="background-color: magenta;" ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   hl"  style="background-color: cyan;" ><div class="lbl c0 trm hl"  style="background-color: cyan;" ><span class="txtu"><span title="atf">KASZ~b</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">NUN~a</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">case</span> <span class="txtu"><span title="number">2b</span><span title="prime">'</span></span></div><div class="children ver False "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">3(N01)</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">KASZ~a?</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="txtu"><span title="atf">GI</span></span></div></div></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">displayReset</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By now it pays off to study the possibilities of
+<a class="reference external" href="https://annotation.github.io/text-fabric/Use/Search/#search-templates">search templates</a>.</p>
+<p>If you want a reminder of all possible spatial relationships between nodes, you can call it up
+here in your notebook:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span><span class="o">.</span><span class="n">relationsLegend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      = left equal to right (as node)
+                      # left unequal to right (as node)
+                      &lt; left before right (in canonical node ordering)
+                      &gt; left after right (in canonical node ordering)
+                     == left occupies same slots as right
+                     &amp;&amp; left has overlapping slots with right
+                     ## left and right do not have the same slot set
+                     || left and right do not have common slots
+                     [[ left embeds right
+                     ]] left embedded in right
+                     &lt;&lt; left completely before right
+                     &gt;&gt; left completely after right
+                     =: left and right start at the same slot
+                     := left and right end at the same slot
+                     :: left and right start and end at the same slot
+                     &lt;: left immediately before right
+                     :&gt; left immediately after right
+                    =k: left and right start at k-nearly the same slot
+                    :k= left and right end at k-nearly the same slot
+                    :k: left and right start and end at k-near slots
+                    &lt;k: left k-nearly before right
+                    :k&gt; left k-nearly after right
+                    .f. left.f = right.f
+                  .f=g. left.f = right.g
+                .f~r~g. left.f matches right.g
+                  .f#g. left.f # right.g
+                  .f&gt;g. left.f &gt; right.g
+                  .f&lt;g. left.f &gt; right.g
+             -comments&gt; edge feature &quot;comments&quot;
+             &lt;comments- edge feature &quot;comments&quot; (opposite direction)
+             &lt;comments&gt; edge feature &quot;comments&quot; (either direction)
+                   -op&gt; edge feature &quot;op&quot; with value specification allowed
+                   &lt;op- edge feature &quot;op&quot; with value specification allowed (opposite direction)
+                   &lt;op&gt; edge feature &quot;op&quot; with value specification allowed (either direction)
+                  -sub&gt; edge feature &quot;sub&quot;
+                  &lt;sub- edge feature &quot;sub&quot; (opposite direction)
+                  &lt;sub&gt; edge feature &quot;sub&quot; (either direction)
+The warp feature &quot;oslots&quot; cannot be used in searches.
+One of the above relations on nodes and/or slots will suit you better.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="relational-patterns-quads">
+<h2>Relational patterns: quads<a class="headerlink" href="#relational-patterns-quads" title="Permalink to this headline">¶</a></h2>
+<p>Quads are compositions of signs by means of <em>operators</em>, such as <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span></code>.
+The operators are coded as an <em>edge</em> feature with values. The <code class="docutils literal notranslate"><span class="pre">op</span></code>-edges are between the signs/quads that are combined,
+and the values of the <code class="docutils literal notranslate"><span class="pre">op</span></code> edges are the names of the operators in question.</p>
+<p>Which operators do we have?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">freq</span><span class="p">)</span> <span class="ow">in</span> <span class="n">E</span><span class="o">.</span><span class="n">op</span><span class="o">.</span><span class="n">freqList</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">op</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">freq</span><span class="si">:</span><span class="s1">&gt;5</span><span class="si">}</span><span class="s1">x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x :  2346x
+. :  1042x
+&amp; :   222x
++ :   200x
+</pre></div>
+</div>
+</div>
+</div>
+<p>Between how many sign pairs do we have an operator?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">sign</span>
+<span class="s1">-op&gt; sign</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.14s 3642 results
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lets specifically ask for the <code class="docutils literal notranslate"><span class="pre">x</span></code> operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">sign</span>
+<span class="s1">-op=x&gt; sign</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.12s 2238 results
+</pre></div>
+</div>
+</div>
+</div>
+<p>Less than expected?</p>
+<p>We must not forget the combinations between quads and between quads and signs.</p>
+<p>We write a function that gives all pairs of sign/quads connected by a specific operator.</p>
+<p>This is a fine illustration of how you can use programming to compose search templates,
+instead of writing them out yourself.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getCombi</span><span class="p">(</span><span class="n">op</span><span class="p">):</span>
+    <span class="n">types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;sign&#39;</span><span class="p">,</span> <span class="s1">&#39;quad&#39;</span><span class="p">)</span>
+    <span class="n">allResults</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">type1</span> <span class="ow">in</span> <span class="n">types</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">type2</span> <span class="ow">in</span> <span class="n">types</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="si">{</span><span class="n">type1</span><span class="si">}</span><span class="s1"></span>
+<span class="s1">-op</span><span class="si">{</span><span class="n">op</span><span class="si">}</span><span class="s1">&gt; </span><span class="si">{</span><span class="n">type2</span><span class="si">}</span><span class="s1"></span>
+<span class="s1">&#39;&#39;&#39;</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">:</span><span class="s1">&gt;5</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">type1</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">op</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">type2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">allResults</span> <span class="o">+=</span> <span class="n">results</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">allResults</span><span class="p">)</span><span class="si">:</span><span class="s1">&gt;5</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">op</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can count all combinations with <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getCombi</span><span class="p">(</span><span class="s1">&#39;=x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 2238 sign =x sign
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  105 sign =x quad
+    3 quad =x sign
+    0 quad =x quad
+ 2346 =x
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getCombi</span><span class="p">(</span><span class="s1">&#39;=.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  985 sign =. sign
+   43 sign =. quad
+   14 quad =. sign
+    0 quad =. quad
+ 1042 =.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getCombi</span><span class="p">(</span><span class="s1">&#39;=&amp;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  220 sign =&amp; sign
+    1 sign =&amp; quad
+    0 quad =&amp; sign
+    1 quad =&amp; quad
+  222 =&amp;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getCombi</span><span class="p">(</span><span class="s1">&#39;=+&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  199 sign =+ sign
+    0 sign =+ quad
+    0 quad =+ sign
+    1 quad =+ quad
+  200 =+
+</pre></div>
+</div>
+</div>
+</div>
+<p>In exact agreement with the results of <code class="docutils literal notranslate"><span class="pre">E.op.freqList()</span></code> above.
+But we are more flexible!</p>
+<p>We can ask for more operators at the same time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getCombi</span><span class="p">(</span><span class="s1">&#39;=x|+&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 2437 sign =x|+ sign
+  105 sign =x|+ quad
+    3 quad =x|+ sign
+    1 quad =x|+ quad
+ 2546 =x|+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">getCombi</span><span class="p">(</span><span class="s1">&#39;~[^a-z]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1404 sign ~[^a-z] sign
+   44 sign ~[^a-z] quad
+   14 quad ~[^a-z] sign
+    2 quad ~[^a-z] quad
+ 1464 ~[^a-z]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we zoom in on the rare cases where the operator is <code class="docutils literal notranslate"><span class="pre">x</span></code> used between a quad and a sign.
+We want to see the show the lines where they occur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">line</span>
+<span class="s1">  quad</span>
+<span class="s1">  -op=x&gt; sign</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">withNodes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">showGraphics</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">condenseType</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0.10s 3 results
+</pre></div>
+</div>
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002264" title="to CDLI main page for this tablet" sec="P002264 obverse:1:1">P002264 obverse:1:1</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:244724</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:210220</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">67704</span> <span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:210220</span> <span class="txtu"><span title="type">?</span></span></div> </div><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad:141950</span></div><div class="children hor wrap "><div class="contnr c1    hl" ><div class="lbl c1  hl" ><span class="nd">quad:141951</span></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">67705</span> <span class="txtu"><span title="atf">GI</span></span></div></div><div class="op">&</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">67706</span> <span class="txtu"><span title="atf">GI</span></span></div></div></div></div><div class="op">x</div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="nd">67707</span> <span class="txtu"><span title="atf">SZE3</span></span></div></div></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">67708</span> <span class="txtu"><span title="atf">UR2</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/UR2.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ur2.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:210221</span> <span class="txtu"><span title="type">?</span></span></div></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">67709</span> <span class="txtu"><span title="atf">...</span></span></div></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:210221</span> <span class="txtu"><span title="type">?</span></span></div> </div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>2</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002624" title="to CDLI main page for this tablet" sec="P002624 obverse:2:3">P002624 obverse:2:3</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:255152</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad:143120</span></div><div class="children hor wrap "><div class="contnr c1    hl" ><div class="lbl c1  hl" ><span class="nd">quad:143121</span></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110687</span> <span class="txtu"><span title="atf">GI</span></span></div></div><div class="op">&</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110688</span> <span class="txtu"><span title="atf">GI</span></span></div></div></div></div><div class="op">x</div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="nd">110689</span> <span class="txtu"><span title="atf">SZE3</span></span></div></div></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110690</span> <span class="txtu"><span title="atf">3(N57)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N57).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n57).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>3</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P004659" title="to CDLI main page for this tablet" sec="P004659 obverse:1:2">P004659 obverse:1:2</a></div><div class=" children"><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:260576</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131407</span> <span class="txtu"><span title="atf">1(N48)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N48).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n48).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131408</span> <span class="txtu"><span title="atf">8(N34)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/8(N34).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-8(n34).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">quad:143672</span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|(GI&amp;GI)xGISZ@t|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-q(gi(e)gi)xgisz(a)tq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div><div class="children hor wrap "><div class="contnr c1    hl" ><div class="lbl c1  hl" ><span class="nd">quad:143673</span></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131409</span> <span class="txtu"><span title="atf">GI</span></span></div></div><div class="op">&</div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131410</span> <span class="txtu"><span title="atf">GI</span></span></div></div></div></div><div class="op">x</div><div class="contnr c0 trm   hl" ><div class="lbl c0 trm hl" ><span class="nd">131411</span> <span class="txtu"><span title="atf">GISZ@t</span></span></div></div></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131412</span> <span class="txtu"><span title="atf">ZATU659#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU659.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu659.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131413</span> <span class="txtu"><span title="atf">USZ~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/USZ~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-usz-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131414</span> <span class="txtu"><span title="atf">GU4#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GU4.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gu4.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div>
+</div>
+<p>Hint: if you want to see where these lines come from, hover over the line indicator, or click on it.</p>
+<p>Alternatively, you can set the condense type to tablet.
+And note that we have set the base type to <code class="docutils literal notranslate"><span class="pre">quad</span></code>, so that the pretty display does not unravel the quads.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">withNodes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">showGraphics</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">condenseType</span><span class="o">=</span><span class="s2">&quot;tablet&quot;</span><span class="p">,</span> <span class="n">baseTypes</span><span class="o">=</span><span class="s2">&quot;quad&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><b>result</b> <i>1</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002264" title="to CDLI main page for this tablet" sec="P002264">P002264</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet:146811</span> <span class="txtu"><span class="tfsechead">P002264</span></span></div><div class='features'><span class="name " title="name">IM 023435,19</span><span class="period " title="period">uruk-iii</span><span class="excavation " title="excavation">W 15771,h</span></div><div class="children ver  "><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">comment:176501</span> <span class="txtu"><span title="type">meta</span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">67703</span> <span class="txtu"><span title="atf"></span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face:154869</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column:186837</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">line:244724</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:210220</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:210220</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div> </div><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">quad:141950</span> <span class="txtu"><span class="plain   " ><span class="plain " >|<span class="plain hl" >(<span class="plain " >GI</span>&<span class="plain " >GI</span>)</span>x<span class="plain hl" >SZE3</span>|</span> </span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">67708</span> <span class="txtu"><span title="atf">UR2</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/UR2.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ur2.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:210221</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:210221</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:244725</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">quad:141952</span> <span class="txtu"><span class="plain   " ><span class="plain " >|<span class="plain " >SILA3~a</span>x<span class="plain " >DUG~a</span>|</span>  <a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|SILA3~axDUG~a|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qsila3-axdug-aq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|SILA3~axDUG~a|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qsila3-axdug-aq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">67712</span> <span class="txtu"><span title="atf">MEN~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/MEN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-men-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">67713</span> <span class="txtu"><span title="atf">SUKKAL#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SUKKAL.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sukkal.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">67714</span> <span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">67715</span> <span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:210222</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:210222</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div> </div></div></div></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>2</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P002624" title="to CDLI main page for this tablet" sec="P002624">P002624</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet:148296</span> <span class="txtu"><span class="tfsechead">P002624</span></span></div><div class='features'><span class="name " title="name">W 17480,b</span><span class="period " title="period">uruk-iii</span><span class="excavation " title="excavation">W 17480,b</span></div><div class="children ver  "><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">comment:178317</span> <span class="txtu"><span title="type">meta</span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110673</span> <span class="txtu"><span title="atf"></span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face:157130</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column:190707</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:255146</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110674</span> <span class="txtu"><span title="atf">TUM~b#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/TUM~b.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-tum-b.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:220130</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:220130</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:255147</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110676</span> <span class="txtu"><span title="atf">SU~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SU~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-su-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:220131</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:220131</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:255148</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110678</span> <span class="txtu"><span title="atf">PIRIG~b1</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/PIRIG~b1.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-pirig-b1.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110679</span> <span class="txtu"><span title="atf">X</span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:255149</span> <span class="txtu"><span title="number">4</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110680</span> <span class="txtu"><span title="atf">NA2~a#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/NA2~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-na2-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:220132</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:220132</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div> </div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column:190708</span> <span class="txtu"><span title="number">2</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:255150</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110682</span> <span class="txtu"><span title="atf">RU#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/RU.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-ru.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:220133</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:220133</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div> </div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:255151</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">quad:143119</span> <span class="txtu"><span class="plain   " ><span class="plain " >|<span class="plain " >BU~b</span>.<span class="plain " >NA2~a</span>|</span>  <a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|BU~b.NA2~a|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qbu-b(d)na2-aq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|BU~b.NA2~a|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-qbu-b(d)na2-aq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110686</span> <span class="txtu"><span title="atf">3(N57)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N57).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n57).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">line:255152</span> <span class="txtu"><span title="number">3</span></span></div><div class="children hor  "><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">quad:143120</span> <span class="txtu"><span class="plain   " ><span class="plain " >|<span class="plain hl" >(<span class="plain " >GI</span>&<span class="plain " >GI</span>)</span>x<span class="plain hl" >SZE3</span>|</span> </span></span></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110690</span> <span class="txtu"><span title="atf">3(N57)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N57).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n57).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column:190709</span> <span class="txtu"><span title="number">3</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:255153</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:220134</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:220134</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">110692</span> <span class="txtu"><span title="atf">X</span></span></div></div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:220135</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:220135</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div> </div></div></div></div></div></div></div></div></div></div></div><div class="output text_html"><p><b>result</b> <i>3</i></p></div><div class="output text_html"><div class="tfsechead "><a target="_blank" href="https://cdli.ucla.edu/search/search_results.php?SearchMode=Text&amp;ObjectID=P004659" title="to CDLI main page for this tablet" sec="P004659">P004659</a></div><div class=" children"><div class="contnr c4    " ><div class="lbl c4  " ><span class="nd">tablet:149624</span> <span class="txtu"><span class="tfsechead">P004659</span></span></div><div class='features'><span class="name " title="name">ATU 7, pl. 091, W 22133</span><span class="period " title="period">uruk-iv</span><span class="excavation " title="excavation">W 22133</span></div><div class="children ver  "><div class="contnr c1    " ><div class="lbl c1  " ><span class="nd">comment:179698</span> <span class="txtu"><span title="type">meta</span></span></div><div class='features'><span class="text " title="text">atf: lang qpc</span></div><div class="children hor wrap "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131402</span> <span class="txtu"><span title="atf"></span></span></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face:158867</span> <span class="txtu"><span title="type">obverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column:193298</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:260575</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131403</span> <span class="txtu"><span title="atf">1(N34)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N34).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n34).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131404</span> <span class="txtu"><span title="atf">3(N14)</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/3(N14).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-3(n14).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131405</span> <span class="txtu"><span title="atf">2(N01)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/2(N01).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-2(n01).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131406</span> <span class="txtu"><span title="atf">SZE3</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/SZE3.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-sze3.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div><div class="contnr c2    hl" ><div class="lbl c2  hl" ><span class="nd">line:260576</span> <span class="txtu"><span title="number">2</span></span></div><div class="children hor  "><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131407</span> <span class="txtu"><span title="atf">1(N48)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/1(N48).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-1(n48).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131408</span> <span class="txtu"><span title="atf">8(N34)#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/8(N34).jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-8(n34).jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c1 trm   " ><div class="lbl c1 trm " ><span class="nd">quad:143672</span> <span class="txtu"><span class="plain   " ><span class="plain " >|<span class="plain hl" >(<span class="plain " >GI</span>&<span class="plain " >GI</span>)</span>x<span class="plain hl" >GISZ@t</span>|</span>  <a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|(GI&amp;GI)xGISZ@t|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-q(gi(e)gi)xgisz(a)tq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/|(GI&amp;GI)xGISZ@t|.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-q(gi(e)gi)xgisz(a)tq.jpg" style="display: inline;max-width: 4em; max-height: 4em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131412</span> <span class="txtu"><span title="atf">ZATU659#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/ZATU659.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-zatu659.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131413</span> <span class="txtu"><span title="atf">USZ~a</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/USZ~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-usz-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131414</span> <span class="txtu"><span title="atf">GU4#</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/GU4.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-gu4.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">face:158868</span> <span class="txtu"><span title="type">reverse</span></span></div><div class="children hor  "><div class="contnr c3    " ><div class="lbl c3  " ><span class="nd">column:193299</span> <span class="txtu"><span title="number">1</span><span title="prime"></span></span></div><div class="children ver  "><div class="contnr c2    " ><div class="lbl c2  " ><span class="nd">line:260577</span> <span class="txtu"><span title="number">1</span></span></div><div class="children hor  "><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:225099</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:225099</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div> </div><div class="contnr c1 cluster trm   " ><div class="lbl c1 clusterb trm " ><span class="nd">cluster:225100</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div></div><div class="contnr c1 cluster {}   " ><div class="lbl c1 clustere trm " ><span class="nd">cluster:225100</span> <span class="txtu"><span class="plain   " ><span class="plain " >[<span class="plain " >...</span>]</span> </span></span></div> </div><div class="contnr c0 trm   " ><div class="lbl c0 trm " ><span class="nd">131417</span> <span class="txtu"><span title="atf">EN~a#?</span></span></div><div><a target="_blank" href="https://cdli.ucla.edu/tools/SignLists/protocuneiform/archsigns/EN~a.jpg" title="to higher resolution lineart on CDLI"><img src="cdli-imagery/lineart-en-a.jpg" style="display: inline;max-width: 2em; max-height: 6em;"  /></a></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
+</div>
+<div class="section" id="next">
+<h2>Next<a class="headerlink" href="#next" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="quantifier.html"><span class="doc std std-doc">quantifier</span></a></p>
+<p><em>There is more …</em></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./uruk"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="search.html" title="previous page">Search</a>
+    <a class='right-next' id="next-link" href="quantifier.html" title="next page">Quantifiers</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Roorda<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

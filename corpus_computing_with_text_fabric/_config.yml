@@ -19,9 +19,16 @@ html:
   use_repository_button: true
   use_issues_button: true
 
+parse:
+  myst_extended_syntax: true
+  myst_commonmark_only: false
+
 execute:
-  execute_notebooks: off
+  execute_notebooks: cache
+  allow_errors: false
   timeout: 120
 
 launch_buttons:
   notebook_interface: jupyterlab
+
+
